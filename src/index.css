@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&family=Metamorphous&family=Staatliches&display=swap&family=Metal+Mania&display=swap");
+
+:root {
+  --mate-font: "Mate SC", serif;
+  --staat-font: "Staatliches", cursive;
+  --mor-font: "Metamorphous", cursive;
+  --metal-font: "Metal Mania", cursive;
+}
+
+h1 {
+  font-family: var(--meta-font);
+}
