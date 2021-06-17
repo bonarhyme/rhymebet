@@ -1,7 +1,7 @@
-import React from "react"
-import { Table } from "react-bootstrap"
-import { games } from "./games"
-import { FaCheck, FaTimes } from "react-icons/fa"
+import React from "react";
+import { Table } from "react-bootstrap";
+import { games } from "./games";
+import { FaCheck, FaTimes } from "react-icons/fa";
 
 const PremuimGames = () => {
   return (
@@ -33,7 +33,7 @@ const PremuimGames = () => {
                 wasWon,
                 clubs,
                 clubsFull,
-              } = game
+              } = game;
               return (
                 <tr>
                   <td>{index + 1}</td>
@@ -53,12 +53,12 @@ const PremuimGames = () => {
                     )}
                   </td>
                 </tr>
-              )
+              );
             })}
         </tbody>
       </Table>
     </div>
-  )
-}
+  );
+};
 
-export default PremuimGames
+export default PremuimGames;

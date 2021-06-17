@@ -1,8 +1,8 @@
-import React from "react"
-import { Table } from "react-bootstrap"
-import { FaCheck, FaTimes } from "react-icons/fa"
+import React from "react";
+import { Table } from "react-bootstrap";
+import { FaCheck, FaTimes } from "react-icons/fa";
 
-import { games } from "./games"
+import { games } from "./games";
 
 const FreeGames = () => {
   return (
@@ -38,7 +38,7 @@ const FreeGames = () => {
                 win,
                 clubs,
                 clubsFull,
-              } = game
+              } = game;
               return (
                 <tr>
                   <td>{index + 1}</td>
@@ -58,12 +58,12 @@ const FreeGames = () => {
                     )}
                   </td>
                 </tr>
-              )
+              );
             })}
         </tbody>
       </Table>
     </div>
-  )
-}
+  );
+};
 
-export default FreeGames
+export default FreeGames;

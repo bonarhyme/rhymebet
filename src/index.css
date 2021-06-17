@@ -11,7 +11,7 @@
   --color-light-blue: #add8e6;
   --color-blue-one: #3498db;
   --color-green-one: #17991d;
-  --color-azure: azure;
+  --color-azure: #f0ffff;
   --color-black-one: #222222;
   --color-white-one: #babecc;
   --color-white-pri: #ffffff;
@@ -49,7 +49,7 @@ ul {
   text-align: center;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-family: var(--staat-font);
+  font-family: var(--mate-font);
 }
 
 .center-all {
@@ -74,6 +74,9 @@ ul {
 
 .small-font {
   font-size: var(--font-size-small);
+}
+.my-mr-5 {
+  margin-right: 0.5rem;
 }
 
 .color-red {
@@ -199,6 +202,9 @@ ul {
 /* End of Page Not found */
 
 /* Navbar */
+.my-navbar {
+  font-family: var(--mate-font);
+}
 @media (min-width: 768px) {
   .my-navbar {
     padding-left: 3rem;
@@ -223,6 +229,7 @@ ul {
 /* Footer */
 .footer {
   background-color: var(--color-white-three);
+  font-family: var(--mor-font);
 }
 .footer-links-container {
   display: flex;
@@ -278,7 +285,7 @@ ul {
 
 /* Header */
 .header-background {
-  font-family: var(--metal-font);
+  font-family: var(--mate-font);
   background-image: url(images/field1.jpg);
   background-position: center;
   background-size: cover;
@@ -300,3 +307,56 @@ ul {
 }
 
 /* End of Header */
+
+/* Hero */
+.hero {
+  background-color: var(--color-white-two);
+  font-family: var(--mate-font);
+}
+
+.hero .subscriptions {
+  background-color: var(--color-white-three);
+}
+
+/* End of Hero */
+
+/* Games */
+
+@media (min-width: 720px) {
+  .overflowing-table {
+    height: 50vh;
+    overflow-y: scroll;
+  }
+}
+@media (max-width: 720px) {
+  .overflowing-table {
+    height: 70vh;
+    overflow-y: scroll;
+  }
+}
+
+/* End of Games */
+
+/* News Container */
+.news-container {
+  padding: 1rem;
+}
+
+@media (min-width: 720px) {
+  .news-container {
+    padding: 3rem;
+    width: 720px !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .news-container {
+    width: 900px !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+}
+/* End of News Container */

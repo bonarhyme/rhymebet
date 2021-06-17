@@ -1,12 +1,11 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { FaCheck, FaTimes } from "react-icons/fa";
 
 import { games } from "./games";
 
 const ShortFreeGames = () => {
   return (
-    <div className="overflowing-table">
+    <div>
       <h2 className="main-header">Free Hot Picks</h2>
       <Table striped bordered hover>
         <thead>
@@ -37,6 +36,7 @@ const ShortFreeGames = () => {
                   </tr>
                 );
               }
+              return null;
             })}
         </tbody>
       </Table>
