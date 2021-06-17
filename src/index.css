@@ -7,12 +7,14 @@
   --staat-font: "Staatliches", cursive;
   --mor-font: "Metamorphous", cursive;
   --metal-font: "Metal Mania", cursive;
-  --color-red: rgb(240, 44, 44);
-  --color-light-blue: lightblue;
+  --color-red: #f02c2c;
+  --color-light-blue: #add8e6;
   --color-blue-one: #3498db;
+  --color-green-one: #17991d;
   --color-azure: azure;
-  --color-black-one: rgb(31, 31, 31);
+  --color-black-one: #222222;
   --color-white-one: #babecc;
+  --color-white-pri: #ffffff;
   --color-white-two: #ffffff73;
   --color-white-three: #dde1e7;
   --font-size-large: 1.8rem;
@@ -59,6 +61,9 @@ ul {
 .bold {
   font-weight: 700;
 }
+.small-font {
+  font-size: 0.8rem !important;
+}
 .fancy-p {
   width: 90vw;
   overflow-wrap: normal;
@@ -77,6 +82,15 @@ ul {
 .color-blue {
   color: var(--color-blue-one);
 }
+.color-white {
+  color: var(--color-white-pri);
+}
+.bg-blue {
+  background-color: var(--color-blue-one);
+}
+.bg-green {
+  background-color: var(--color-green-one);
+}
 
 .button-fancy {
   margin: 2rem auto;
@@ -90,6 +104,48 @@ ul {
 .button-fancy:hover {
   transform: scale(1.05);
 }
+
+.button-block {
+  display: block;
+  width: 30vw;
+  min-width: 200px;
+  font-size: 20px;
+  border: 1px solid var(--color-blue-one);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem;
+}
+.button-block:hover {
+  transform: scale(1.01);
+  border-color: var(--color-white-one);
+}
+
+@media (max-width: 767px) {
+  .wide-block {
+    width: 100%;
+  }
+}
+
+/* 
+.reverse-bg {
+  color: var(--primary-white);
+  background-color: var(--primary-blue);
+}
+
+.reverse-bg:hover {
+  border-color: var(--primary-white);
+  color: var(--primary-blue);
+  background-color: var(--primary-white);
+  border: 1px solid var(--primary-blue);
+}
+
+.big-button {
+  width: 100%;
+  max-width: 767px;
+  font-size: 4rem;
+  margin: 1rem auto;
+  display: block;
+} */
 
 .box-shadow-white {
   background-color: var(--color-white-three);
@@ -219,3 +275,28 @@ ul {
 }
 
 /* End of Footer */
+
+/* Header */
+.header-background {
+  font-family: var(--metal-font);
+  background-image: url(images/field1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.header-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 767px) {
+  .header-container {
+    display: block;
+  }
+}
+.header-content {
+  background-color: var(--color-white-pri);
+  padding: 1rem;
+  width: fit-content;
+}
+
+/* End of Header */
