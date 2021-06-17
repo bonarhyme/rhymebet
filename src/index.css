@@ -1,12 +1,221 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&family=Metamorphous&family=Staatliches&display=swap&family=Metal+Mania&display=swap");
 
+/* TODOS: Use beskerville font */
+
 :root {
   --mate-font: "Mate SC", serif;
   --staat-font: "Staatliches", cursive;
   --mor-font: "Metamorphous", cursive;
   --metal-font: "Metal Mania", cursive;
+  --color-red: rgb(240, 44, 44);
+  --color-light-blue: lightblue;
+  --color-blue-one: #3498db;
+  --color-azure: azure;
+  --color-black-one: rgb(31, 31, 31);
+  --color-white-one: #babecc;
+  --color-white-two: #ffffff73;
+  --color-white-three: #dde1e7;
+  --font-size-large: 1.8rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 1.2rem;
+  --font-size-tiny: 0.7rem;
 }
 
-h1 {
-  font-family: var(--meta-font);
+* {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Utilities */
+
+ul {
+  list-style-type: none;
+}
+.main-header {
+  text-align: center;
+  font-size: var(--font-size-large);
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  text-decoration: overline;
+  font-family: var(--staat-font);
+}
+.other-header {
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: var(--staat-font);
+}
+
+.center-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bold {
+  font-weight: 700;
+}
+.fancy-p {
+  width: 90vw;
+  overflow-wrap: normal;
+}
+.letter-space-big {
+  letter-spacing: 1.2px;
+}
+
+.small-font {
+  font-size: var(--font-size-small);
+}
+
+.color-red {
+  color: var(--color-red);
+}
+.color-blue {
+  color: var(--color-blue-one);
+}
+
+.button-fancy {
+  margin: 2rem auto;
+  font-size: var(--font-size-medium);
+  outline: none;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-azure);
+  padding: 1rem;
+  font-family: var(--mate-font);
+}
+.button-fancy:hover {
+  transform: scale(1.05);
+}
+
+.box-shadow-white {
+  background-color: var(--color-white-three);
+  box-shadow: 2px 2px 5px var(--color-white-one),
+    -5px -5px 10px var(--color-white-two);
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out both;
+  animation-iteration-count: 15;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(3px) translateY(3px);
+  }
+
+  50% {
+    transform: translateX(6px) translateY(-6px);
+  }
+  75% {
+    transform: translateX(3px) translateY(-3px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+.responsive-image {
+  width: 100%;
+  max-width: 550px;
+}
+
+/* End of Utilities */
+
+/* Page Not found */
+.page-not-found {
+  padding: 0.5rem !important;
+  margin: 0.5rem;
+  overflow-x: hidden;
+}
+
+@media (max-width: 767px) {
+  .page-not-found {
+    height: 100%;
+  }
+}
+/* End of Page Not found */
+
+/* Navbar */
+@media (min-width: 768px) {
+  .my-navbar {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  #responsive-navbar-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 767px) {
+  .my-navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* End of Navbar */
+
+/* Footer */
+.footer {
+  background-color: var(--color-white-three);
+}
+.footer-links-container {
+  display: flex;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .footer-links-container {
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-links-container {
+    flex-direction: column;
+    margin: auto;
+    padding: 0.5rem;
+  }
+  .footer-links-container ul {
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+  }
+
+  .footer-links-container .useful-links {
+    margin: 1rem 3rem;
+  }
+}
+
+.footer-links-container ul li a {
+  cursor: pointer;
+}
+.footer-links-container ul li a:active {
+  color: var(--color-red);
+}
+
+.useful-links li {
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+}
+
+.copyright {
+  background-color: var(--color-white-one);
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* End of Footer */
