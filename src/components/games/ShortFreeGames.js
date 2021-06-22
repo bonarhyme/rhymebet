@@ -25,7 +25,7 @@ const ShortFreeGames = () => {
               const { win, clubs, clubsFull, matchTime, corner, gg } = game;
               if (index < 4) {
                 return (
-                  <tr>
+                  <tr key={index + 1}>
                     <td>{index + 1}</td>
 
                     <td title={clubsFull}>{clubs}</td>

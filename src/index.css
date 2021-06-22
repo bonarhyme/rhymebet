@@ -13,6 +13,7 @@
   --color-green-one: #17991d;
   --color-azure: #f0ffff;
   --color-black-one: #222222;
+  --color-black-two: #6c757d;
   --color-white-one: #babecc;
   --color-white-pri: #ffffff;
   --color-white-two: #ffffff73;
@@ -30,9 +31,17 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Utilities */
+.form-container form > * {
+  margin: 1rem auto;
+}
+
+/* a {
+  text-decoration: none;
+} */
 
 ul {
   list-style-type: none;
@@ -129,7 +138,6 @@ ul {
   }
 }
 
-/* 
 .reverse-bg {
   color: var(--primary-white);
   background-color: var(--primary-blue);
@@ -148,7 +156,7 @@ ul {
   font-size: 4rem;
   margin: 1rem auto;
   display: block;
-} */
+}
 
 .box-shadow-white {
   background-color: var(--color-white-three);
@@ -204,6 +212,10 @@ ul {
 /* Navbar */
 .my-navbar {
   font-family: var(--mate-font);
+}
+.my-navbar a {
+  text-decoration: none;
+  color: var(--color-black-two);
 }
 @media (min-width: 768px) {
   .my-navbar {
@@ -360,3 +372,28 @@ ul {
   }
 }
 /* End of News Container */
+
+/* Past Games */
+.past-games {
+  background-image: url(images/women-in-field.jpg);
+  background-clip: border-box;
+  background-position: center;
+  background-size: cover;
+  padding: 5rem 1rem 15rem;
+  margin-top: 2rem;
+}
+/* End of past Games */
+
+/* Register */
+.register {
+  background-image: url(images/stadium1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.register-container {
+  background-color: var(--color-white-pri);
+  border-radius: 15px;
+  padding: 1rem;
+}
+/* End of register */

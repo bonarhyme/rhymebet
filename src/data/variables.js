@@ -8,4 +8,5 @@ export const variables = {
   instagramHandle: "@rhymebet_support",
   emailLink: "mailto:rhymebet_support@outlook.com",
   email: "rhymebet_support@outlook.com",
+  backendLink: "http://localhost:4006",
 };

@@ -54,7 +54,7 @@ const News = () => {
         {news.map((story, index) => {
           const { title, image, fullstory, date, id } = story;
           return (
-            <div className="py-3">
+            <div className="py-3" key={index + 1}>
               <h4>{title}</h4>
               <small>{date}</small>
               <Image src={image} alt={title} fluid />

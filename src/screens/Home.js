@@ -7,8 +7,10 @@ const Home = () => {
   return (
     <>
       <MyHeader />
-      <MyHero />
-      <News />
+      <main>
+        <MyHero />
+        <News />
+      </main>
     </>
   );
 };

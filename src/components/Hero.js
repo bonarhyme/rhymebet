@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { FaKey } from "react-icons/fa";
 
@@ -10,7 +9,7 @@ import BuyGames from "./games/BuyGames";
 const Hero = () => {
   return (
     <section>
-      <div fluid className="py-3 hero">
+      <div className="py-3 hero">
         <article className="m-5">
           <h3 className="main-header">Premuium Games </h3>
           <LinkContainer to="/subscriptions">
@@ -22,7 +21,7 @@ const Hero = () => {
           <PremuimGames />
         </article>
 
-        <article className="m-5">
+        <article className="m-5" id="free" name="free">
           <h3 className="main-header">Free Games</h3>
           <FreeGames />
         </article>

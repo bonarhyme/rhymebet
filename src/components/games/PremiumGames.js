@@ -35,7 +35,7 @@ const PremuimGames = () => {
                 clubsFull,
               } = game;
               return (
-                <tr>
+                <tr key={index + 1}>
                   <td>{index + 1}</td>
                   <td title={countryFull}>{country}</td>
                   <td title={leagueFull}>{league}</td>

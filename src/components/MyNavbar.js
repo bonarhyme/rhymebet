@@ -7,6 +7,7 @@ import { FaUnlockAlt } from "react-icons/fa";
 import { variables } from "../data/variables";
 
 import { LinkContainer } from "react-router-bootstrap";
+import { HashLink } from "react-router-hash-link";
 
 const MyNavbar = () => {
   // eslint-disable-next-line
@@ -19,9 +20,14 @@ const MyNavbar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <LinkContainer to="/#free">
-            <Nav.Link title="Access free games">Free Games</Nav.Link>
-          </LinkContainer>
+          <HashLink
+            className="nav-link"
+            title="Access free games"
+            smooth
+            to={"/#free"}
+          >
+            Free Games
+          </HashLink>
           <NavDropdown title="Premium Games" id="collasible-nav-dropdown">
             <LinkContainer to="/subscription/basic">
               <NavDropdown.Item title="Access 1.5 odds for 3 days">
