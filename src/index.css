@@ -103,6 +103,9 @@ ul {
 .bg-green {
   background-color: var(--color-green-one);
 }
+.bg-ash {
+  background-color: var(--color-black-two);
+}
 
 .button-fancy {
   margin: 2rem auto;
@@ -384,11 +387,14 @@ ul {
 }
 /* End of past Games */
 
-/* Register */
+/* Register && FORMS CONTAINERS*/
 .register {
   background-image: url(images/stadium1.jpg);
   background-position: center;
   background-size: cover;
+  margin: 0;
+  margin-bottom: -3rem;
+  padding: 1rem;
 }
 
 .register-container {

@@ -23,6 +23,11 @@ const MyHeader = () => {
                   Register
                 </button>
               </LinkContainer>
+              <LinkContainer to="/verify">
+                <button className="mt-1 button-block wide-block bg-ash color-white">
+                  VERIFY ACCOUNT
+                </button>
+              </LinkContainer>
             </div>
           ) : (
             <>

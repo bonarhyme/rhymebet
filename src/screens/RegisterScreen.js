@@ -27,8 +27,8 @@ const Register = ({ history, location }) => {
   const { loading, error, userInfo } = userRegister;
 
   useEffect(() => {
-    let userInfoFromStorage = sessionStorage.getItem("userInfo")
-      ? JSON.parse(sessionStorage.getItem("userInfo"))
+    let userInfoFromStorage = localStorage.getItem("userInfo")
+      ? JSON.parse(localStorage.getItem("userInfo"))
       : null;
     if (userInfoFromStorage) {
       history.push("/");
@@ -88,84 +88,86 @@ const Register = ({ history, location }) => {
                 </p>
               </Message>
             ) : (
-              <Form onSubmit={handleSubmit}>
-                {message && <Message variant="danger">{message}</Message>}
-                {error && <Message variant="danger">{error}</Message>}
-                {loading && <Loader />}
-                <Form.Group controlId="formBasicName">
-                  <Form.Label>Full Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="e.g John Doe"
-                    className="about-form"
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    autoFocus
-                  />
-                </Form.Group>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="e.g name@example.com"
-                    className="about-form"
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group controlId="formBasicUsername">
-                  <Form.Label>Username</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="e.g John123"
-                    className="about-form"
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Enter a strong password"
-                    className="about-form"
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group controlId="confirmPassword">
-                  <Form.Label>Confirm Password</Form.Label>
+              <div className="form-container">
+                <Form onSubmit={handleSubmit}>
+                  {message && <Message variant="danger">{message}</Message>}
+                  {error && <Message variant="danger">{error}</Message>}
+                  {loading && <Loader />}
+                  <Form.Group controlId="formBasicName">
+                    <Form.Label>Full Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="e.g John Doe"
+                      className="about-form"
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                      autoFocus
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="e.g name@example.com"
+                      className="about-form"
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formBasicUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="e.g John123"
+                      className="about-form"
+                      onChange={(e) => setUsername(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Enter a strong password"
+                      className="about-form"
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="confirmPassword">
+                    <Form.Label>Confirm Password</Form.Label>
 
-                  <Form.Control
-                    type="password"
-                    placeholder="Confirm your password"
-                    className="about-form"
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  ></Form.Control>
-                </Form.Group>
-                <input
-                  type="checkbox"
-                  name="accept"
-                  required
-                  // onInvalid={remind}
-                />{" "}
-                I accept your <Link to="terms">terms and conditions</Link>
-                {/* onInvalid="this.setCustomValidity('Please accept our terms and conditions to continue')"
+                    <Form.Control
+                      type="password"
+                      placeholder="Confirm your password"
+                      className="about-form"
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                    ></Form.Control>
+                  </Form.Group>
+                  <input
+                    type="checkbox"
+                    name="accept"
+                    required
+                    // onInvalid={remind}
+                  />{" "}
+                  I accept your <Link to="terms">terms and conditions</Link>
+                  {/* onInvalid="this.setCustomValidity('Please accept our terms and conditions to continue')"
                   onInput="setCustomValidity('')" */}
-                <Button
-                  variant="outline-info"
-                  type="submit"
-                  className="button-block d-block mx-auto mt-2"
-                >
-                  Submit
-                </Button>
-                <p className="about-p  text-center my-2">
-                  ALREADY HAVE AN ACCOUNT?{" "}
-                  <Link to="login" className="register-btn">
-                    LOGIN
-                  </Link>
-                </p>
-              </Form>
+                  <Button
+                    variant="outline-info"
+                    type="submit"
+                    className="button-block d-block mx-auto mt-2"
+                  >
+                    Submit
+                  </Button>
+                  <p className="about-p  text-center my-2">
+                    ALREADY HAVE AN ACCOUNT?{" "}
+                    <Link to="login" className="register-btn">
+                      LOGIN
+                    </Link>
+                  </p>
+                </Form>
+              </div>
             )}
           </Col>
         </Row>
