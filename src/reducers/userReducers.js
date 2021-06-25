@@ -9,6 +9,9 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGOUT,
+  CHECK_USER_TOKEN_REQUEST,
+  CHECK_USER_TOKEN_SUCCESS,
+  CHECK_USER_TOKEN_FAIL,
 } from "../constants/userConstants";
 
 export const userRegisterReducer = (state = {}, action) => {
@@ -49,6 +52,20 @@ export const userLoginReducer = (state = {}, action) => {
       return { loading: false, error: action.payload };
     case USER_LOGOUT:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const checkTokenReducer = (state = {}, action) => {
+  switch (action.type) {
+    case CHECK_USER_TOKEN_REQUEST:
+      return { loading: true };
+    case CHECK_USER_TOKEN_SUCCESS:
+      return { loading: false, success: true, tokenChecked: action.payload };
+    case CHECK_USER_TOKEN_FAIL:
+      return { loading: false, success: false, error: action.payload };
+
     default:
       return state;
   }

@@ -5,12 +5,14 @@ import {
   userRegisterReducer,
   verifyUserReducer,
   userLoginReducer,
+  checkTokenReducer,
 } from "./reducers/userReducers";
 
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userVerify: verifyUserReducer,
   userLogin: userLoginReducer,
+  tokenCheck: checkTokenReducer,
 });
 
 // Local storage matters
