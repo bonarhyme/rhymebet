@@ -9,6 +9,10 @@ import {
   USER_VERIFICATION_REQUEST,
   USER_VERIFICATION_SUCCESS,
   USER_VERIFICATION_FAIL,
+  USER_LOGIN_FAIL,
+  USER_LOGIN_REQUEST,
+  USER_LOGIN_SUCCESS,
+  USER_LOGOUT,
 } from "../constants/userConstants";
 
 export const register =
@@ -78,4 +82,44 @@ export const verifyUser = (username, token) => async (dispatch) => {
           : error.message,
     });
   }
+};
+
+export const login = (username, password) => async (dispatch) => {
+  try {
+    dispatch({
+      type: USER_LOGIN_REQUEST,
+    });
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const { data } = await axios.post(
+      `${variables.backendLink}/api/user/login`,
+      { username, password },
+      config
+    );
+    dispatch({
+      type: USER_LOGIN_SUCCESS,
+      payload: data,
+    });
+
+    localStorage.setItem("userInfo", JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: USER_LOGIN_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+export const logout = () => (dispatch) => {
+  sessionStorage.clear();
+  dispatch({ type: USER_LOGOUT });
+  // This redirects the user on logout
+  document.location.href = "/login";
 };

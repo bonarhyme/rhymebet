@@ -4,11 +4,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import {
   userRegisterReducer,
   verifyUserReducer,
+  userLoginReducer,
 } from "./reducers/userReducers";
 
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userVerify: verifyUserReducer,
+  userLogin: userLoginReducer,
 });
 
 // Local storage matters

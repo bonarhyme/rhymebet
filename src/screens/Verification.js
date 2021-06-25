@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import Helmet from "react-helmet";
 
 import Loader from "../components/Loader";
 import Message from "../components/Message";
@@ -39,6 +40,10 @@ const Verification = ({ history, location }) => {
 
   return (
     <main className="register">
+      <Helmet>
+        <title>Verify User - Rhymebet</title>
+        <meta name="description" content="Login" />
+      </Helmet>
       <Container className="mb-5">
         <Row className="justify-content-center ">
           <Col className="py-5 my-5 register-container box-shadow-white" md={6}>
