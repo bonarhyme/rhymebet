@@ -9,6 +9,9 @@ import HomeScreen from "./screens/Home";
 import RegisterScreen from "./screens/RegisterScreen";
 import VerifyScreen from "./screens/Verification";
 import LoginScreen from "./screens/Login";
+import ForgotPasswordScreen from "./screens/ForgotPassword";
+import ResetPasswordScreen from "./screens/ResetPassword";
+import ProfileScreen from "./screens/Profile";
 
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
@@ -58,6 +61,22 @@ const App = () => {
           <Route
             path="/login"
             component={!userInfo ? LoginScreen : HomeScreen}
+            exact
+          />
+
+          <Route
+            path="/forgot-password"
+            component={!userInfo ? ForgotPasswordScreen : HomeScreen}
+            exact
+          />
+          <Route
+            path="/reset/password/:token"
+            component={!userInfo ? ResetPasswordScreen : HomeScreen}
+            exact
+          />
+          <Route
+            path="/user/profile"
+            component={userInfo ? ProfileScreen : HomeScreen}
             exact
           />
           <Route path="*" component={PageNotFoundScreen} />

@@ -6,6 +6,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { register } from "../actions/userActions";
 import { Helmet } from "react-helmet";
+import MyButton from "../components/buttons/MyButton";
 
 const Register = ({ history, location }) => {
   const [username, setUsername] = useState("");
@@ -153,13 +154,7 @@ const Register = ({ history, location }) => {
                   I accept your <Link to="terms">terms and conditions</Link>
                   {/* onInvalid="this.setCustomValidity('Please accept our terms and conditions to continue')"
                   onInput="setCustomValidity('')" */}
-                  <Button
-                    variant="outline-info"
-                    type="submit"
-                    className="button-block d-block mx-auto mt-2"
-                  >
-                    Submit
-                  </Button>
+                  <MyButton />
                   <p className="about-p  text-center my-2">
                     ALREADY HAVE AN ACCOUNT?{" "}
                     <Link to="login" className="register-btn">

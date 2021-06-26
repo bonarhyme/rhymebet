@@ -7,6 +7,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { login } from "../actions/userActions";
 import { Helmet } from "react-helmet";
+import MyButton from "../components/buttons/MyButton";
 
 const Login = ({ history }) => {
   const [username, setUsername] = useState("");
@@ -65,13 +66,7 @@ const Login = ({ history }) => {
                 />
               </Form.Group>
 
-              <Button
-                variant="outline-info"
-                type="submit"
-                className="button-block d-block mx-auto mt-2"
-              >
-                SUBMIT
-              </Button>
+              <MyButton />
               <p className=" text-center my-2">
                 DON'T HAVE AN ACCOUNT?{" "}
                 <Link to="/register" className="register-btn">
@@ -86,7 +81,7 @@ const Login = ({ history }) => {
               </p>
               <p className="text-center my-2">
                 FORGOT YOUR PASSWORD?{" "}
-                <Link to="/forgotpassword" className="register-btn">
+                <Link to="/forgot-password" className="register-btn">
                   RESET PASSWORD
                 </Link>
               </p>

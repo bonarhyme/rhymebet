@@ -6,6 +6,8 @@ import {
   verifyUserReducer,
   userLoginReducer,
   checkTokenReducer,
+  userForgotPasswordReducer,
+  userResetPasswordReducer,
 } from "./reducers/userReducers";
 
 const reducer = combineReducers({
@@ -13,6 +15,8 @@ const reducer = combineReducers({
   userVerify: verifyUserReducer,
   userLogin: userLoginReducer,
   tokenCheck: checkTokenReducer,
+  userForgotPassword: userForgotPasswordReducer,
+  userResetPassword: userResetPasswordReducer,
 });
 
 // Local storage matters
