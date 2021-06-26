@@ -121,8 +121,8 @@ export const login = (username, password) => async (dispatch) => {
 };
 
 export const logout = () => (dispatch) => {
-  localStorage.clear();
   dispatch({ type: USER_LOGOUT });
+  localStorage.clear();
   // This redirects the user on logout
   document.location.href = "/login";
 };

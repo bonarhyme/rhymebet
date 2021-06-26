@@ -12,13 +12,13 @@ import LoginScreen from "./screens/Login";
 
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
-import { checkToken, logout } from "./actions/userActions";
+import { checkToken } from "./actions/userActions";
 
 const App = () => {
   const dispatch = useDispatch();
 
   const tokenCheck = useSelector((state) => state.tokenCheck);
-  const { error, tokenChecked } = tokenCheck;
+  const { error } = tokenCheck;
 
   const { userInfo } = useSelector((state) => state.userLogin);
 
@@ -29,7 +29,7 @@ const App = () => {
     if (userInfoFromStorage !== null) {
       dispatch(checkToken(userInfoFromStorage));
     }
-  }, [userInfo]);
+  }, [userInfo, dispatch]);
 
   useEffect(() => {
     if (error) {

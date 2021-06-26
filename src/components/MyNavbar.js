@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+
 import { Nav, Navbar, NavDropdown, Image } from "react-bootstrap";
 import { BiLogIn } from "react-icons/bi";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { FaUnlockAlt } from "react-icons/fa";
+
+import { useDispatch } from "react-redux";
+
+import { USER_LOGOUT } from "../constants/userConstants";
 
 import { variables } from "../data/variables";
 
@@ -10,8 +15,17 @@ import { LinkContainer } from "react-router-bootstrap";
 import { HashLink } from "react-router-hash-link";
 
 const MyNavbar = () => {
-  // eslint-disable-next-line
-  const [user, setUser] = useState({});
+  const { userInfo: user } = useSelector((state) => state.userLogin);
+
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch({
+      type: USER_LOGOUT,
+    });
+    localStorage.clear();
+  };
+
   return (
     <Navbar bg="light" expand="lg" className="my-navbar" collapseOnSelect>
       <LinkContainer to="/">
@@ -81,7 +95,11 @@ const MyNavbar = () => {
         <Nav>
           {user && user.name ? (
             <>
-              <NavDropdown title={user.name} id="collasible-nav-dropdown">
+              <NavDropdown
+                title={user.username}
+                id="collasible-nav-dropdown "
+                className="username"
+              >
                 <LinkContainer to="/user/dashboard">
                   <NavDropdown.Item
                     title={"Access " + user.name + " Dashboard"}
@@ -94,6 +112,14 @@ const MyNavbar = () => {
                     Profile
                   </NavDropdown.Item>
                 </LinkContainer>
+                <NavDropdown.Divider />
+                <NavDropdown.Item
+                  title={"Access " + user.name + " Profile"}
+                  onClick={logoutHandler}
+                  className="logout"
+                >
+                  Logout
+                </NavDropdown.Item>
               </NavDropdown>
             </>
           ) : (

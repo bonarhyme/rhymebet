@@ -239,6 +239,13 @@ ul {
   }
 }
 
+.username.nav-item.dropdown > a {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.dropdown-item.logout {
+  color: red;
+}
 /* End of Navbar */
 
 /* Footer */
