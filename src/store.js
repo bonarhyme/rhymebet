@@ -8,6 +8,9 @@ import {
   checkTokenReducer,
   userForgotPasswordReducer,
   userResetPasswordReducer,
+  getUserProfileReducer,
+  updateUserProfileReducer,
+  updateUserPasswordReducer,
 } from "./reducers/userReducers";
 
 const reducer = combineReducers({
@@ -17,6 +20,9 @@ const reducer = combineReducers({
   tokenCheck: checkTokenReducer,
   userForgotPassword: userForgotPasswordReducer,
   userResetPassword: userResetPasswordReducer,
+  userProfile: getUserProfileReducer,
+  userUpdatedProfile: updateUserProfileReducer,
+  userUpdatedPassword: updateUserPasswordReducer,
 });
 
 // Local storage matters

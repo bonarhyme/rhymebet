@@ -106,6 +106,12 @@ ul {
 .bg-ash {
   background-color: var(--color-black-two);
 }
+.bg-red {
+  background-color: var(--color-red);
+}
+height-big {
+  height: 5rem;
+}
 
 .button-fancy {
   margin: 2rem auto;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Helmet from "react-helmet";
+import { Link } from "react-router-dom";
 
 import Loader from "../components/Loader";
 import Message from "../components/Message";
@@ -83,6 +84,18 @@ const Verification = ({ history, location }) => {
                     >
                       VERIFY ACCOUNT
                     </Button>
+                    <p className="about-p  text-center my-2">
+                      ALREADY VERIFIED ACCOUNT?{" "}
+                      <Link to="login" className="register-btn">
+                        LOGIN
+                      </Link>
+                    </p>
+                    <p className=" text-center my-2">
+                      DON'T HAVE AN ACCOUNT?{" "}
+                      <Link to="/register" className="register-btn">
+                        REGISTER
+                      </Link>
+                    </p>
                   </Form>
                 </div>
               </>
