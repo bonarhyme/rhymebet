@@ -92,88 +92,102 @@ const MyNavbar = () => {
             <Nav.Link title="Rhymebet sports news">Sports News</Nav.Link>
           </LinkContainer>
         </Nav>
-        <Nav>
-          {user && user.name ? (
-            <>
-              <NavDropdown
-                title={user.username}
-                id="collasible-nav-dropdown "
-                className="username"
-              >
-                <LinkContainer to="/user/dashboard">
-                  <NavDropdown.Item
-                    title={"Access " + user.name + " Dashboard"}
-                  >
-                    Dashboard
-                  </NavDropdown.Item>
-                </LinkContainer>
-                <LinkContainer to="/user/profile">
-                  <NavDropdown.Item title={"Access " + user.name + " Profile"}>
-                    Profile
-                  </NavDropdown.Item>
-                </LinkContainer>
-                <NavDropdown.Divider />
-                <NavDropdown.Item
-                  title={"Access " + user.name + " Profile"}
-                  onClick={logoutHandler}
-                  className="logout"
+        <div className="flex-it">
+          <Nav>
+            {user && user.name ? (
+              <>
+                <NavDropdown
+                  title={user.username}
+                  id="collasible-nav-dropdown "
+                  className="username"
                 >
-                  Logout
-                </NavDropdown.Item>
+                  <LinkContainer to="/user/dashboard">
+                    <NavDropdown.Item
+                      title={"Access " + user.name + " Dashboard"}
+                    >
+                      Dashboard
+                    </NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/user/profile">
+                    <NavDropdown.Item
+                      title={"Access " + user.name + " Profile"}
+                    >
+                      Profile
+                    </NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item
+                    title={"Access " + user.name + " Profile"}
+                    onClick={logoutHandler}
+                    className="logout"
+                  >
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </>
+            ) : (
+              <>
+                <LinkContainer to="/login">
+                  <Nav.Link title="Sign in">
+                    <BiLogIn className="pr-1" size={20} />
+                    Login
+                  </Nav.Link>
+                </LinkContainer>
+
+                <LinkContainer to="/register">
+                  <Nav.Link title="Register">
+                    <SiGnuprivacyguard className="pr-1" size={20} />
+                    Register
+                  </Nav.Link>
+                </LinkContainer>
+
+                <LinkContainer to="/verify">
+                  <Nav.Link title="Verify Account">
+                    <FaUnlockAlt className="pr-1" size={18} />
+                    Verify Account
+                  </Nav.Link>
+                </LinkContainer>
+              </>
+            )}
+          </Nav>
+          {user && user.isAdmin && (
+            <Nav>
+              <NavDropdown title="Admin" id="Admin-dropdown">
+                <LinkContainer to="/admin/users">
+                  <NavDropdown.Item title="Access all users">
+                    Users
+                  </NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/admin/games">
+                  <NavDropdown.Item title="Access all games">
+                    Games
+                  </NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/admin/subscriptions">
+                  <NavDropdown.Item title="Access all subscriptions">
+                    Subscriptions
+                  </NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
-            </>
-          ) : (
-            <>
-              <LinkContainer to="/login">
-                <Nav.Link title="Sign in">
-                  <BiLogIn className="pr-1" size={20} />
-                  Login
-                </Nav.Link>
-              </LinkContainer>
-
-              <LinkContainer to="/register">
-                <Nav.Link title="Register">
-                  <SiGnuprivacyguard className="pr-1" size={20} />
-                  Register
-                </Nav.Link>
-              </LinkContainer>
-
-              <LinkContainer to="/verify">
-                <Nav.Link title="Verify Account">
-                  <FaUnlockAlt className="pr-1" size={18} />
-                  Verify Account
-                </Nav.Link>
-              </LinkContainer>
-            </>
+            </Nav>
           )}
-        </Nav>
-        {user && user.isAdmin && (
-          <Nav>
-            <NavDropdown title="Admin" id="Admin-dropdown">
-              <LinkContainer to="/admin/users">
-                <NavDropdown.Item title="Access all users">
-                  Users
-                </NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown>
-          </Nav>
-        )}
-        {user && user.isSuperAdmin && (
-          <Nav>
-            <NavDropdown title="Super Admin" id="Super-Admin-dropdown">
-              <LinkContainer to="/superadmin/users">
-                <NavDropdown.Item title="Access all users">
-                  Users
-                </NavDropdown.Item>
-              </LinkContainer>
-              <LinkContainer to="/superadmin/subscriptions">
-                <NavDropdown.Item title="Access all subscriptions">
-                  Subscriptions
-                </NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown>
-          </Nav>
-        )}
+          {user && user.isSuperAdmin && (
+            <Nav>
+              <NavDropdown title="Super Admin" id="Super-Admin-dropdown">
+                <LinkContainer to="/superadmin/users">
+                  <NavDropdown.Item title="Access all users">
+                    Users
+                  </NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/superadmin/subscriptions">
+                  <NavDropdown.Item title="Access all subscriptions">
+                    Subscriptions
+                  </NavDropdown.Item>
+                </LinkContainer>
+              </NavDropdown>
+            </Nav>
+          )}
+        </div>
       </Navbar.Collapse>
     </Navbar>
   );

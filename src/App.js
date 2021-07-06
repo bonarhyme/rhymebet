@@ -12,10 +12,12 @@ import LoginScreen from "./screens/Login";
 import ForgotPasswordScreen from "./screens/ForgotPassword";
 import ResetPasswordScreen from "./screens/ResetPassword";
 import ProfileScreen from "./screens/Profile";
+import AdminGamesScreen from "./screens/AdminGames";
 
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 import { checkToken } from "./actions/userActions";
+import CreateGameScreen from "./screens/CreateGame";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -77,6 +79,20 @@ const App = () => {
           <Route
             path="/user/profile"
             component={userInfo ? ProfileScreen : HomeScreen}
+            exact
+          />
+          <Route
+            path="/admin/games"
+            component={
+              userInfo && userInfo.isAdmin ? AdminGamesScreen : HomeScreen
+            }
+            exact
+          />
+          <Route
+            path="/admin/games/create-game"
+            component={
+              userInfo && userInfo.isAdmin ? CreateGameScreen : HomeScreen
+            }
             exact
           />
           <Route path="*" component={PageNotFoundScreen} />

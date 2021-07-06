@@ -13,6 +13,8 @@ import {
   updateUserPasswordReducer,
 } from "./reducers/userReducers";
 
+import { gameToCartReducer, postGamesReducer } from "./reducers/gameReducers";
+
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userVerify: verifyUserReducer,
@@ -23,6 +25,8 @@ const reducer = combineReducers({
   userProfile: getUserProfileReducer,
   userUpdatedProfile: updateUserProfileReducer,
   userUpdatedPassword: updateUserPasswordReducer,
+  cart: gameToCartReducer,
+  postedGame: postGamesReducer,
 });
 
 // Local storage matters
@@ -30,10 +34,17 @@ const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
 
+const cartGamesFromStorage = localStorage.getItem("cartGames")
+  ? JSON.parse(localStorage.getItem("cartGames"))
+  : [];
+
 // initial state
 const initialState = {
   userLogin: {
     userInfo: userInfoFromStorage,
+  },
+  cart: {
+    cartGames: cartGamesFromStorage,
   },
 };
 

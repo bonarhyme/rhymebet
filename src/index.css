@@ -232,7 +232,7 @@ height-big {
     padding-right: 3rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   #responsive-navbar-nav {
     display: flex;
     justify-content: space-around;
@@ -251,6 +251,12 @@ height-big {
 
 .dropdown-item.logout {
   color: red;
+}
+
+@media (min-width: 992px) {
+  .flex-it {
+    display: flex;
+  }
 }
 /* End of Navbar */
 
