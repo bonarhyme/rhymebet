@@ -32,10 +32,10 @@ const PostGames = () => {
     if (success) {
       dispatch(clearGamesFromCart());
     }
-  }, [serverReply]);
+  }, [serverReply, success, dispatch]);
 
   return (
-    <section className="form-container ">
+    <section className="form-container">
       <Row className="justify-content-center ">
         <Col className=" register-container box-shadow-white" md={6}>
           <h2 className="main-header">POST GAMES</h2>

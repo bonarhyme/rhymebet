@@ -110,10 +110,10 @@ const CreateGame = () => {
 
   return (
     <section className="form-container ">
-      <Row className="justify-content-center ">
-        <Col className="py-5 my-5 register-container box-shadow-white" md={6}>
+      <Row className="justify-content-center register mb-5 ">
+        <Col className="py-5 my-5 register-container box-shadow-white " md={6}>
           <h2 className="main-header">Create Games</h2>
-          <Form onSubmit={addGameToCartHandler} className="my-5 center-form">
+          <Form onSubmit={addGameToCartHandler} className="my-5 center-form ">
             <Form.Group controlId="league">
               <Form.Control
                 as="select"
