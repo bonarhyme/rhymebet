@@ -13,7 +13,12 @@ import {
   updateUserPasswordReducer,
 } from "./reducers/userReducers";
 
-import { gameToCartReducer, postGamesReducer } from "./reducers/gameReducers";
+import {
+  gameToCartReducer,
+  postGamesReducer,
+  getGamesListReducer,
+  getFreeGamesListReducer,
+} from "./reducers/gameReducers";
 
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
@@ -27,6 +32,8 @@ const reducer = combineReducers({
   userUpdatedPassword: updateUserPasswordReducer,
   cart: gameToCartReducer,
   postedGame: postGamesReducer,
+  gamesListGet: getGamesListReducer,
+  gamesFreeListGet: getFreeGamesListReducer,
 });
 
 // Local storage matters
