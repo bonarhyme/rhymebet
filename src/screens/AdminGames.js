@@ -28,11 +28,8 @@ const AdminGames = () => {
         </button>
       </LinkContainer>
 
-      <Row>
-        <Col>
-          <FreeGamesList />
-        </Col>
-      </Row>
+      <FreeGamesList />
+      <hr />
     </main>
   );
 };

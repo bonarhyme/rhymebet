@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Table, Pagination } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCheck, FaTimes } from "react-icons/fa";
-
 import { getFreeGamesList } from "../../actions/gamesActions";
 import Message from "../Message";
 import Loader from "../Loader";
@@ -32,7 +31,7 @@ const FreeGamesList = () => {
   useEffect(() => {
     if (success) {
       setPage(serverReply.page);
-      setPages(9);
+      setPages(serverReply.pages);
       setGames(serverReply.games);
       setCreatedAt(serverReply.games[0].createdAt);
       setCreatorUser(serverReply.games[0].creator[0].creatorUsername);
@@ -126,7 +125,10 @@ const FreeGamesList = () => {
         }}
         className="mx-auto my-4"
       >
-        <div style={{ display: "inline-flex", height: "40px" }}>
+        <div
+          style={{ display: "inline-flex", height: "40px" }}
+          className="mb-2"
+        >
           {pages > 1 && (
             <Pagination>
               {[...Array(pages).keys()].map((x) => {
