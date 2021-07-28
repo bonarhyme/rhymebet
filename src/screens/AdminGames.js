@@ -6,6 +6,7 @@ import { Col, Row } from "react-bootstrap";
 
 import { USER_LOGOUT } from "../constants/userConstants";
 import FreeGamesList from "../components/games/FreeGamesList";
+import PremiumGamesList from "../components/games/PremiumGamesList";
 
 const AdminGames = () => {
   const dispatch = useDispatch();
@@ -27,9 +28,10 @@ const AdminGames = () => {
           <FaPlus size={30} /> CREATE NEW GAMES
         </button>
       </LinkContainer>
-
-      <FreeGamesList />
       <hr />
+      <PremiumGamesList />
+      <hr />
+      <FreeGamesList />
     </main>
   );
 };

@@ -12,6 +12,9 @@ import {
   GET_FREE_GAMES_LIST_REQUEST,
   GET_FREE_GAMES_LIST_SUCCESS,
   GET_FREE_GAMES_LIST_FAIL,
+  GET_PREMIUM_GAMES_LIST_REQUEST,
+  GET_PREMIUM_GAMES_LIST_SUCCESS,
+  GET_PREMIUM_GAMES_LIST_FAIL,
 } from "../constants/gameConstants";
 
 export const gameToCartReducer = (state = { cartGames: [] }, action) => {
@@ -112,6 +115,26 @@ export const getFreeGamesListReducer = (state = {}, action) => {
         serverReply: action.payload,
       };
     case GET_FREE_GAMES_LIST_FAIL:
+      return { loading: false, success: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const getPremiumGamesListReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_PREMIUM_GAMES_LIST_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case GET_PREMIUM_GAMES_LIST_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        serverReply: action.payload,
+      };
+    case GET_PREMIUM_GAMES_LIST_FAIL:
       return { loading: false, success: false, error: action.payload };
     default:
       return state;
