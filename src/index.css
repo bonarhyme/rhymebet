@@ -202,6 +202,21 @@ ul {
   max-width: 550px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* .overflow-pagination {
+  overflow: scroll;
+} */
+
 /* End of Utilities */
 
 /* Page Not found */
@@ -356,7 +371,7 @@ ul {
 
 /* Games */
 
-@media (min-width: 720px) {
+/* @media (min-width: 720px) {
   .overflowing-table {
     height: 50vh;
     overflow-y: scroll;
@@ -367,7 +382,7 @@ ul {
     height: 70vh;
     overflow-y: scroll;
   }
-}
+} */
 
 /* End of Games */
 
