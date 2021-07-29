@@ -4,6 +4,7 @@ import { Button, Container, Image } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 const News = () => {
+  // eslint-disable-next-line
   const [news, setNews] = useState([
     {
       id: 1,

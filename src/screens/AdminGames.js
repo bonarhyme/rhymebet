@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import { FaPlus } from "react-icons/fa";
-import { Col, Row } from "react-bootstrap";
 
 import { USER_LOGOUT } from "../constants/userConstants";
 import FreeGamesList from "../components/games/FreeGamesList";

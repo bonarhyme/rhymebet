@@ -13,6 +13,7 @@ const PremiumGamesList = () => {
   const dispatch = useDispatch();
 
   const isFree = false;
+  // eslint-disable-next-line
   const [creator, setCreator] = useState();
   const [pageNumber, setPageNumber] = useState(1);
   const [games, setGames] = useState([]);
@@ -30,6 +31,7 @@ const PremiumGamesList = () => {
   const {
     loading: wasWonLoading,
     success: wasWonSuccess,
+    // eslint-disable-next-line
     serverReply: wasWonServerReply,
     error: wasWonError,
   } = useSelector((state) => state.gamesWasWonUpdate);
@@ -63,6 +65,7 @@ const PremiumGamesList = () => {
     if (wasWonSuccess) {
       dispatch(getPremiumGamesList(isFree, creator, pageNumber));
     }
+    // eslint-disable-next-line
   }, [wasWonSuccess]);
 
   return (
@@ -80,87 +83,96 @@ const PremiumGamesList = () => {
         {loading ? (
           <Loader />
         ) : (
-          <Table striped bordered hover responsive>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Country</th>
-                <th>League</th>
-                <th>Clubs</th>
-                <th>Win</th>
-                <th>Ov</th>
-                <th>GG</th>
-                <th>Corner</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th>Mark</th>
-              </tr>
-            </thead>
-            <tbody>
-              {games.length > 0 &&
-                games.map((game, index) => {
-                  return game.games.map((singleGame, index) => {
-                    const {
-                      country,
-                      league,
-                      countryFull,
-                      corner,
-                      gg,
-                      leagueFull,
-                      matchTime,
-                      ov,
-                      wasWon,
-                      win,
-                      clubs,
-                      clubsFull,
-                      _id,
-                    } = singleGame;
+          <>
+            {wasWonError && <Message children={wasWonError} variant="danger" />}
+            <Table striped bordered hover responsive>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Country</th>
+                  <th>League</th>
+                  <th>Clubs</th>
+                  <th>Win</th>
+                  <th>Ov</th>
+                  <th>GG</th>
+                  <th>Corner</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th>Mark</th>
+                </tr>
+              </thead>
+              <tbody>
+                {games.length > 0 &&
+                  games.map((game, index) => {
+                    return game.games.map((singleGame, index) => {
+                      const {
+                        country,
+                        league,
+                        countryFull,
+                        corner,
+                        gg,
+                        leagueFull,
+                        matchTime,
+                        ov,
+                        wasWon,
+                        win,
+                        clubs,
+                        clubsFull,
+                        _id,
+                      } = singleGame;
 
-                    return (
-                      <tr key={index + 1}>
-                        <td>{index + 1}</td>
-                        <td title={countryFull}>{country}</td>
-                        <td title={leagueFull}>{league}</td>
-                        <td title={clubsFull}>{clubs}</td>
-                        <td title="Match result">{win}</td>
-                        <td title="Number of goals">{ov}</td>
-                        <td title="Both teams to score">{gg}</td>
-                        <td title="Number of corners">{corner}</td>
-                        <td>{new Date(matchTime).toLocaleString()}</td>
-                        <td>
-                          {wasWon === null ? (
-                            "Not Specified"
-                          ) : wasWon === true ? (
-                            <FaCheck color="green" />
-                          ) : (
-                            <FaTimes color="red" />
-                          )}
-                        </td>
-                        <td>
-                          <Button
-                            variant="info"
-                            onClick={() => handleWasWon(_id, "won")}
-                            type="button"
-                            disabled={wasWon === true}
-                          >
-                            Mark As Won
-                          </Button>
-                          {"  "}
-                          <Button
-                            variant="danger"
-                            onClick={() => handleWasWon(_id, "failed")}
-                            type="button"
-                            disabled={wasWon === false}
-                          >
-                            Mark As Failed
-                          </Button>
-                        </td>
-                      </tr>
-                    );
-                  });
-                })}
-            </tbody>
-          </Table>
+                      return (
+                        <tr key={index + 1}>
+                          <td>{index + 1}</td>
+                          <td title={countryFull}>{country}</td>
+                          <td title={leagueFull}>{league}</td>
+                          <td title={clubsFull}>{clubs}</td>
+                          <td title="Match result">{win}</td>
+                          <td title="Number of goals">{ov}</td>
+                          <td title="Both teams to score">{gg}</td>
+                          <td title="Number of corners">{corner}</td>
+                          <td>{new Date(matchTime).toLocaleString()}</td>
+                          <td>
+                            {wasWon === null ? (
+                              "Not Specified"
+                            ) : wasWon === true ? (
+                              <FaCheck color="green" />
+                            ) : (
+                              <FaTimes color="red" />
+                            )}
+                          </td>
+                          <td>
+                            {wasWonLoading ? (
+                              <Loader />
+                            ) : (
+                              <>
+                                <Button
+                                  variant="info"
+                                  onClick={() => handleWasWon(_id, "won")}
+                                  type="button"
+                                  disabled={wasWon === true}
+                                >
+                                  Mark As Won
+                                </Button>
+                                {"  "}
+                                <Button
+                                  variant="danger"
+                                  onClick={() => handleWasWon(_id, "failed")}
+                                  type="button"
+                                  disabled={wasWon === false}
+                                >
+                                  Mark As Failed
+                                </Button>
+                              </>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    });
+                  })}
+              </tbody>
+            </Table>
+          </>
         )}
       </div>
       <div
