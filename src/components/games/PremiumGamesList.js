@@ -32,7 +32,7 @@ const PremiumGamesList = () => {
     success: wasWonSuccess,
     serverReply: wasWonServerReply,
     error: wasWonError,
-  } = useSelector((state) => state.gamesPremiumWasWonUpdate);
+  } = useSelector((state) => state.gamesWasWonUpdate);
 
   useEffect(() => {
     dispatch(getPremiumGamesList(isFree, creator, pageNumber));

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Table, Pagination } from "react-bootstrap";
+import { Table, Pagination, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCheck, FaTimes } from "react-icons/fa";
-import { getFreeGamesList } from "../../actions/gamesActions";
+import {
+  getFreeGamesList,
+  updateGamesWasWon,
+} from "../../actions/gamesActions";
 import Message from "../Message";
 import Loader from "../Loader";
 
@@ -23,6 +26,13 @@ const FreeGamesList = () => {
     (state) => state.gamesFreeListGet
   );
 
+  const {
+    loading: wasWonLoading,
+    success: wasWonSuccess,
+    serverReply: wasWonServerReply,
+    error: wasWonError,
+  } = useSelector((state) => state.gamesWasWonUpdate);
+
   useEffect(() => {
     dispatch(getFreeGamesList(isFree, creator, pageNumber));
     // eslint-disable-next-line
@@ -35,6 +45,7 @@ const FreeGamesList = () => {
       setGames(serverReply.games);
       setCreatedAt(serverReply.games[0].createdAt);
       setCreatorUser(serverReply.games[0].creator[0].creatorUsername);
+      setPageNumber(serverReply.page);
     }
   }, [dispatch, success, serverReply]);
 
@@ -42,6 +53,16 @@ const FreeGamesList = () => {
     dispatch(getFreeGamesList(isFree, creator, e.target.innerText));
     // setLast(e.target.innerText === (pages - (pages - 1)));
   };
+
+  const handleWasWon = (id, status) => {
+    dispatch(updateGamesWasWon(id, status));
+  };
+
+  useEffect(() => {
+    if (wasWonSuccess) {
+      dispatch(getFreeGamesList(isFree, creator, pageNumber));
+    }
+  }, [wasWonSuccess]);
 
   return (
     <section className="px-3">
@@ -71,6 +92,7 @@ const FreeGamesList = () => {
                 <th>Corner</th>
                 <th>Time</th>
                 <th>Status</th>
+                <th>Mark</th>
               </tr>
             </thead>
             <tbody>
@@ -90,6 +112,7 @@ const FreeGamesList = () => {
                       win,
                       clubs,
                       clubsFull,
+                      _id,
                     } = singleGame;
 
                     return (
@@ -104,11 +127,33 @@ const FreeGamesList = () => {
                         <td title="Number of corners">{corner}</td>
                         <td>{new Date(matchTime).toLocaleString()}</td>
                         <td>
-                          {wasWon ? (
+                          {wasWon === null ? (
+                            "Not Specified"
+                          ) : wasWon === true ? (
                             <FaCheck color="green" />
                           ) : (
                             <FaTimes color="red" />
                           )}
+                        </td>
+                        <td>
+                          {" "}
+                          <Button
+                            variant="info"
+                            onClick={() => handleWasWon(_id, "won")}
+                            type="button"
+                            disabled={wasWon === true}
+                          >
+                            Mark As Won
+                          </Button>
+                          {"  "}
+                          <Button
+                            variant="danger"
+                            onClick={() => handleWasWon(_id, "failed")}
+                            type="button"
+                            disabled={wasWon === false}
+                          >
+                            Mark As Failed
+                          </Button>
                         </td>
                       </tr>
                     );

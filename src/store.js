@@ -37,7 +37,7 @@ const reducer = combineReducers({
   gamesListGet: getGamesListReducer,
   gamesFreeListGet: getFreeGamesListReducer,
   gamesPremiumListGet: getPremiumGamesListReducer,
-  gamesPremiumWasWonUpdate: updateGamesWasWonReducer,
+  gamesWasWonUpdate: updateGamesWasWonReducer,
 });
 
 // Local storage matters
