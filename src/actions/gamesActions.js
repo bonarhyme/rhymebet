@@ -16,9 +16,9 @@ import {
   GET_PREMIUM_GAMES_LIST_REQUEST,
   GET_PREMIUM_GAMES_LIST_SUCCESS,
   GET_PREMIUM_GAMES_LIST_FAIL,
-  UPDATE_PREMIUM_GAMES_WASWON_REQUEST,
-  UPDATE_PREMIUM_GAMES_WASWON_SUCCESS,
-  UPDATE_PREMIUM_GAMES_WASWON_FAIL,
+  UPDATE_GAMES_WASWON_REQUEST,
+  UPDATE_GAMES_WASWON_SUCCESS,
+  UPDATE_GAMES_WASWON_FAIL,
 } from "../constants/gameConstants";
 import { variables } from "../data/variables";
 
@@ -268,12 +268,12 @@ export const getPremiumGamesList =
     }
   };
 
-export const updatePremiumGamesWasWon =
+export const updateGamesWasWon =
   (id, status = null) =>
   async (dispatch, getState) => {
     try {
       dispatch({
-        type: UPDATE_PREMIUM_GAMES_WASWON_REQUEST,
+        type: UPDATE_GAMES_WASWON_REQUEST,
       });
 
       const {
@@ -294,12 +294,12 @@ export const updatePremiumGamesWasWon =
       );
 
       dispatch({
-        type: UPDATE_PREMIUM_GAMES_WASWON_SUCCESS,
+        type: UPDATE_GAMES_WASWON_SUCCESS,
         payload: data,
       });
     } catch (error) {
       dispatch({
-        type: UPDATE_PREMIUM_GAMES_WASWON_FAIL,
+        type: UPDATE_GAMES_WASWON_FAIL,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message

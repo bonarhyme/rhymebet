@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import {
   getPremiumGamesList,
-  updatePremiumGamesWasWon,
+  updateGamesWasWon,
 } from "../../actions/gamesActions";
 import Message from "../Message";
 import Loader from "../Loader";
@@ -56,7 +56,7 @@ const PremiumGamesList = () => {
   };
 
   const handleWasWon = (id, status) => {
-    dispatch(updatePremiumGamesWasWon(id, status));
+    dispatch(updateGamesWasWon(id, status));
   };
 
   useEffect(() => {
