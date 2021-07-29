@@ -15,6 +15,9 @@ import {
   GET_PREMIUM_GAMES_LIST_REQUEST,
   GET_PREMIUM_GAMES_LIST_SUCCESS,
   GET_PREMIUM_GAMES_LIST_FAIL,
+  UPDATE_PREMIUM_GAMES_WASWON_REQUEST,
+  UPDATE_PREMIUM_GAMES_WASWON_SUCCESS,
+  UPDATE_PREMIUM_GAMES_WASWON_FAIL,
 } from "../constants/gameConstants";
 
 export const gameToCartReducer = (state = { cartGames: [] }, action) => {
@@ -135,6 +138,26 @@ export const getPremiumGamesListReducer = (state = {}, action) => {
         serverReply: action.payload,
       };
     case GET_PREMIUM_GAMES_LIST_FAIL:
+      return { loading: false, success: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const updatePremiumGamesWasWonReducer = (state = {}, action) => {
+  switch (action.type) {
+    case UPDATE_PREMIUM_GAMES_WASWON_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case UPDATE_PREMIUM_GAMES_WASWON_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        serverReply: action.payload,
+      };
+    case UPDATE_PREMIUM_GAMES_WASWON_FAIL:
       return { loading: false, success: false, error: action.payload };
     default:
       return state;

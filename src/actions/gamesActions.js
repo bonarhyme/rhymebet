@@ -16,6 +16,9 @@ import {
   GET_PREMIUM_GAMES_LIST_REQUEST,
   GET_PREMIUM_GAMES_LIST_SUCCESS,
   GET_PREMIUM_GAMES_LIST_FAIL,
+  UPDATE_PREMIUM_GAMES_WASWON_REQUEST,
+  UPDATE_PREMIUM_GAMES_WASWON_SUCCESS,
+  UPDATE_PREMIUM_GAMES_WASWON_FAIL,
 } from "../constants/gameConstants";
 import { variables } from "../data/variables";
 
@@ -257,6 +260,46 @@ export const getPremiumGamesList =
     } catch (error) {
       dispatch({
         type: GET_PREMIUM_GAMES_LIST_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
+
+export const updatePremiumGamesWasWon =
+  (id, status = null) =>
+  async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: UPDATE_PREMIUM_GAMES_WASWON_REQUEST,
+      });
+
+      const {
+        userLogin: { userInfo },
+      } = getState();
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      let { data } = await axios.put(
+        `${variables.backendLink}/api/games/list/game/update/${id}/?status=${status}`,
+        "",
+        config
+      );
+
+      dispatch({
+        type: UPDATE_PREMIUM_GAMES_WASWON_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: UPDATE_PREMIUM_GAMES_WASWON_FAIL,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message

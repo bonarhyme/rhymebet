@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Table, Pagination } from "react-bootstrap";
+import { Table, Pagination, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCheck, FaTimes } from "react-icons/fa";
-import { getPremiumGamesList } from "../../actions/gamesActions";
+import {
+  getPremiumGamesList,
+  updatePremiumGamesWasWon,
+} from "../../actions/gamesActions";
 import Message from "../Message";
 import Loader from "../Loader";
 
@@ -17,11 +20,19 @@ const PremiumGamesList = () => {
   const [creatorUser, setCreatorUser] = useState("");
   const [page, setPage] = useState(0);
   const [pages, setPages] = useState(0);
+
   // const [last, setLast] = useState(false);
 
   const { loading, success, serverReply, error } = useSelector(
     (state) => state.gamesPremiumListGet
   );
+
+  const {
+    loading: wasWonLoading,
+    success: wasWonSuccess,
+    serverReply: wasWonServerReply,
+    error: wasWonError,
+  } = useSelector((state) => state.gamesPremiumWasWonUpdate);
 
   useEffect(() => {
     dispatch(getPremiumGamesList(isFree, creator, pageNumber));
@@ -35,6 +46,7 @@ const PremiumGamesList = () => {
       setGames(serverReply.games);
       setCreatedAt(serverReply.games[0].createdAt);
       setCreatorUser(serverReply.games[0].creator[0].creatorUsername);
+      setPageNumber(serverReply.page);
     }
   }, [dispatch, success, serverReply]);
 
@@ -42,6 +54,16 @@ const PremiumGamesList = () => {
     dispatch(getPremiumGamesList(isFree, creator, e.target.innerText));
     // setLast(e.target.innerText === (pages - (pages - 1)));
   };
+
+  const handleWasWon = (id, status) => {
+    dispatch(updatePremiumGamesWasWon(id, status));
+  };
+
+  useEffect(() => {
+    if (wasWonSuccess) {
+      dispatch(getPremiumGamesList(isFree, creator, pageNumber));
+    }
+  }, [wasWonSuccess]);
 
   return (
     <section className="px-3">
@@ -71,6 +93,7 @@ const PremiumGamesList = () => {
                 <th>Corner</th>
                 <th>Time</th>
                 <th>Status</th>
+                <th>Mark</th>
               </tr>
             </thead>
             <tbody>
@@ -90,6 +113,7 @@ const PremiumGamesList = () => {
                       win,
                       clubs,
                       clubsFull,
+                      _id,
                     } = singleGame;
 
                     return (
@@ -104,11 +128,32 @@ const PremiumGamesList = () => {
                         <td title="Number of corners">{corner}</td>
                         <td>{new Date(matchTime).toLocaleString()}</td>
                         <td>
-                          {wasWon ? (
+                          {wasWon === null ? (
+                            "Not Specified"
+                          ) : wasWon === true ? (
                             <FaCheck color="green" />
                           ) : (
                             <FaTimes color="red" />
                           )}
+                        </td>
+                        <td>
+                          <Button
+                            variant="info"
+                            onClick={() => handleWasWon(_id, "won")}
+                            type="button"
+                            disabled={wasWon === true}
+                          >
+                            Mark As Won
+                          </Button>
+                          {"  "}
+                          <Button
+                            variant="danger"
+                            onClick={() => handleWasWon(_id, "failed")}
+                            type="button"
+                            disabled={wasWon === false}
+                          >
+                            Mark As Failed
+                          </Button>
                         </td>
                       </tr>
                     );
