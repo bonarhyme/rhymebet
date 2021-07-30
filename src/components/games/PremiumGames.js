@@ -5,8 +5,8 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 
 const PremuimGames = () => {
   return (
-    <div className="overflowing-table">
-      <Table striped bordered hover>
+    <div>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th>#</th>

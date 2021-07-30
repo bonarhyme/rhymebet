@@ -76,25 +76,31 @@ const App = () => {
             component={!userInfo ? ResetPasswordScreen : HomeScreen}
             exact
           />
-          <Route
-            path="/user/profile"
-            component={userInfo ? ProfileScreen : HomeScreen}
-            exact
-          />
-          <Route
-            path="/admin/games"
-            component={
-              userInfo && userInfo.isAdmin ? AdminGamesScreen : HomeScreen
-            }
-            exact
-          />
-          <Route
-            path="/admin/games/create-game"
-            component={
-              userInfo && userInfo.isAdmin ? CreateGameScreen : HomeScreen
-            }
-            exact
-          />
+          {userInfo && (
+            <Route
+              path="/user/profile"
+              component={userInfo ? ProfileScreen : HomeScreen}
+              exact
+            />
+          )}
+          {userInfo && userInfo.admin && (
+            <Route
+              path="/admin/games"
+              component={
+                userInfo && userInfo.isAdmin ? AdminGamesScreen : HomeScreen
+              }
+              exact
+            />
+          )}
+          {userInfo && userInfo.admin && (
+            <Route
+              path="/admin/games/create-game"
+              component={
+                userInfo && userInfo.isAdmin ? CreateGameScreen : HomeScreen
+              }
+              exact
+            />
+          )}
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />

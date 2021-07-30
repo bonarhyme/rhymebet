@@ -5,9 +5,10 @@ import { games } from "./games";
 
 const ShortFreeGames = () => {
   return (
+    // Work on the hide on Sc stuffs
     <div>
       <h2 className="main-header">Free Hot Picks</h2>
-      <Table striped bordered hover>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th>#</th>

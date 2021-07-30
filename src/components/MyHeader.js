@@ -48,7 +48,7 @@ const MyHeader = () => {
             </>
           )}
         </div>
-        <div className="fancy-header header-content">
+        <div className="fancy-header header-content margin-top">
           <ShortFreeGames />
         </div>
       </Container>

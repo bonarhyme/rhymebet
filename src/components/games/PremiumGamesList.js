@@ -29,7 +29,6 @@ const PremiumGamesList = () => {
   );
 
   const {
-    loading: wasWonLoading,
     success: wasWonSuccess,
     // eslint-disable-next-line
     serverReply: wasWonServerReply,
@@ -142,29 +141,23 @@ const PremiumGamesList = () => {
                             )}
                           </td>
                           <td>
-                            {wasWonLoading ? (
-                              <Loader />
-                            ) : (
-                              <>
-                                <Button
-                                  variant="info"
-                                  onClick={() => handleWasWon(_id, "won")}
-                                  type="button"
-                                  disabled={wasWon === true}
-                                >
-                                  Mark As Won
-                                </Button>
-                                {"  "}
-                                <Button
-                                  variant="danger"
-                                  onClick={() => handleWasWon(_id, "failed")}
-                                  type="button"
-                                  disabled={wasWon === false}
-                                >
-                                  Mark As Failed
-                                </Button>
-                              </>
-                            )}
+                            <Button
+                              variant="info"
+                              onClick={() => handleWasWon(_id, "won")}
+                              type="button"
+                              disabled={wasWon === true}
+                            >
+                              Mark As Won
+                            </Button>
+                            {"  "}
+                            <Button
+                              variant="danger"
+                              onClick={() => handleWasWon(_id, "failed")}
+                              type="button"
+                              disabled={wasWon === false}
+                            >
+                              Mark As Failed
+                            </Button>
                           </td>
                         </tr>
                       );

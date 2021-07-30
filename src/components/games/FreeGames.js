@@ -6,8 +6,8 @@ import { games } from "./games";
 
 const FreeGames = () => {
   return (
-    <div className="overflowing-table">
-      <Table striped bordered hover>
+    <div>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th>#</th>

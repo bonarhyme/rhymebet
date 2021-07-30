@@ -68,7 +68,7 @@ const News = () => {
         })}
       </Container>
       <LinkContainer to="/sportsnews" className="news-button">
-        <button className="button-block wide-block d-block mx-auto bg-green color-white my-4">
+        <button className="button-block wide-block d-block mx-auto bg-green color-white my-4 mx-3">
           View All Sports News
         </button>
       </LinkContainer>
