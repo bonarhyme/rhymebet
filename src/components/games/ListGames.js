@@ -118,7 +118,7 @@ const ListGames = () => {
               </tbody>
             </Table>
             <button
-              className="mx-auto my-auto button-block wide-block bg-red color-white"
+              className="mx-auto my-3 button-block wide-block bg-red color-white"
               onClick={clearAllGames}
             >
               <FaTrash /> {"  "}

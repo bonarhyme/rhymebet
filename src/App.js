@@ -76,14 +76,14 @@ const App = () => {
             component={!userInfo ? ResetPasswordScreen : HomeScreen}
             exact
           />
-          {userInfo && (
-            <Route
-              path="/user/profile"
-              component={userInfo ? ProfileScreen : HomeScreen}
-              exact
-            />
-          )}
-          {userInfo && userInfo.admin && (
+
+          <Route
+            path="/user/profile"
+            component={userInfo ? ProfileScreen : HomeScreen}
+            exact
+          />
+
+          {userInfo && userInfo.isAdmin && (
             <Route
               path="/admin/games"
               component={
@@ -92,7 +92,7 @@ const App = () => {
               exact
             />
           )}
-          {userInfo && userInfo.admin && (
+          {userInfo && userInfo.isAdmin && (
             <Route
               path="/admin/games/create-game"
               component={

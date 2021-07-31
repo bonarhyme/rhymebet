@@ -249,7 +249,6 @@ ul {
 /* Navbar */
 .my-navbar {
   font-family: var(--mate-font);
-  overflow-x: hidden;
 }
 .my-navbar a {
   text-decoration: none;
@@ -346,7 +345,6 @@ ul {
 
 @media (max-width: 480px) {
   .footer-ul {
-    color: var(--color-red);
     font-size: 0.7rem;
   }
 }

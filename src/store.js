@@ -20,6 +20,7 @@ import {
   getFreeGamesListReducer,
   getPremiumGamesListReducer,
   updateGamesWasWonReducer,
+  deleteGameReducer,
 } from "./reducers/gameReducers";
 
 const reducer = combineReducers({
@@ -38,6 +39,7 @@ const reducer = combineReducers({
   gamesFreeListGet: getFreeGamesListReducer,
   gamesPremiumListGet: getPremiumGamesListReducer,
   gamesWasWonUpdate: updateGamesWasWonReducer,
+  gameDelete: deleteGameReducer,
 });
 
 // Local storage matters

@@ -18,6 +18,9 @@ import {
   UPDATE_GAMES_WASWON_REQUEST,
   UPDATE_GAMES_WASWON_SUCCESS,
   UPDATE_GAMES_WASWON_FAIL,
+  DELETE_GAME_REQUEST,
+  DELETE_GAME_SUCCESS,
+  DELETE_GAME_FAIL,
 } from "../constants/gameConstants";
 
 export const gameToCartReducer = (state = { cartGames: [] }, action) => {
@@ -158,6 +161,26 @@ export const updateGamesWasWonReducer = (state = {}, action) => {
         serverReply: action.payload,
       };
     case UPDATE_GAMES_WASWON_FAIL:
+      return { loading: false, success: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const deleteGameReducer = (state = {}, action) => {
+  switch (action.type) {
+    case DELETE_GAME_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case DELETE_GAME_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        serverReply: action.payload,
+      };
+    case DELETE_GAME_FAIL:
       return { loading: false, success: false, error: action.payload };
     default:
       return state;

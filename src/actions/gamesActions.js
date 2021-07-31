@@ -19,6 +19,9 @@ import {
   UPDATE_GAMES_WASWON_REQUEST,
   UPDATE_GAMES_WASWON_SUCCESS,
   UPDATE_GAMES_WASWON_FAIL,
+  DELETE_GAME_REQUEST,
+  DELETE_GAME_SUCCESS,
+  DELETE_GAME_FAIL,
 } from "../constants/gameConstants";
 import { variables } from "../data/variables";
 
@@ -267,6 +270,43 @@ export const getPremiumGamesList =
       });
     }
   };
+
+export const deleteGame = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: DELETE_GAME_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    let { data } = await axios.delete(
+      `${variables.backendLink}/api/games/list/game/delete/${id}`,
+      config
+    );
+
+    dispatch({
+      type: DELETE_GAME_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: DELETE_GAME_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
 
 export const updateGamesWasWon =
   (id, status = null) =>
