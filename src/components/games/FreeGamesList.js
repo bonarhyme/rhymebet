@@ -22,7 +22,10 @@ const FreeGamesList = () => {
   const [creatorUser, setCreatorUser] = useState("");
   const [page, setPage] = useState(0);
   const [pages, setPages] = useState(0);
+
   // const [last, setLast] = useState(false);
+
+  const { userInfo } = useSelector((state) => state.userLogin);
 
   const { loading, success, serverReply, error } = useSelector(
     (state) => state.gamesFreeListGet
@@ -80,22 +83,26 @@ const FreeGamesList = () => {
 
   return (
     <section className="px-3">
-      <h2 className="main-header">Free Games List</h2>
+      <h2 className="main-header">Free Games</h2>
       {error && <Message variant="danger">{error}</Message>}
       <div>
-        <h5 className="other-header">
-          Created On: {new Date(createdAt).toLocaleString()}
-          {"      "}
-          <p>
-            Created By: <b>{creatorUser}</b>
-          </p>
-        </h5>
+        {userInfo && userInfo.isAdmin && (
+          <h5 className="other-header">
+            Created On: {new Date(createdAt).toLocaleString()}
+            {"      "}
+            <p>
+              Created By: <b>{creatorUser}</b>
+            </p>
+          </h5>
+        )}
+
         {loading ? (
           <Loader />
         ) : (
           <>
             {wasWonError && <Message children={wasWonError} variant="danger" />}
             {deleteError && <Message children={deleteError} variant="danger" />}
+            {pageNumber === 1 && <h3>Lastest Games</h3>}
             <Table striped bordered hover responsive>
               <thead>
                 <tr>
@@ -109,31 +116,31 @@ const FreeGamesList = () => {
                   <th>Corner</th>
                   <th>Time</th>
                   <th>Status</th>
-                  <th>Mark</th>
-                  <th></th>
+                  {userInfo && userInfo.isAdmin && <th>Mark</th>}
+                  {userInfo && userInfo.isAdmin && <th></th>}
                 </tr>
               </thead>
               <tbody>
-                {games.length > 0 &&
-                  games.map((game, index) => {
-                    return game.games.map((singleGame, index) => {
-                      const {
-                        country,
-                        league,
-                        countryFull,
-                        corner,
-                        gg,
-                        leagueFull,
-                        matchTime,
-                        ov,
-                        wasWon,
-                        win,
-                        clubs,
-                        clubsFull,
-                        _id,
-                      } = singleGame;
+                {games.map((game, index) => {
+                  return game.games.map((singleGame, index) => {
+                    const {
+                      country,
+                      league,
+                      countryFull,
+                      corner,
+                      gg,
+                      leagueFull,
+                      matchTime,
+                      ov,
+                      wasWon,
+                      win,
+                      clubs,
+                      clubsFull,
+                      _id,
+                    } = singleGame;
 
-                      return (
+                    return (
+                      <>
                         <tr key={index + 1}>
                           <td>{index + 1}</td>
                           <td title={countryFull}>{country}</td>
@@ -153,39 +160,44 @@ const FreeGamesList = () => {
                               <FaTimes color="red" />
                             )}
                           </td>
-                          <td>
-                            {" "}
-                            <Button
-                              variant="info"
-                              onClick={() => handleWasWon(_id, "won")}
-                              type="button"
-                              disabled={wasWon === true}
-                            >
-                              Mark As Won
-                            </Button>
-                            {"  "}
-                            <Button
-                              variant="warning"
-                              onClick={() => handleWasWon(_id, "failed")}
-                              type="button"
-                              disabled={wasWon === false}
-                            >
-                              Mark As Failed
-                            </Button>
-                          </td>
-                          <td>
-                            <Button
-                              variant="danger"
-                              onClick={() => handleDelete(_id)}
-                              type="button"
-                            >
-                              Delete
-                            </Button>
-                          </td>
+                          {userInfo && userInfo.isAdmin && (
+                            <td>
+                              {" "}
+                              <Button
+                                variant="info"
+                                onClick={() => handleWasWon(_id, "won")}
+                                type="button"
+                                disabled={wasWon === true}
+                              >
+                                Mark As Won
+                              </Button>
+                              {"  "}
+                              <Button
+                                variant="warning"
+                                onClick={() => handleWasWon(_id, "failed")}
+                                type="button"
+                                disabled={wasWon === false}
+                              >
+                                Mark As Failed
+                              </Button>
+                            </td>
+                          )}
+                          {userInfo && userInfo.isAdmin && (
+                            <td>
+                              <Button
+                                variant="danger"
+                                onClick={() => handleDelete(_id)}
+                                type="button"
+                              >
+                                Delete
+                              </Button>
+                            </td>
+                          )}
                         </tr>
-                      );
-                    });
-                  })}
+                      </>
+                    );
+                  });
+                })}
               </tbody>
             </Table>
           </>

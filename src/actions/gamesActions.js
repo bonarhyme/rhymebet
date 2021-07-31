@@ -182,14 +182,14 @@ export const getFreeGamesList =
         type: GET_FREE_GAMES_LIST_REQUEST,
       });
 
-      const {
-        userLogin: { userInfo },
-      } = getState();
+      // const {
+      //   userLogin: { userInfo },
+      // } = getState();
 
       const config = {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${userInfo.token}`,
+          // Authorization: `Bearer ${userInfo.token}`,
         },
       };
 
@@ -230,14 +230,14 @@ export const getPremiumGamesList =
         type: GET_PREMIUM_GAMES_LIST_REQUEST,
       });
 
-      const {
-        userLogin: { userInfo },
-      } = getState();
+      // const {
+      //   userLogin: { userInfo },
+      // } = getState();
 
       const config = {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${userInfo.token}`,
+          // Authorization: `Bearer ${userInfo.token}`,
         },
       };
 

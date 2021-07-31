@@ -10,7 +10,7 @@ import {
 import Message from "../Message";
 import Loader from "../Loader";
 
-const PremiumGamesList = () => {
+const PremiumGamesList = ({ see = true }) => {
   const dispatch = useDispatch();
 
   const isFree = false;
@@ -28,6 +28,8 @@ const PremiumGamesList = () => {
   const { loading, success, serverReply, error } = useSelector(
     (state) => state.gamesPremiumListGet
   );
+
+  const { userInfo } = useSelector((state) => state.userLogin);
 
   const {
     success: wasWonSuccess,
@@ -81,22 +83,25 @@ const PremiumGamesList = () => {
 
   return (
     <section className="px-3">
-      <h2 className="main-header">Premium Games List</h2>
+      {see && <h2 className="main-header">Premium Games</h2>}
       {error && <Message variant="danger">{error}</Message>}
       <div>
-        <h5 className="other-header">
-          Created On: {new Date(createdAt).toLocaleString()}
-          {"      "}
-          <p>
-            Created By: <b>{creatorUser}</b>
-          </p>
-        </h5>
+        {userInfo && userInfo.isAdmin && (
+          <h5 className="other-header">
+            Created On: {new Date(createdAt).toLocaleString()}
+            {"      "}
+            <p>
+              Created By: <b>{creatorUser}</b>
+            </p>
+          </h5>
+        )}
         {loading ? (
           <Loader />
         ) : (
           <>
             {wasWonError && <Message children={wasWonError} variant="danger" />}
             {deleteError && <Message children={deleteError} variant="danger" />}
+            {pageNumber === 1 && <h3>Lastest Games</h3>}
             <Table striped bordered hover responsive>
               <thead>
                 <tr>
@@ -110,8 +115,8 @@ const PremiumGamesList = () => {
                   <th>Corner</th>
                   <th>Time</th>
                   <th>Status</th>
-                  <th>Mark</th>
-                  <th></th>
+                  {userInfo && userInfo.isAdmin && <th>Mark</th>}
+                  {userInfo && userInfo.isAdmin && <th></th>}
                 </tr>
               </thead>
               <tbody>
@@ -154,34 +159,38 @@ const PremiumGamesList = () => {
                               <FaTimes color="red" />
                             )}
                           </td>
-                          <td>
-                            <Button
-                              variant="info"
-                              onClick={() => handleWasWon(_id, "won")}
-                              type="button"
-                              disabled={wasWon === true}
-                            >
-                              Mark As Won
-                            </Button>
-                            {"  "}
-                            <Button
-                              variant="warning"
-                              onClick={() => handleWasWon(_id, "failed")}
-                              type="button"
-                              disabled={wasWon === false}
-                            >
-                              Mark As Failed
-                            </Button>
-                          </td>
-                          <td>
-                            <Button
-                              variant="danger"
-                              onClick={() => handleDelete(_id)}
-                              type="button"
-                            >
-                              Delete
-                            </Button>
-                          </td>
+                          {userInfo && userInfo.isAdmin && (
+                            <td>
+                              <Button
+                                variant="info"
+                                onClick={() => handleWasWon(_id, "won")}
+                                type="button"
+                                disabled={wasWon === true}
+                              >
+                                Mark As Won
+                              </Button>
+                              {"  "}
+                              <Button
+                                variant="warning"
+                                onClick={() => handleWasWon(_id, "failed")}
+                                type="button"
+                                disabled={wasWon === false}
+                              >
+                                Mark As Failed
+                              </Button>
+                            </td>
+                          )}
+                          {userInfo && userInfo.isAdmin && (
+                            <td>
+                              <Button
+                                variant="danger"
+                                onClick={() => handleDelete(_id)}
+                                type="button"
+                              >
+                                Delete
+                              </Button>
+                            </td>
+                          )}
                         </tr>
                       );
                     });
