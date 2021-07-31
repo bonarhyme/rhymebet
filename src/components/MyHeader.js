@@ -15,17 +15,17 @@ const MyHeader = () => {
           {!user ? (
             <div className="d-block mx-auto my-3">
               <LinkContainer to="/login">
-                <button className="mr-2 mt-5 button-block wide-block bg-blue color-white">
+                <button className="mr-2 mt-5 button-block wide-block bg-blue color-white mx-auto">
                   Login
                 </button>
               </LinkContainer>
               <LinkContainer to="/register">
-                <button className="mt-1 button-block wide-block bg-green color-white">
+                <button className="mt-1 button-block wide-block bg-green color-white mx-auto">
                   Register
                 </button>
               </LinkContainer>
               <LinkContainer to="/verify">
-                <button className="mt-1 button-block wide-block bg-ash color-white">
+                <button className="mt-1 button-block wide-block bg-ash color-white mx-auto">
                   VERIFY ACCOUNT
                 </button>
               </LinkContainer>
@@ -35,12 +35,12 @@ const MyHeader = () => {
               <div className="d-block mx-auto my-3">
                 <h2>Hello, {user.name && user.name}</h2>
                 <LinkContainer to="/user/dashboard">
-                  <button className="mr-2 mt-5 button-block wide-block bg-blue color-white">
+                  <button className=" mt-5 button-block wide-block bg-blue color-white mx-auto">
                     View Dashboard
                   </button>
                 </LinkContainer>
                 <LinkContainer to="/user/profile">
-                  <button className="mr-2 mt-1 button-block wide-block bg-green color-white">
+                  <button className="mt-1 button-block wide-block bg-green color-white mx-auto">
                     View Profile
                   </button>
                 </LinkContainer>

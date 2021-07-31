@@ -5,6 +5,7 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 import {
   getFreeGamesList,
   updateGamesWasWon,
+  deleteGame,
 } from "../../actions/gamesActions";
 import Message from "../Message";
 import Loader from "../Loader";
@@ -34,6 +35,13 @@ const FreeGamesList = () => {
     error: wasWonError,
   } = useSelector((state) => state.gamesWasWonUpdate);
 
+  const {
+    success: deleteSuccess,
+    // eslint-disable-next-line
+    serverReply: deleteServerReply,
+    error: deleteError,
+  } = useSelector((state) => state.gameDelete);
+
   useEffect(() => {
     dispatch(getFreeGamesList(isFree, creator, pageNumber));
     // eslint-disable-next-line
@@ -60,11 +68,15 @@ const FreeGamesList = () => {
   };
 
   useEffect(() => {
-    if (wasWonSuccess) {
+    if (wasWonSuccess || deleteSuccess) {
       dispatch(getFreeGamesList(isFree, creator, pageNumber));
     }
     // eslint-disable-next-line
-  }, [wasWonSuccess]);
+  }, [wasWonSuccess, deleteSuccess]);
+
+  const handleDelete = (id) => {
+    dispatch(deleteGame(id));
+  };
 
   return (
     <section className="px-3">
@@ -83,6 +95,7 @@ const FreeGamesList = () => {
         ) : (
           <>
             {wasWonError && <Message children={wasWonError} variant="danger" />}
+            {deleteError && <Message children={deleteError} variant="danger" />}
             <Table striped bordered hover responsive>
               <thead>
                 <tr>
@@ -97,6 +110,7 @@ const FreeGamesList = () => {
                   <th>Time</th>
                   <th>Status</th>
                   <th>Mark</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -151,12 +165,21 @@ const FreeGamesList = () => {
                             </Button>
                             {"  "}
                             <Button
-                              variant="danger"
+                              variant="warning"
                               onClick={() => handleWasWon(_id, "failed")}
                               type="button"
                               disabled={wasWon === false}
                             >
                               Mark As Failed
+                            </Button>
+                          </td>
+                          <td>
+                            <Button
+                              variant="danger"
+                              onClick={() => handleDelete(_id)}
+                              type="button"
+                            >
+                              Delete
                             </Button>
                           </td>
                         </tr>
