@@ -91,6 +91,12 @@ ul {
 .small-font {
   font-size: var(--font-size-small);
 }
+.big-font {
+  font-size: var(--font-size-large);
+}
+.medium-font {
+  font-size: var(--font-size-medium);
+}
 .my-mr-5 {
   margin-right: 0.5rem;
 }
@@ -169,9 +175,14 @@ ul {
 .big-button {
   width: 100%;
   max-width: 767px;
-  font-size: 4rem;
+  font-size: var(--font-size-medium);
+  border: 1px solid var(--color-blue-one);
   margin: 1rem auto;
   display: block;
+}
+.big-button:hover {
+  transform: scale(1.01);
+  border-color: var(--color-white-one);
 }
 
 .box-shadow-white {
@@ -461,3 +472,19 @@ ul {
   padding: 1rem;
 }
 /* End of register */
+
+/* Start of subscription */
+.subs-container {
+  display: block;
+  width: 100%;
+  max-width: 767px;
+  margin: 2rem auto;
+}
+
+@media (max-width: 767px) {
+  .subs-container {
+    padding: 0 1rem;
+  }
+}
+
+/* End of subscription */

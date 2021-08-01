@@ -1,99 +1,136 @@
 import React from "react";
-import { Button, Card, Row, Col } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { FcInfo } from "react-icons/fc";
 
-import bank1 from "../../images/bank1.jpg";
-import bank2 from "../../images/bank2.jpg";
-import bank3 from "../../images/bank3.jpg";
+import { bank1, bank2, bank3, bank4, bank5 } from "../../data/variables";
+
 import { plans } from "../plans/data";
 
 const BuyGames = () => {
   return (
     <article>
       <Row className="py-5 text-center justify-content-center">
-        <Col md={4} className="d-flex justify-content-center mb-2">
+        <Col md={4} className="d-flex justify-content-center mb-2 mt-3">
           <Card style={{ width: "18rem" }} border="primary">
-            <Card.Img variant="top" src={bank1} />
+            <Card.Img variant="top" src={bank5} className="mb-3" />
             <Card.Body>
-              <Card.Title>Basic Plan</Card.Title>
+              <Card.Title className="big-font bold">Testie Plan</Card.Title>
               <Card.Text>
-                <strong>&#8358;{plans.basic.price}</strong>
+                <strong className="big-font bold">
+                  &#8358;{plans.testie.price}
+                </strong>
               </Card.Text>
               <hr />
               <Card.Text>
-                <strong>{plans.basic.odds} Odds Minimum</strong>
+                <strong>
+                  Access To Premium Games For {plans.testie.duration} Day
+                </strong>
               </Card.Text>
-              <Card.Text>
-                <strong>{plans.basic.duration} Days Duration</strong>
-              </Card.Text>
-              <LinkContainer to="/subscription/basic">
-                <Button variant="primary" className="my-mr-5" block>
+              <LinkContainer to="/subscription/testie">
+                <button className="big-button bg-blue color-white">
                   Access
-                </Button>
-              </LinkContainer>
-              <LinkContainer to="/subscription/info/#basic">
-                <Button variant="outline-info">
-                  <FcInfo /> Info
-                </Button>
+                </button>
               </LinkContainer>
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} className="d-flex justify-content-center mb-2">
+        <Col md={4} className="d-flex justify-content-center mb-2  mt-3">
           <Card style={{ width: "18rem" }} border="primary">
-            <Card.Img variant="top" src={bank2} />
+            <Card.Img variant="top" src={bank4} />
             <Card.Body>
-              <Card.Title>Standard Plan</Card.Title>
+              <Card.Title className="big-font bold">Noob Plan</Card.Title>
               <Card.Text>
-                <strong>&#8358;{plans.standard.price}</strong>
+                <strong className="big-font bold">
+                  &#8358;{plans.noob.price}
+                </strong>
               </Card.Text>
               <hr />
               <Card.Text>
-                <strong>{plans.standard.odds} Odds Minimum</strong>
+                <strong>
+                  Access To Premium Games For {plans.noob.duration} Days
+                </strong>
               </Card.Text>
-              <Card.Text>
-                <strong>{plans.standard.duration} Days Duration</strong>
-              </Card.Text>
-
-              <LinkContainer to="/subscription/standard">
-                <Button variant="primary" className="my-mr-5" block>
+              <LinkContainer to="/subscription/noob">
+                <button className="big-button bg-blue color-white">
                   Access
-                </Button>
-              </LinkContainer>
-              <LinkContainer to="/subscription/info/#standard">
-                <Button variant="outline-info" block>
-                  <FcInfo /> Info
-                </Button>
+                </button>
               </LinkContainer>
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4} className="d-flex justify-content-center mb-2">
+        <Col md={4} className="d-flex justify-content-center mb-2  mt-3">
           <Card style={{ width: "18rem" }} border="primary">
             <Card.Img variant="top" src={bank3} />
             <Card.Body>
-              <Card.Title>Gold Plan</Card.Title>
+              <Card.Title className="big-font bold">Basic Plan</Card.Title>
               <Card.Text>
-                <strong>&#8358;{plans.gold.price}</strong>
+                <strong className="big-font bold">
+                  &#8358;{plans.basic.price}
+                </strong>
               </Card.Text>
               <hr />
               <Card.Text>
-                <strong>{plans.gold.odds} Odds Minimum</strong>
+                <strong>
+                  Access To Premium Games For {plans.basic.duration} Days
+                </strong>
               </Card.Text>
+              <LinkContainer to="/subscription/basic">
+                <button className="big-button bg-blue color-white">
+                  Access
+                </button>
+              </LinkContainer>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="d-flex justify-content-center mb-2  mt-3">
+          <Card style={{ width: "18rem" }} border="primary">
+            <Card.Img variant="top" src={bank2} />
+            <Card.Body>
+              <Card.Title className="big-font bold">Standard Plan</Card.Title>
               <Card.Text>
-                <strong>{plans.gold.duration} Days Duration</strong>
+                <strong className="big-font bold">
+                  &#8358;{plans.standard.price}
+                </strong>
+              </Card.Text>
+              <hr />
+
+              <Card.Text>
+                <strong>
+                  Access To Premium Games For Five {plans.standard.duration}{" "}
+                  Days
+                </strong>
+              </Card.Text>
+
+              <LinkContainer to="/subscription/standard">
+                <button className="big-button bg-blue color-white">
+                  Access
+                </button>
+              </LinkContainer>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="d-flex justify-content-center mb-2  mt-3">
+          <Card style={{ width: "18rem" }} border="primary">
+            <Card.Img variant="top" src={bank1} />
+            <Card.Body>
+              <Card.Title className="big-font bold">Gold Plan</Card.Title>
+              <Card.Text>
+                <strong className="big-font bold">
+                  &#8358;{plans.gold.price}
+                </strong>
+              </Card.Text>
+              <hr />
+
+              <Card.Text>
+                <strong>
+                  Access To Premium Games For {plans.gold.duration} Days
+                </strong>
               </Card.Text>
 
               <LinkContainer to="/subscription/gold">
-                <Button variant="primary" className="my-mr-5" block>
+                <button className="big-button bg-blue color-white">
                   Access
-                </Button>
-              </LinkContainer>
-              <LinkContainer to="/subscription/info/#gold">
-                <Button variant="outline-info" block>
-                  <FcInfo /> Info
-                </Button>
+                </button>
               </LinkContainer>
             </Card.Body>
           </Card>

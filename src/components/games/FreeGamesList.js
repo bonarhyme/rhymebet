@@ -140,61 +140,59 @@ const FreeGamesList = () => {
                     } = singleGame;
 
                     return (
-                      <>
-                        <tr key={index + 1}>
-                          <td>{index + 1}</td>
-                          <td title={countryFull}>{country}</td>
-                          <td title={leagueFull}>{league}</td>
-                          <td title={clubsFull}>{clubs}</td>
-                          <td title="Match result">{win}</td>
-                          <td title="Number of goals">{ov}</td>
-                          <td title="Both teams to score">{gg}</td>
-                          <td title="Number of corners">{corner}</td>
-                          <td>{new Date(matchTime).toLocaleString()}</td>
+                      <tr key={index + 1}>
+                        <td>{index + 1}</td>
+                        <td title={countryFull}>{country}</td>
+                        <td title={leagueFull}>{league}</td>
+                        <td title={clubsFull}>{clubs}</td>
+                        <td title="Match result">{win}</td>
+                        <td title="Number of goals">{ov}</td>
+                        <td title="Both teams to score">{gg}</td>
+                        <td title="Number of corners">{corner}</td>
+                        <td>{new Date(matchTime).toLocaleString()}</td>
+                        <td>
+                          {wasWon === null ? (
+                            "Not Specified"
+                          ) : wasWon === true ? (
+                            <FaCheck color="green" />
+                          ) : (
+                            <FaTimes color="red" />
+                          )}
+                        </td>
+                        {userInfo && userInfo.isAdmin && (
                           <td>
-                            {wasWon === null ? (
-                              "Not Specified"
-                            ) : wasWon === true ? (
-                              <FaCheck color="green" />
-                            ) : (
-                              <FaTimes color="red" />
-                            )}
+                            {" "}
+                            <Button
+                              variant="info"
+                              onClick={() => handleWasWon(_id, "won")}
+                              type="button"
+                              disabled={wasWon === true}
+                            >
+                              Mark As Won
+                            </Button>
+                            {"  "}
+                            <Button
+                              variant="warning"
+                              onClick={() => handleWasWon(_id, "failed")}
+                              type="button"
+                              disabled={wasWon === false}
+                            >
+                              Mark As Failed
+                            </Button>
                           </td>
-                          {userInfo && userInfo.isAdmin && (
-                            <td>
-                              {" "}
-                              <Button
-                                variant="info"
-                                onClick={() => handleWasWon(_id, "won")}
-                                type="button"
-                                disabled={wasWon === true}
-                              >
-                                Mark As Won
-                              </Button>
-                              {"  "}
-                              <Button
-                                variant="warning"
-                                onClick={() => handleWasWon(_id, "failed")}
-                                type="button"
-                                disabled={wasWon === false}
-                              >
-                                Mark As Failed
-                              </Button>
-                            </td>
-                          )}
-                          {userInfo && userInfo.isAdmin && (
-                            <td>
-                              <Button
-                                variant="danger"
-                                onClick={() => handleDelete(_id)}
-                                type="button"
-                              >
-                                Delete
-                              </Button>
-                            </td>
-                          )}
-                        </tr>
-                      </>
+                        )}
+                        {userInfo && userInfo.isAdmin && (
+                          <td>
+                            <Button
+                              variant="danger"
+                              onClick={() => handleDelete(_id)}
+                              type="button"
+                            >
+                              Delete
+                            </Button>
+                          </td>
+                        )}
+                      </tr>
                     );
                   });
                 })}

@@ -18,6 +18,7 @@ import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 import { checkToken } from "./actions/userActions";
 import CreateGameScreen from "./screens/CreateGame";
+import Testie from "./components/subscriptions/Testie";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -101,6 +102,8 @@ const App = () => {
               exact
             />
           )}
+
+          <Route path="/subscription/testie" component={Testie} exact />
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />

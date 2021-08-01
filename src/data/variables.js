@@ -1,4 +1,9 @@
 import rhymebet from "../images/rhymebet-logo-complete.png";
+import bank1 from "../images/bank1.jpg";
+import bank2 from "../images/bank2.jpg";
+import bank3 from "../images/bank3.jpg";
+import bank4 from "../images/bank4.jpg";
+import bank5 from "../images/bank5.jpg";
 
 export const variables = {
   rhymebetLogo: rhymebet,
@@ -10,6 +15,8 @@ export const variables = {
   email: "rhymebet_support@outlook.com",
   backendLink: "http://localhost:4006",
 };
+
+export { bank1, bank2, bank3, bank4, bank5 };
 
 export const gameVariables = {
   league: [
