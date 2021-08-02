@@ -19,6 +19,10 @@ import MyFooter from "./components/MyFooter";
 import { checkToken } from "./actions/userActions";
 import CreateGameScreen from "./screens/CreateGame";
 import Testie from "./components/subscriptions/Testie";
+import Noob from "./components/subscriptions/Noob";
+import Basic from "./components/subscriptions/Basic";
+import Standard from "./components/subscriptions/Standard";
+import Gold from "./components/subscriptions/Gold";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -104,6 +108,10 @@ const App = () => {
           )}
 
           <Route path="/subscription/testie" component={Testie} exact />
+          <Route path="/subscription/noob" component={Noob} exact />
+          <Route path="/subscription/basic" component={Basic} exact />
+          <Route path="/subscription/standard" component={Standard} exact />
+          <Route path="/subscription/gold" component={Gold} exact />
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />
