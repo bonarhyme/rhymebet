@@ -23,7 +23,7 @@ const Testie = () => {
           <p className="medium-font">
             <b>Price:</b> &#8358;{plans.testie.price}
           </p>
-          <UsePaystack amount={plans.testie.price} />
+          <UsePaystack amount={plans.testie.price * 100} plan="testie" />
         </article>
       </section>
     </main>

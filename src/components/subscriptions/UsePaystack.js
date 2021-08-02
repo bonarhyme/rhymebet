@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { usePaystackPayment } from "react-paystack";
 
-import { getPaystackConfig } from "../../actions/subscriptionActions";
+import {
+  getPaystackConfig,
+  confirmPaystackPayment,
+} from "../../actions/subscriptionActions";
 
-export const UsePaystack = ({ amount }) => {
+export const UsePaystack = ({ amount, plan }) => {
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
@@ -13,6 +16,13 @@ export const UsePaystack = ({ amount }) => {
   const { success, serverReply, error } = useSelector(
     (state) => state.paystackConfigGet
   );
+
+  // eslint-disable-next-line
+  const {
+    success: confirmSuccess,
+    serverReply: confirmServerReply,
+    error: confirmError,
+  } = useSelector((state) => state.paystackPaymentConfirm);
 
   useEffect(() => {
     dispatch(getPaystackConfig());
@@ -34,19 +44,18 @@ export const UsePaystack = ({ amount }) => {
     publicKey,
   };
 
-  // you can call this function anything
   const onSuccess = (reference) => {
-    // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
+    dispatch(
+      confirmPaystackPayment({ ...reference, amount: amount / 100, plan })
+    );
+    // console.log({ ...reference, amount: amount / 100, plan });
   };
 
-  // you can call this function anything
   const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
-    console.log("closed");
+    window.alert("Transaction cancelled.");
   };
 
-  const PaystackHookExample = () => {
+  const Paystack = () => {
     const initializePayment = usePaystackPayment(config);
     return (
       <div>
@@ -62,5 +71,5 @@ export const UsePaystack = ({ amount }) => {
     );
   };
 
-  return <PaystackHookExample />;
+  return <Paystack />;
 };

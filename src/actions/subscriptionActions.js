@@ -4,6 +4,9 @@ import {
   GET_PAYSTACK_CONFIG_REQUEST,
   GET_PAYSTACK_CONFIG_SUCCESS,
   GET_PAYSTACK_CONFIG_FAIL,
+  CONFIRM_PAYSTACK_PAYMENT_REQUEST,
+  CONFIRM_PAYSTACK_PAYMENT_SUCCESS,
+  CONFIRM_PAYSTACK_PAYMENT_FAIL,
 } from "../constants/subscriptionConstants";
 import { variables } from "../data/variables";
 
@@ -31,3 +34,42 @@ export const getPaystackConfig = () => async (dispatch) => {
     });
   }
 };
+
+export const confirmPaystackPayment =
+  (result) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: CONFIRM_PAYSTACK_PAYMENT_REQUEST,
+      });
+
+      const {
+        userLogin: { userInfo },
+      } = getState();
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      const { data } = await axios.post(
+        `${variables.backendLink}/api/subscriptions/confirm`,
+        result,
+        config
+      );
+
+      dispatch({
+        type: CONFIRM_PAYSTACK_PAYMENT_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: CONFIRM_PAYSTACK_PAYMENT_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
