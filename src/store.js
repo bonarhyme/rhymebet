@@ -23,6 +23,8 @@ import {
   deleteGameReducer,
 } from "./reducers/gameReducers";
 
+import { getPaystackConfigReducer } from "./reducers/subscriptionReducers";
+
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userVerify: verifyUserReducer,
@@ -40,6 +42,7 @@ const reducer = combineReducers({
   gamesPremiumListGet: getPremiumGamesListReducer,
   gamesWasWonUpdate: updateGamesWasWonReducer,
   gameDelete: deleteGameReducer,
+  paystackConfigGet: getPaystackConfigReducer,
 });
 
 // Local storage matters

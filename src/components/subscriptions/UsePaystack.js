@@ -1,11 +1,37 @@
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { usePaystackPayment } from "react-paystack";
 
-export const UsePaystack = () => {
+import { getPaystackConfig } from "../../actions/subscriptionActions";
+
+export const UsePaystack = ({ amount }) => {
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState("");
+  const [publicKey, setPublicKey] = useState("");
+
+  const { success, serverReply, error } = useSelector(
+    (state) => state.paystackConfigGet
+  );
+
+  useEffect(() => {
+    dispatch(getPaystackConfig());
+    // eslint-disable-next-line
+  }, [dispatch, error]);
+
+  useEffect(() => {
+    if (serverReply) {
+      setEmail(serverReply.email);
+      setPublicKey(serverReply.publicKey);
+    }
+    // eslint-disable-next-line
+  }, [success]);
+
   const config = {
     reference: new Date().getTime().toString(),
-    email: "bonarhyme@protonmail.com",
-    amount: 20000,
-    publicKey: "pk_test_e59723a0403a7fe619c62c88b775e394fe471f69",
+    email,
+    amount,
+    publicKey,
   };
 
   // you can call this function anything
@@ -19,6 +45,7 @@ export const UsePaystack = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log("closed");
   };
+
   const PaystackHookExample = () => {
     const initializePayment = usePaystackPayment(config);
     return (

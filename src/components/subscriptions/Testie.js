@@ -1,4 +1,5 @@
 import React from "react";
+// import { useDispatch, useSelector } from "react-redux";
 
 import { bank5 } from "../../data/variables";
 import { plans } from "../plans/data";
@@ -22,7 +23,7 @@ const Testie = () => {
           <p className="medium-font">
             <b>Price:</b> &#8358;{plans.testie.price}
           </p>
-          <UsePaystack />
+          <UsePaystack amount={plans.testie.price} />
         </article>
       </section>
     </main>

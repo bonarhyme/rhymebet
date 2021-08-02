@@ -237,6 +237,11 @@ ul {
   }
 }
 
+.remove-bottom-space {
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+}
+
 /* .overflow-pagination {
   overflow: scroll;
 } */
@@ -398,7 +403,7 @@ ul {
   font-family: var(--mate-font);
 }
 
-.hero .subscriptions {
+.subscriptions {
   background-color: var(--color-white-three);
 }
 
