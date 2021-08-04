@@ -13,6 +13,7 @@ import ForgotPasswordScreen from "./screens/ForgotPassword";
 import ResetPasswordScreen from "./screens/ResetPassword";
 import ProfileScreen from "./screens/Profile";
 import AdminGamesScreen from "./screens/AdminGames";
+import SubscriptionsScreen from "./screens/Subscriptions";
 
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
@@ -102,6 +103,15 @@ const App = () => {
               path="/admin/games/create-game"
               component={
                 userInfo && userInfo.isAdmin ? CreateGameScreen : HomeScreen
+              }
+              exact
+            />
+          )}
+          {userInfo && userInfo.isAdmin && (
+            <Route
+              path="/admin/subscriptions"
+              component={
+                userInfo && userInfo.isAdmin ? SubscriptionsScreen : HomeScreen
               }
               exact
             />

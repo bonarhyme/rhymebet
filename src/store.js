@@ -26,6 +26,7 @@ import {
 import {
   getPaystackConfigReducer,
   confirmPaystackPaymentReducer,
+  getActiveSubscriptionsReducer,
 } from "./reducers/subscriptionReducers";
 
 const reducer = combineReducers({
@@ -47,6 +48,7 @@ const reducer = combineReducers({
   gameDelete: deleteGameReducer,
   paystackConfigGet: getPaystackConfigReducer,
   paystackPaymentConfirm: confirmPaystackPaymentReducer,
+  subscriptionActiveGet: getActiveSubscriptionsReducer,
 });
 
 // Local storage matters

@@ -7,6 +7,9 @@ import {
   CONFIRM_PAYSTACK_PAYMENT_REQUEST,
   CONFIRM_PAYSTACK_PAYMENT_SUCCESS,
   CONFIRM_PAYSTACK_PAYMENT_FAIL,
+  GET_ACTIVE_SUBSCRIPTIONS_REQUEST,
+  GET_ACTIVE_SUBSCRIPTIONS_SUCCESS,
+  GET_ACTIVE_SUBSCRIPTIONS_FAIL,
 } from "../constants/subscriptionConstants";
 import { variables } from "../data/variables";
 
@@ -73,3 +76,40 @@ export const confirmPaystackPayment =
       });
     }
   };
+
+export const getActiveSubscriptions = () => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: GET_ACTIVE_SUBSCRIPTIONS_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.get(
+      `${variables.backendLink}/api/subscriptions/active-subscriptions`,
+      config
+    );
+
+    dispatch({
+      type: GET_ACTIVE_SUBSCRIPTIONS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_ACTIVE_SUBSCRIPTIONS_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};

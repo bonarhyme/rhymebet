@@ -5,6 +5,9 @@ import {
   CONFIRM_PAYSTACK_PAYMENT_REQUEST,
   CONFIRM_PAYSTACK_PAYMENT_SUCCESS,
   CONFIRM_PAYSTACK_PAYMENT_FAIL,
+  GET_ACTIVE_SUBSCRIPTIONS_REQUEST,
+  GET_ACTIVE_SUBSCRIPTIONS_SUCCESS,
+  GET_ACTIVE_SUBSCRIPTIONS_FAIL,
 } from "../constants/subscriptionConstants";
 
 export const getPaystackConfigReducer = (state = {}, action) => {
@@ -41,6 +44,26 @@ export const confirmPaystackPaymentReducer = (state = {}, action) => {
         serverReply: action.payload,
       };
     case CONFIRM_PAYSTACK_PAYMENT_FAIL:
+      return { loading: false, success: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const getActiveSubscriptionsReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_ACTIVE_SUBSCRIPTIONS_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case GET_ACTIVE_SUBSCRIPTIONS_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        serverReply: action.payload,
+      };
+    case GET_ACTIVE_SUBSCRIPTIONS_FAIL:
       return { loading: false, success: false, error: action.payload };
     default:
       return state;
