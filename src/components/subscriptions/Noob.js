@@ -23,7 +23,11 @@ const Noob = () => {
           <p className="medium-font">
             <b>Price:</b> &#8358;{plans.noob.price}
           </p>
-          <UsePaystack amount={plans.noob.price * 100} plan="noob" />
+          <UsePaystack
+            amount={plans.noob.price * 100}
+            plan="noob"
+            duration={plans.noob.durationShort}
+          />
         </article>
       </section>
     </main>

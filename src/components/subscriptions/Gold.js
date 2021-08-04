@@ -23,7 +23,11 @@ const Gold = () => {
           <p className="medium-font">
             <b>Price:</b> &#8358;{plans.gold.price}
           </p>
-          <UsePaystack amount={plans.gold.price * 100} plan="gold" />
+          <UsePaystack
+            amount={plans.gold.price * 100}
+            plan="gold"
+            duration={plans.gold.durationShort}
+          />
         </article>
       </section>
     </main>

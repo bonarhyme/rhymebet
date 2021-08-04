@@ -7,7 +7,7 @@ import {
   confirmPaystackPayment,
 } from "../../actions/subscriptionActions";
 
-export const UsePaystack = ({ amount, plan }) => {
+export const UsePaystack = ({ amount, plan, duration }) => {
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
@@ -19,8 +19,11 @@ export const UsePaystack = ({ amount, plan }) => {
 
   // eslint-disable-next-line
   const {
+    // eslint-disable-next-line
     success: confirmSuccess,
+    // eslint-disable-next-line
     serverReply: confirmServerReply,
+    // eslint-disable-next-line
     error: confirmError,
   } = useSelector((state) => state.paystackPaymentConfirm);
 
@@ -46,7 +49,12 @@ export const UsePaystack = ({ amount, plan }) => {
 
   const onSuccess = (reference) => {
     dispatch(
-      confirmPaystackPayment({ ...reference, amount: amount / 100, plan })
+      confirmPaystackPayment({
+        ...reference,
+        amount: amount / 100,
+        plan,
+        duration,
+      })
     );
     // console.log({ ...reference, amount: amount / 100, plan });
   };

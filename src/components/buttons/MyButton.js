@@ -5,7 +5,7 @@ const MyButton = ({
   text = "Submit",
   className,
   type = "submit",
-  handleClick,
+  handleclick,
   disabled = false,
 }) => {
   return (
@@ -13,7 +13,7 @@ const MyButton = ({
       variant="outline-info"
       type={type}
       className={`button-block d-block mx-auto mt-2 ${className}`}
-      handleClick={handleClick}
+      handleclick={handleclick}
       disabled={disabled}
     >
       {text}

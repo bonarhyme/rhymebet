@@ -23,7 +23,11 @@ const Standard = () => {
           <p className="medium-font">
             <b>Price:</b> &#8358;{plans.standard.price}
           </p>
-          <UsePaystack amount={plans.standard.price * 100} plan="standard" />
+          <UsePaystack
+            amount={plans.standard.price * 100}
+            plan="standard"
+            duration={plans.standard.durationShort}
+          />
         </article>
       </section>
     </main>
