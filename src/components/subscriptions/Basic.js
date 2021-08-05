@@ -13,7 +13,6 @@ const Basic = () => {
 
   const [active, setActive] = useState(false);
   const [plan, setPlan] = useState(null);
-  const [expiryDate, setExpiryDate] = useState(null);
 
   const { success, serverReply } = useSelector(
     (state) => state.singleSubActiveGet
@@ -26,14 +25,13 @@ const Basic = () => {
 
   useEffect(() => {
     if (success) {
-      const { active, expiryDateLiteral, plan } = serverReply.activeSub;
+      const { active, plan } = serverReply.activeSub;
 
       setActive(active);
-      setExpiryDate(expiryDateLiteral);
       setPlan(plan);
     } else {
       setActive(false);
-      setExpiryDate(null);
+
       setPlan(null);
     }
   }, [success, serverReply]);

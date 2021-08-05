@@ -7,7 +7,6 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { login } from "../actions/userActions";
 import { Helmet } from "react-helmet";
-import { useHistory } from "react-router-dom";
 
 import MyButton from "../components/buttons/MyButton";
 
@@ -31,7 +30,7 @@ const Login = ({ history, location }) => {
     if (userInfo && userInfo.username) {
       history.push(redirect);
     }
-  }, [history, userInfo]);
+  }, [history, userInfo, redirect]);
 
   return (
     <main className="form-container register">
