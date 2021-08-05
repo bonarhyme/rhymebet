@@ -2,6 +2,7 @@ import React from "react";
 import { Pagination } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getFreeGamesList, getPremiumGamesList } from "../actions/gamesActions";
+import { getActiveSubscriptions } from "../actions/subscriptionActions";
 
 const Paginate = ({ isFree, creator, pages, page }) => {
   const dispatch = useDispatch();
@@ -9,6 +10,8 @@ const Paginate = ({ isFree, creator, pages, page }) => {
   const handlePagination = (e) => {
     if (isFree) {
       dispatch(getFreeGamesList(isFree, creator, e.target.innerText));
+    } else if (isFree === null) {
+      dispatch(getActiveSubscriptions(e.target.innerText));
     } else {
       dispatch(getPremiumGamesList(isFree, creator, e.target.innerText));
     }

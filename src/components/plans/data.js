@@ -19,7 +19,7 @@ export const plans = {
     price: 2000,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, cupiditate consectetur nihil illo aliquid dicta tempora pariatur itaque dolores minima earum praesentium in natus suscipit laborum quisquam facilis nisi odio!",
-    duration: "Four (5)",
+    duration: "Five (5)",
     durationShort: 5,
     odds: 1.5,
   },
@@ -27,7 +27,7 @@ export const plans = {
     price: 3500,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, cupiditate consectetur nihil illo aliquid dicta tempora pariatur itaque dolores minima earum praesentium in natus suscipit laborum quisquam facilis nisi odio!",
-    duration: "Seven (9)",
+    duration: "Nine (9)",
     durationShort: 9,
     odds: 2.5,
   },

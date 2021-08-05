@@ -77,39 +77,40 @@ export const confirmPaystackPayment =
     }
   };
 
-export const getActiveSubscriptions = () => async (dispatch, getState) => {
-  try {
-    dispatch({
-      type: GET_ACTIVE_SUBSCRIPTIONS_REQUEST,
-    });
+export const getActiveSubscriptions =
+  (pageNumber) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: GET_ACTIVE_SUBSCRIPTIONS_REQUEST,
+      });
 
-    const {
-      userLogin: { userInfo },
-    } = getState();
+      const {
+        userLogin: { userInfo },
+      } = getState();
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
 
-    const { data } = await axios.get(
-      `${variables.backendLink}/api/subscriptions/active-subscriptions`,
-      config
-    );
+      const { data } = await axios.get(
+        `${variables.backendLink}/api/subscriptions/active-subscriptions/?pageNumber=${pageNumber}`,
+        config
+      );
 
-    dispatch({
-      type: GET_ACTIVE_SUBSCRIPTIONS_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: GET_ACTIVE_SUBSCRIPTIONS_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
+      dispatch({
+        type: GET_ACTIVE_SUBSCRIPTIONS_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: GET_ACTIVE_SUBSCRIPTIONS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };

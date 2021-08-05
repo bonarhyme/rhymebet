@@ -6,11 +6,14 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 import { getActiveSubscriptions } from "../actions/subscriptionActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import Paginate from "../components/Pagination";
 
 const Subscriptions = () => {
   const dispatch = useDispatch();
 
   const [list, setList] = useState([]);
+  const [page, setPage] = useState(0);
+  const [pages, setPages] = useState(0);
 
   const { loading, success, serverReply, error } = useSelector(
     (state) => state.subscriptionActiveGet
@@ -22,8 +25,12 @@ const Subscriptions = () => {
 
   useEffect(() => {
     if (success) {
-      setList(serverReply);
+      setList(serverReply.activeSubsUser);
+      setPages(serverReply.pages);
+      setPage(serverReply.page);
+      console.log(serverReply);
     }
+    // eslint-disable-next-line
   }, [success]);
 
   return (
@@ -96,6 +103,7 @@ const Subscriptions = () => {
           </Table>
         </div>
       )}
+      <Paginate isFree={null} page={page} pages={pages} />
     </main>
   );
 };
