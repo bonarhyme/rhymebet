@@ -28,6 +28,7 @@ import {
   confirmPaystackPaymentReducer,
   getActiveSubscriptionsReducer,
   getActiveSingleSubReducer,
+  getAllSubReducer,
 } from "./reducers/subscriptionReducers";
 
 const reducer = combineReducers({
@@ -51,6 +52,7 @@ const reducer = combineReducers({
   paystackPaymentConfirm: confirmPaystackPaymentReducer,
   subscriptionActiveGet: getActiveSubscriptionsReducer,
   singleSubActiveGet: getActiveSingleSubReducer,
+  allSubget: getAllSubReducer,
 });
 
 // Local storage matters

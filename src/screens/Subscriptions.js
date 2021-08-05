@@ -7,6 +7,7 @@ import { getActiveSubscriptions } from "../actions/subscriptionActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Paginate from "../components/Pagination";
+import GetAllSub from "../components/subscriptions/GetAllSub";
 
 const Subscriptions = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,6 @@ const Subscriptions = () => {
       setList(serverReply.activeSubsUser);
       setPages(serverReply.pages);
       setPage(serverReply.page);
-      console.log(serverReply);
     }
     // eslint-disable-next-line
   }, [success]);
@@ -42,7 +42,7 @@ const Subscriptions = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="mx-3">
+        <section className="mx-3">
           <Table striped bordered hover responsive>
             <thead>
               <tr>
@@ -102,9 +102,12 @@ const Subscriptions = () => {
                 })}
             </tbody>
           </Table>
-        </div>
+          <Paginate isFree={null} page={page} pages={pages} />
+        </section>
       )}
-      <Paginate isFree={null} page={page} pages={pages} />
+      <section>
+        <GetAllSub />
+      </section>
     </main>
   );
 };
