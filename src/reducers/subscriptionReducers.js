@@ -8,7 +8,11 @@ import {
   GET_ACTIVE_SUBSCRIPTIONS_REQUEST,
   GET_ACTIVE_SUBSCRIPTIONS_SUCCESS,
   GET_ACTIVE_SUBSCRIPTIONS_FAIL,
+  GET_ACTIVE_SINGLE_SUB_REQUEST,
+  GET_ACTIVE_SINGLE_SUB_SUCCESS,
+  GET_ACTIVE_SINGLE_SUB_FAIL,
 } from "../constants/subscriptionConstants";
+import { USER_LOGOUT } from "../constants/userConstants";
 
 export const getPaystackConfigReducer = (state = {}, action) => {
   switch (action.type) {
@@ -65,6 +69,30 @@ export const getActiveSubscriptionsReducer = (state = {}, action) => {
       };
     case GET_ACTIVE_SUBSCRIPTIONS_FAIL:
       return { loading: false, success: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
+    default:
+      return state;
+  }
+};
+
+export const getActiveSingleSubReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_ACTIVE_SINGLE_SUB_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case GET_ACTIVE_SINGLE_SUB_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        serverReply: action.payload,
+      };
+    case GET_ACTIVE_SINGLE_SUB_FAIL:
+      return { loading: false, success: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
     default:
       return state;
   }

@@ -21,6 +21,7 @@ const Subscriptions = () => {
 
   useEffect(() => {
     dispatch(getActiveSubscriptions());
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
