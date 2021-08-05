@@ -13,6 +13,7 @@ import { variables } from "../data/variables";
 
 import { LinkContainer } from "react-router-bootstrap";
 import { HashLink } from "react-router-hash-link";
+import { plans } from "./plans/data";
 
 const MyNavbar = () => {
   const { userInfo: user } = useSelector((state) => state.userLogin);
@@ -43,20 +44,42 @@ const MyNavbar = () => {
             Free Games
           </HashLink>
           <NavDropdown title="Premium Games" id="collasible-nav-dropdown">
+            <LinkContainer to="/subscription/testie">
+              <NavDropdown.Item
+                title={`Access To Premium Games For ${plans.testie.duration} Day`}
+              >
+                Testie Plan
+              </NavDropdown.Item>
+            </LinkContainer>
+            <NavDropdown.Divider />
+            <LinkContainer to="/subscription/noob">
+              <NavDropdown.Item
+                title={`Access To Premium Games For ${plans.noob.duration} Days`}
+              >
+                Noob Plan
+              </NavDropdown.Item>
+            </LinkContainer>
+            <NavDropdown.Divider />
             <LinkContainer to="/subscription/basic">
-              <NavDropdown.Item title="Access 1.5 odds for 3 days">
+              <NavDropdown.Item
+                title={`Access To Premium Games For ${plans.basic.duration} Days`}
+              >
                 Basic Plan
               </NavDropdown.Item>
             </LinkContainer>
             <NavDropdown.Divider />
             <LinkContainer to="/subscription/standard">
-              <NavDropdown.Item title="Access 2 odds for 7 days">
+              <NavDropdown.Item
+                title={`Access To Premium Games For ${plans.standard.duration} Days`}
+              >
                 Standard Plan
               </NavDropdown.Item>
             </LinkContainer>
             <NavDropdown.Divider />
             <LinkContainer to="/subscription/gold">
-              <NavDropdown.Item title="Access 3 odds for 14 days">
+              <NavDropdown.Item
+                title={`Access To Premium Games For ${plans.gold.duration} Days`}
+              >
                 Gold Plan
               </NavDropdown.Item>
             </LinkContainer>
