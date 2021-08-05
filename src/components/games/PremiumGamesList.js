@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table, Pagination, Button } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import {
@@ -9,6 +9,7 @@ import {
 } from "../../actions/gamesActions";
 import Message from "../Message";
 import Loader from "../Loader";
+import Paginate from "../Pagination";
 
 const PremiumGamesList = ({ see = true }) => {
   const dispatch = useDispatch();
@@ -60,11 +61,6 @@ const PremiumGamesList = ({ see = true }) => {
       setPageNumber(serverReply.page);
     }
   }, [dispatch, success, serverReply]);
-
-  const handlePagination = (e) => {
-    dispatch(getPremiumGamesList(isFree, creator, e.target.innerText));
-    // setLast(e.target.innerText === (pages - (pages - 1)));
-  };
 
   const handleWasWon = (id, status) => {
     dispatch(updateGamesWasWon(id, status));
@@ -200,34 +196,7 @@ const PremiumGamesList = ({ see = true }) => {
           </>
         )}
       </div>
-      <div
-        style={{
-          width: "270px",
-          overflowX: pages <= 8 ? "hidden" : "scroll",
-        }}
-        className="mx-auto my-4"
-      >
-        <div
-          style={{ display: "inline-flex", height: "40px" }}
-          className="mb-2"
-        >
-          {pages > 1 && (
-            <Pagination>
-              {[...Array(pages).keys()].map((x) => {
-                return (
-                  <Pagination.Item
-                    key={x + 1}
-                    active={x + 1 === page}
-                    onClick={(e) => handlePagination(e)}
-                  >
-                    {x + 1}
-                  </Pagination.Item>
-                );
-              })}
-            </Pagination>
-          )}
-        </div>
-      </div>
+      <Paginate creator={creator} isFree={isFree} page={page} pages={pages} />
     </section>
   );
 };
