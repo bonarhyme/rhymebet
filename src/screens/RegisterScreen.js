@@ -91,7 +91,6 @@ const Register = ({ history, location }) => {
             ) : (
               <div className="form-container">
                 <Form onSubmit={handleSubmit}>
-                  {message && <Message variant="danger">{message}</Message>}
                   {error && <Message variant="danger">{error}</Message>}
                   {loading && <Loader />}
                   <Form.Group controlId="formBasicName">
@@ -125,13 +124,17 @@ const Register = ({ history, location }) => {
                       required
                     />
                   </Form.Group>
+                  {message && <Message variant="danger">{message}</Message>}
                   <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                       type="password"
                       placeholder="Enter a strong password"
                       className="about-form"
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                        setMessage(null);
+                      }}
                       required
                     />
                   </Form.Group>
@@ -142,7 +145,10 @@ const Register = ({ history, location }) => {
                       type="password"
                       placeholder="Confirm your password"
                       className="about-form"
-                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      onChange={(e) => {
+                        setConfirmPassword(e.target.value);
+                        setMessage(null);
+                      }}
                     ></Form.Control>
                   </Form.Group>
                   <input
