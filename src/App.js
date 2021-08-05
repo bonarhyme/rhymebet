@@ -66,11 +66,7 @@ const App = () => {
             component={!userInfo ? VerifyScreen : HomeScreen}
             exact
           />
-          <Route
-            path="/login"
-            component={!userInfo ? LoginScreen : HomeScreen}
-            exact
-          />
+          <Route path="/login" component={LoginScreen} exact />
 
           <Route
             path="/forgot-password"
@@ -83,11 +79,7 @@ const App = () => {
             exact
           />
 
-          <Route
-            path="/user/profile"
-            component={userInfo ? ProfileScreen : HomeScreen}
-            exact
-          />
+          <Route path="/user/profile" component={ProfileScreen} exact />
 
           {userInfo && userInfo.isAdmin && (
             <Route

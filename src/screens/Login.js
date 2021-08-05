@@ -7,9 +7,11 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { login } from "../actions/userActions";
 import { Helmet } from "react-helmet";
+import { useHistory } from "react-router-dom";
+
 import MyButton from "../components/buttons/MyButton";
 
-const Login = ({ history }) => {
+const Login = ({ history, location }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,10 +25,11 @@ const Login = ({ history }) => {
     e.preventDefault();
     dispatch(login(username, password));
   };
+  const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
     if (userInfo && userInfo.username) {
-      history.push("/");
+      history.push(redirect);
     }
   }, [history, userInfo]);
 

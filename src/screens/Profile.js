@@ -27,7 +27,7 @@ const Profile = ({ history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      history.push("/login");
+      history.push("/login?redirect=user/profile");
     } else {
       if (!user || !user.name) {
         dispatch(getUserProfile());

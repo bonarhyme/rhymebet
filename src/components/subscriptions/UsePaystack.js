@@ -6,10 +6,11 @@ import {
   getPaystackConfig,
   confirmPaystackPayment,
 } from "../../actions/subscriptionActions";
-import { LinkContainer } from "react-router-bootstrap";
+import { useHistory } from "react-router-dom";
 
 export const UsePaystack = ({ amount, plan, duration, hidden = false }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const { userInfo } = useSelector((state) => state.userLogin);
 
@@ -42,6 +43,10 @@ export const UsePaystack = ({ amount, plan, duration, hidden = false }) => {
     }
     // eslint-disable-next-line
   }, [success]);
+
+  const handleRedirect = () => {
+    history.push(`/login?redirect=subscription/${plan}`);
+  };
 
   const config = {
     reference: new Date().getTime().toString(),
@@ -84,14 +89,13 @@ export const UsePaystack = ({ amount, plan, duration, hidden = false }) => {
             Make Secure Payment
           </button>
         ) : (
-          <LinkContainer to="/login">
-            <button
-              className="mb-2 mt-5 button-block wide-block bg-blue color-white mx-auto blur-button-bg"
-              style={{ cursor: "pointer" }}
-            >
-              Make Secure Payment
-            </button>
-          </LinkContainer>
+          <button
+            className="mb-2 mt-5 button-block wide-block bg-blue color-white mx-auto blur-button-bg"
+            style={{ cursor: "pointer" }}
+            onClick={handleRedirect}
+          >
+            Make Secure Payment
+          </button>
         )}
       </div>
     );
