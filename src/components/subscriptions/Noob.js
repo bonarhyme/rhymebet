@@ -67,6 +67,7 @@ const Noob = () => {
             amount={plans.noob.price * 100}
             plan="noob"
             duration={plans.noob.durationShort}
+            hidden={active ? true : false}
           />
         </article>
       </section>

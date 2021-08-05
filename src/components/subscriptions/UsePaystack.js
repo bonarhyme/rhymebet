@@ -6,9 +6,12 @@ import {
   getPaystackConfig,
   confirmPaystackPayment,
 } from "../../actions/subscriptionActions";
+import { LinkContainer } from "react-router-bootstrap";
 
-export const UsePaystack = ({ amount, plan, duration }) => {
+export const UsePaystack = ({ amount, plan, duration, hidden = false }) => {
   const dispatch = useDispatch();
+
+  const { userInfo } = useSelector((state) => state.userLogin);
 
   const [email, setEmail] = useState("");
   const [publicKey, setPublicKey] = useState("");
@@ -67,14 +70,29 @@ export const UsePaystack = ({ amount, plan, duration }) => {
     const initializePayment = usePaystackPayment(config);
     return (
       <div>
-        <button
-          onClick={() => {
-            initializePayment(onSuccess, onClose);
-          }}
-          className="mb-2 mt-5 button-block wide-block bg-blue color-white mx-auto"
-        >
-          Make Secure Payment
-        </button>
+        {userInfo && userInfo.username ? (
+          <button
+            onClick={() => {
+              initializePayment(onSuccess, onClose);
+            }}
+            className={`mb-2 mt-5 button-block wide-block bg-blue color-white mx-auto blur-button-bg ${
+              hidden && `bg-ash`
+            }`}
+            style={{ cursor: hidden ? "not-allowed" : "pointer" }}
+            disabled={hidden}
+          >
+            Make Secure Payment
+          </button>
+        ) : (
+          <LinkContainer to="/login">
+            <button
+              className="mb-2 mt-5 button-block wide-block bg-blue color-white mx-auto blur-button-bg"
+              style={{ cursor: "pointer" }}
+            >
+              Make Secure Payment
+            </button>
+          </LinkContainer>
+        )}
       </div>
     );
   };

@@ -67,6 +67,7 @@ const Standard = () => {
             amount={plans.standard.price * 100}
             plan="standard"
             duration={plans.standard.durationShort}
+            hidden={active ? true : false}
           />
         </article>
       </section>

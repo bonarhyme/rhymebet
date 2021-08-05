@@ -67,6 +67,7 @@ const Gold = () => {
             amount={plans.gold.price * 100}
             plan="gold"
             duration={plans.gold.durationShort}
+            hidden={active ? true : false}
           />
         </article>
       </section>
