@@ -9,6 +9,7 @@ import { plans } from "../plans/data";
 const BuyGames = () => {
   return (
     <article>
+      <h2 className="main-header">Subscriptions</h2>
       <Row className="py-5 text-center justify-content-center">
         <Col md={4} className="d-flex justify-content-center mb-2 mt-3">
           <Card style={{ width: "18rem" }} border="primary">

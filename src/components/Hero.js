@@ -27,7 +27,6 @@ const Hero = () => {
         </article>
 
         <div className="py-5 subscriptions">
-          <h2 className="main-header">Subscriptions</h2>
           <BuyGames />
         </div>
       </div>

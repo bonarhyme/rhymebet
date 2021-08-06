@@ -24,6 +24,7 @@ import Noob from "./components/subscriptions/Noob";
 import Basic from "./components/subscriptions/Basic";
 import Standard from "./components/subscriptions/Standard";
 import Gold from "./components/subscriptions/Gold";
+import BuyGames from "./components/games/BuyGames";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -114,6 +115,7 @@ const App = () => {
           <Route path="/subscription/basic" component={Basic} exact />
           <Route path="/subscription/standard" component={Standard} exact />
           <Route path="/subscription/gold" component={Gold} exact />
+          <Route path="/subscriptions" component={BuyGames} exact />
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />
