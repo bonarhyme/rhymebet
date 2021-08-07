@@ -75,7 +75,9 @@ const PremiumGamesList = ({ see = true }) => {
   }, [wasWonSuccess, deleteSuccess]);
 
   const handleDelete = (id) => {
-    dispatch(deleteGame(id));
+    if (window.confirm("Are you sure you want to delete this game?")) {
+      dispatch(deleteGame(id));
+    }
   };
 
   return (
