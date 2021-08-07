@@ -5,14 +5,13 @@ import { bank1 } from "../../data/variables";
 import { plans } from "../plans/data";
 import { UsePaystack } from "./UsePaystack";
 import { getActiveSingleSub } from "../../actions/subscriptionActions";
-import Message from "../Message";
-import { Link } from "react-router-dom";
+import Notice from "./Notice";
+import ActiveNotice from "./ActiveNotice";
 
 const Gold = () => {
   const dispatch = useDispatch();
 
   const [active, setActive] = useState(false);
-  const [plan, setPlan] = useState(null);
 
   const { success, serverReply } = useSelector(
     (state) => state.singleSubActiveGet
@@ -25,26 +24,17 @@ const Gold = () => {
 
   useEffect(() => {
     if (success) {
-      const { active, plan } = serverReply.activeSub;
+      const { active } = serverReply.activeSub;
 
       setActive(active);
-      setPlan(plan);
     } else {
       setActive(false);
-      setPlan(null);
     }
   }, [success, serverReply]);
   return (
     <main>
-      {active && (
-        <Message variant="info">
-          You have an active{" "}
-          <Link to={`/subscription/${plan}`}>
-            <b>{plan.toString().toUpperCase()}</b>
-          </Link>{" "}
-          Plan
-        </Message>
-      )}
+      <ActiveNotice />
+      <Notice />
       <section>
         <h2 className="main-header">Gold Plan</h2>
         <img

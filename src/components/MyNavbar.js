@@ -83,6 +83,15 @@ const MyNavbar = () => {
                 Gold Plan
               </NavDropdown.Item>
             </LinkContainer>
+            <NavDropdown.Divider />
+            <HashLink
+              className="nav-link"
+              title="View Premium games"
+              smooth
+              to={"/#premium"}
+            >
+              View Premium Games
+            </HashLink>
           </NavDropdown>
 
           <NavDropdown title="Discover us" id="collasible-nav-dropdown">

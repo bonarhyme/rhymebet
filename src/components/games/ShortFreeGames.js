@@ -18,11 +18,12 @@ const ShortFreeGames = () => {
   const { loading, success, serverReply, error } = useSelector(
     (state) => state.gamesFreeShortListGet
   );
+  const { success: deleteSuccess } = useSelector((state) => state.gameDelete);
 
   useEffect(() => {
     dispatch(getShortFreeGamesList(isFree, creator, pageNumber));
     // eslint-disable-next-line
-  }, [dispatch]);
+  }, [dispatch, deleteSuccess]);
 
   useEffect(() => {
     if (success) {
