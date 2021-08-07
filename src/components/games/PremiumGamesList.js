@@ -53,6 +53,7 @@ const PremiumGamesList = ({ see = true }) => {
 
   useEffect(() => {
     if (success) {
+      console.log(serverReply);
       setPage(serverReply.page);
       setPages(serverReply.pages);
       setGames(serverReply.games);
@@ -141,20 +142,26 @@ const PremiumGamesList = ({ see = true }) => {
                           <td title={countryFull}>{country}</td>
                           <td title={leagueFull}>{league}</td>
                           <td title={clubsFull}>{clubs}</td>
-                          <td title="Match result">{win}</td>
-                          <td title="Number of goals">{ov}</td>
-                          <td title="Both teams to score">{gg}</td>
-                          <td title="Number of corners">{corner}</td>
-                          <td>{new Date(matchTime).toLocaleString()}</td>
-                          <td>
-                            {wasWon === null ? (
-                              "Not Specified"
-                            ) : wasWon === true ? (
-                              <FaCheck color="green" />
-                            ) : (
-                              <FaTimes color="red" />
-                            )}
+                          <td title="Match result">{win ? win : "-"}</td>
+                          <td title="Number of goals">{ov ? ov : "-"}</td>
+                          <td title="Both teams to score">{gg ? gg : "-"}</td>
+                          <td title="Number of corners">
+                            {corner ? corner : "-"}
                           </td>
+                          <td>{new Date(matchTime).toLocaleString()}</td>
+                          {wasWon ? (
+                            <td>
+                              {wasWon === null ? (
+                                "Not Specified"
+                              ) : wasWon === true ? (
+                                <FaCheck color="green" />
+                              ) : (
+                                <FaTimes color="red" />
+                              )}
+                            </td>
+                          ) : (
+                            <td>Not Specified</td>
+                          )}
                           {userInfo && userInfo.isAdmin && (
                             <td>
                               <Button

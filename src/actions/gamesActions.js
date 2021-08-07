@@ -230,27 +230,38 @@ export const getPremiumGamesList =
         type: GET_PREMIUM_GAMES_LIST_REQUEST,
       });
 
-      // const {
-      //   userLogin: { userInfo },
-      // } = getState();
+      const {
+        userLogin: { userInfo },
+      } = getState();
 
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-          // Authorization: `Bearer ${userInfo.token}`,
-        },
-      };
+      let config;
+      if (userInfo && userInfo.token) {
+        config = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${
+              userInfo && userInfo.token ? userInfo.token : userInfo
+            }`,
+          },
+        };
+      } else {
+        config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+      }
 
       let response;
 
       if (creatorUsername) {
         response = await axios.get(
-          `${variables.backendLink}/api/games/list/?isFree=${isFree}&creator=${creatorUsername}&pageNumber=${pageNumber}`,
+          `${variables.backendLink}/api/games/list/premium/?creator=${creatorUsername}&pageNumber=${pageNumber}`,
           config
         );
       } else {
         response = await axios.get(
-          `${variables.backendLink}/api/games/list/?isFree=${isFree}&pageNumber=${pageNumber}`,
+          `${variables.backendLink}/api/games/list/premium/?isFree=${isFree}&pageNumber=${pageNumber}`,
           config
         );
       }
