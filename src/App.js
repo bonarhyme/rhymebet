@@ -24,7 +24,8 @@ import Noob from "./components/subscriptions/Noob";
 import Basic from "./components/subscriptions/Basic";
 import Standard from "./components/subscriptions/Standard";
 import Gold from "./components/subscriptions/Gold";
-import BuyGames from "./components/games/BuyGames";
+import BuyGamesScreen from "./screens/BuyGamesScreen";
+import { getActiveSingleSub } from "./actions/subscriptionActions";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -50,6 +51,11 @@ const App = () => {
       document.location.href = "/login";
     }
   }, [userInfo, error, dispatch]);
+
+  useEffect(() => {
+    dispatch(getActiveSingleSub());
+    // eslint-disable-next-line
+  }, [userInfo]);
 
   return (
     <>
@@ -115,7 +121,7 @@ const App = () => {
           <Route path="/subscription/basic" component={Basic} exact />
           <Route path="/subscription/standard" component={Standard} exact />
           <Route path="/subscription/gold" component={Gold} exact />
-          <Route path="/subscriptions" component={BuyGames} exact />
+          <Route path="/subscriptions" component={BuyGamesScreen} exact />
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />

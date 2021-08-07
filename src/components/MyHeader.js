@@ -10,7 +10,7 @@ const MyHeader = () => {
     <header className="header-background">
       <Container className="p-5 header-container" fluid>
         <div className="header-content">
-          <h1 className="main-header">Welcome to Rhymebet</h1>
+          <h1 className="main-header-2">Welcome to Rhymebet</h1>
           <em>Home of premium and free football tips and predictions</em>
           {!user ? (
             <div className="d-block mx-auto my-3">

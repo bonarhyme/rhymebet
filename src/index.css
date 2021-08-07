@@ -59,8 +59,29 @@ ul {
   padding-top: 3rem;
   padding-bottom: 1rem;
   text-decoration: overline;
+  /* border-top: 1px solid var(--color-black-one); */
   font-family: var(--staat-font);
 }
+@media (max-width: 480px) {
+  .main-header-2 {
+    text-align: center;
+    font-size: var(--font-size-large);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-family: var(--staat-font);
+  }
+}
+@media (min-width: 481px) {
+  .main-header-2 {
+    text-align: center;
+    font-size: var(--font-size-large);
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    text-decoration: overline;
+    font-family: var(--staat-font);
+  }
+}
+
 .other-header {
   text-align: center;
   padding-top: 0.5rem;

@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Row, Col } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
+import { FcInfo } from "react-icons/fc";
 
 import { bank1, bank2, bank3, bank4, bank5 } from "../../data/variables";
+import Message from "../Message";
 
 import { plans } from "../plans/data";
 
-const BuyGames = () => {
+const BuyGames = ({ show = true }) => {
+  const [active, setActive] = useState(false);
+
+  const { success, serverReply } = useSelector(
+    (state) => state.singleSubActiveGet
+  );
+
+  useEffect(() => {
+    if (success) {
+      const { active } = serverReply.activeSub;
+
+      setActive(active);
+    } else {
+      setActive(false);
+    }
+  }, [success, serverReply]);
+
   return (
     <article>
       <h2 className="main-header">Subscriptions</h2>
+      {show && !active && (
+        <Message variant="info">
+          <FcInfo size={35} color="#3498db" /> Buy a subscription plan to access
+          our premium games.
+        </Message>
+      )}
       <Row className="py-5 text-center justify-content-center">
         <Col md={4} className="d-flex justify-content-center mb-2 mt-3">
           <Card style={{ width: "18rem" }} border="primary">

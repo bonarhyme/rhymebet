@@ -49,7 +49,7 @@ const PremiumGamesList = ({ see = true }) => {
   useEffect(() => {
     dispatch(getPremiumGamesList(isFree, creator, pageNumber));
     // eslint-disable-next-line
-  }, []);
+  }, [userInfo]);
 
   useEffect(() => {
     if (success) {
