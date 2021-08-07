@@ -22,6 +22,9 @@ import {
   DELETE_GAME_REQUEST,
   DELETE_GAME_SUCCESS,
   DELETE_GAME_FAIL,
+  GET_SHORT_FREE_GAMES_LIST_REQUEST,
+  GET_SHORT_FREE_GAMES_LIST_SUCCESS,
+  GET_SHORT_FREE_GAMES_LIST_FAIL,
 } from "../constants/gameConstants";
 import { variables } from "../data/variables";
 
@@ -215,6 +218,54 @@ export const getFreeGamesList =
     } catch (error) {
       dispatch({
         type: GET_FREE_GAMES_LIST_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
+
+export const getShortFreeGamesList =
+  (isFree, creatorUsername, pageNumber) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: GET_SHORT_FREE_GAMES_LIST_REQUEST,
+      });
+
+      // const {
+      //   userLogin: { userInfo },
+      // } = getState();
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          // Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      let response;
+
+      if (creatorUsername) {
+        response = await axios.get(
+          `${variables.backendLink}/api/games/list/?isFree=${isFree}&creator=${creatorUsername}&pageNumber=${pageNumber}`,
+          config
+        );
+      } else {
+        response = await axios.get(
+          `${variables.backendLink}/api/games/list/?isFree=${isFree}&pageNumber=${pageNumber}`,
+          config
+        );
+      }
+
+      const { data } = response;
+      dispatch({
+        type: GET_SHORT_FREE_GAMES_LIST_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: GET_SHORT_FREE_GAMES_LIST_FAIL,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message
