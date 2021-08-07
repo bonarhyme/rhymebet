@@ -10,6 +10,7 @@ import {
 import Message from "../Message";
 import Loader from "../Loader";
 import Paginate from "../Pagination";
+import Notice from "../subscriptions/Notice";
 
 const FreeGamesList = () => {
   const dispatch = useDispatch();
@@ -80,6 +81,7 @@ const FreeGamesList = () => {
   return (
     <section className="px-3">
       <h2 className="main-header">Free Games</h2>
+      <Notice />
       {error && <Message variant="danger">{error}</Message>}
       <div>
         {userInfo && userInfo.isAdmin && (
