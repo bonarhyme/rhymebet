@@ -36,9 +36,16 @@ const ActiveNotice = () => {
           </Link>{" "}
           Plan.
           {"  "}
-          <HashLink title="View Premium games" smooth to={"/#premium"}>
-            View Premium Games List Now.
-          </HashLink>
+          <button className="link-button bg-green">
+            <HashLink
+              title="View Premium games"
+              className="color-white"
+              smooth
+              to={"/#premium"}
+            >
+              View Premium Games List Now.
+            </HashLink>
+          </button>
         </Message>
       )}
     </>

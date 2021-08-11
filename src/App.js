@@ -42,7 +42,7 @@ const App = () => {
     if (userInfoFromStorage !== null) {
       dispatch(checkToken(userInfoFromStorage));
     }
-  }, [userInfo, dispatch]);
+  }, [dispatch]);
 
   useEffect(() => {
     if (error) {
@@ -53,7 +53,9 @@ const App = () => {
   }, [userInfo, error, dispatch]);
 
   useEffect(() => {
-    dispatch(getActiveSingleSub());
+    if (userInfo) {
+      dispatch(getActiveSingleSub());
+    }
     // eslint-disable-next-line
   }, [userInfo]);
 
