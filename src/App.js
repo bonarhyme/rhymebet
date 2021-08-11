@@ -14,6 +14,7 @@ import ResetPasswordScreen from "./screens/ResetPassword";
 import ProfileScreen from "./screens/Profile";
 import AdminGamesScreen from "./screens/AdminGames";
 import SubscriptionsScreen from "./screens/Subscriptions";
+import UsersScreen from "./screens/Users";
 
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
@@ -116,6 +117,9 @@ const App = () => {
               }
               exact
             />
+          )}
+          {userInfo && userInfo.isAdmin && (
+            <Route path="/admin/users" component={UsersScreen} exact />
           )}
 
           <Route path="/subscription/testie" component={Testie} exact />

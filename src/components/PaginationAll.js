@@ -2,12 +2,17 @@ import React from "react";
 import { Pagination } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getAllSub } from "../actions/subscriptionActions";
+import { getAllUsers } from "../actions/adminActions";
 
-const PaginateAll = ({ pages, page }) => {
+const PaginateAll = ({ pages, page, users = false }) => {
   const dispatch = useDispatch();
 
   const handlePagination = (e) => {
-    dispatch(getAllSub(e.target.innerText));
+    if (users) {
+      dispatch(getAllUsers(e.target.innerText));
+    } else {
+      dispatch(getAllSub(e.target.innerText));
+    }
   };
 
   return (

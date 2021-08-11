@@ -53,7 +53,7 @@ const PremiumGamesList = ({ see = true }) => {
 
   useEffect(() => {
     if (success) {
-      console.log(serverReply);
+      // console.log(serverReply);
       setPage(serverReply.page);
       setPages(serverReply.pages);
       setGames(serverReply.games);

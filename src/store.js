@@ -32,6 +32,8 @@ import {
   getAllSubReducer,
 } from "./reducers/subscriptionReducers";
 
+import { getAllUsersReducer } from "./reducers/adminReducers";
+
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userVerify: verifyUserReducer,
@@ -55,6 +57,7 @@ const reducer = combineReducers({
   singleSubActiveGet: getActiveSingleSubReducer,
   allSubget: getAllSubReducer,
   gamesFreeShortListGet: getShortFreeGamesListReducer,
+  usersAllGet: getAllUsersReducer,
 });
 
 // Local storage matters
