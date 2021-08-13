@@ -8,6 +8,7 @@ import { bank1, bank2, bank3, bank4, bank5 } from "../../data/variables";
 import { plans } from "../plans/data";
 
 import Notice from "../subscriptions/Notice";
+import ActiveNotice from "../subscriptions/ActiveNotice";
 
 const BuyGames = () => {
   return (
@@ -15,6 +16,7 @@ const BuyGames = () => {
       <h2 className="main-header">Subscriptions</h2>
       <Container>
         <Notice />
+        <ActiveNotice />
       </Container>
 
       <Row className="py-5 text-center justify-content-center">

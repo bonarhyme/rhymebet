@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader from "../Loader";
 import Message from "../Message";
 import Notice from "../subscriptions/Notice";
+import ActiveNotice from "../subscriptions/ActiveNotice";
 import { getShortFreeGamesList } from "../../actions/gamesActions";
 
 const ShortFreeGames = () => {
@@ -35,6 +36,7 @@ const ShortFreeGames = () => {
     <div>
       <h2 className="main-header">Free Hot Picks</h2>
       <Notice />
+      <ActiveNotice />
       {loading ? (
         <Loader />
       ) : (

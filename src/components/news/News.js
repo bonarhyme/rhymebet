@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Container, Image } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import Notice from "../subscriptions/Notice";
+import ActiveNotice from "../subscriptions/ActiveNotice";
 
 const News = () => {
   // eslint-disable-next-line
@@ -53,6 +54,7 @@ const News = () => {
       <h2 className="main-header">Sports News</h2>
       <Container>
         <Notice />
+        <ActiveNotice />
       </Container>
       <Container className="news-container">
         {news.map((story, index) => {

@@ -11,6 +11,7 @@ import Message from "../Message";
 import Loader from "../Loader";
 import Paginate from "../Pagination";
 import Notice from "../subscriptions/Notice";
+import ActiveNotice from "../subscriptions/ActiveNotice";
 
 const FreeGamesList = () => {
   const dispatch = useDispatch();
@@ -84,6 +85,7 @@ const FreeGamesList = () => {
     <section className="px-3">
       <h2 className="main-header">Free Games</h2>
       <Notice />
+      <ActiveNotice />
       {error && <Message variant="danger">{error}</Message>}
       <div>
         {userInfo && userInfo.isAdmin && (
