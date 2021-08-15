@@ -20,7 +20,7 @@ import UserDashboardScreen from "./screens/UserDashboard";
 
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
-import { checkToken } from "./actions/userActions";
+import { checkToken, getUserProfile } from "./actions/userActions";
 import CreateGameScreen from "./screens/CreateGame";
 import Testie from "./components/subscriptions/Testie";
 import Noob from "./components/subscriptions/Noob";
@@ -58,6 +58,7 @@ const App = () => {
   useEffect(() => {
     if (userInfo) {
       dispatch(getActiveSingleSub());
+      dispatch(getUserProfile());
     }
     // eslint-disable-next-line
   }, [userInfo]);
