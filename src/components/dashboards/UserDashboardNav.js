@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
 import { FaHome, FaCoins, FaCalendar, FaBox, FaReceipt } from "react-icons/fa";
+import ActiveSub from "./ActiveSub";
 import Overview from "./Overview";
 
 const UserDashboardNav = () => {
@@ -68,7 +69,7 @@ const UserDashboardNav = () => {
                 <Overview />
               </Tab.Pane>
               <Tab.Pane eventKey="active-subscription">
-                <h2>Active Subscription</h2>
+                <ActiveSub />
               </Tab.Pane>
               <Tab.Pane eventKey="subscriptions">
                 <h2>Subscriptions</h2>
