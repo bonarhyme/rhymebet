@@ -7,6 +7,8 @@ import MyButton from "../components/buttons/MyButton";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import PasswordUpdate from "../components/PasswordUpdate";
+import Notice from "../components/subscriptions/Notice";
+import ActiveNotice from "../components/subscriptions/ActiveNotice";
 
 const Profile = ({ history }) => {
   const [name, setName] = useState("");
@@ -50,6 +52,8 @@ const Profile = ({ history }) => {
           <div className=" form-container">
             <Form onSubmit={submitHandler}>
               <h2 className="other-header">Update Profile</h2>
+              <Notice />
+              <ActiveNotice />
               {error && <Message variant="danger">{error}</Message>}
               {profileUpdateSuccess && (
                 <Message variant="success">{updatedProfile.message}</Message>

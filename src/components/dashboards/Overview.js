@@ -73,7 +73,7 @@ const Overview = () => {
               <td>{name}</td>
               <td>{username}</td>
               <td>{email}</td>
-              <td>{activeSub}</td>
+              <td>{activeSub ? activeSub : "-"}</td>
               <td>{referral}</td>
               <td>{subCount}</td>
               <td>
