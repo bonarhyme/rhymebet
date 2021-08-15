@@ -16,6 +16,8 @@ import AdminGamesScreen from "./screens/AdminGames";
 import SubscriptionsScreen from "./screens/Subscriptions";
 import UsersScreen from "./screens/Users";
 
+import UserDashboardScreen from "./screens/UserDashboard";
+
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 import { checkToken } from "./actions/userActions";
@@ -121,6 +123,12 @@ const App = () => {
           {userInfo && userInfo.isAdmin && (
             <Route path="/admin/users" component={UsersScreen} exact />
           )}
+
+          <Route
+            path="/user/dashboard"
+            component={userInfo ? UserDashboardScreen : LoginScreen}
+            exact
+          />
 
           <Route path="/subscription/testie" component={Testie} exact />
           <Route path="/subscription/noob" component={Noob} exact />

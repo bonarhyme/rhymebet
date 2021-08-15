@@ -534,3 +534,21 @@ ul {
 }
 
 /* End of subscription */
+
+/* Start dashboard tab*/
+.trim {
+  margin-left: 0.8rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+@media (max-width: 991px) {
+  .mt-on-small-screen {
+    margin-top: 3rem;
+  }
+}
+
+.make-block {
+  display: flex;
+}
+
+/* End dashboard tab */
