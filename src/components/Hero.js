@@ -35,7 +35,7 @@ const Hero = () => {
       <div className="py-3 hero">
         <article className="m-5" id="premium" name="premium">
           <h3 className="main-header">Premium Games </h3>
-          <Notice />
+          <Notice show={false} />
           {active ? (
             <Message variant="info">
               You have an active{" "}

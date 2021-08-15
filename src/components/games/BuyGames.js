@@ -15,7 +15,7 @@ const BuyGames = () => {
     <article>
       <h2 className="main-header">Subscriptions</h2>
       <Container>
-        <Notice />
+        <Notice subScreen />
         <ActiveNotice />
       </Container>
 

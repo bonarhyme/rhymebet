@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import Loader from "../Loader";
+import { Link } from "react-router-dom";
 
 const ActiveSub = () => {
   const [plan, setPlan] = useState("");
@@ -32,7 +33,7 @@ const ActiveSub = () => {
       setCurrency(currency);
       setDuration(duration);
       setSubDate(createdDate);
-      setExpiryDate(expiryDateLiteral.slice(0, 25));
+      setExpiryDate(expiryDateLiteral);
     }
   }, [success, profile]);
 
@@ -54,12 +55,48 @@ const ActiveSub = () => {
           </thead>
           <tbody>
             <tr>
-              <td>{plan}</td>
-              <td>{amount}</td>
-              <td>{currency}</td>
-              <td>{duration}</td>
-              <td>{new Date(Number(subDate)).toString().slice(0, 25)}</td>
-              <td>{expiryDate}</td>
+              <td>
+                {plan ? (
+                  plan
+                ) : (
+                  <Link to="/subscriptions">Buy Premium Game</Link>
+                )}
+              </td>
+              <td>
+                {amount ? (
+                  amount
+                ) : (
+                  <Link to="/subscriptions">Buy Premium Game</Link>
+                )}
+              </td>
+              <td>
+                {currency ? (
+                  currency
+                ) : (
+                  <Link to="/subscriptions">Buy Premium Game</Link>
+                )}
+              </td>
+              <td>
+                {duration ? (
+                  duration
+                ) : (
+                  <Link to="/subscriptions">Buy Premium Game</Link>
+                )}
+              </td>
+              <td>
+                {subDate ? (
+                  new Date(Number(subDate)).toString().slice(0, 25)
+                ) : (
+                  <Link to="/subscriptions">Buy Premium Game</Link>
+                )}
+              </td>
+              <td>
+                {expiryDate ? (
+                  expiryDate.slice(0, 25)
+                ) : (
+                  <Link to="/subscriptions">Buy Premium Game</Link>
+                )}
+              </td>
             </tr>
           </tbody>
         </Table>
