@@ -14,6 +14,9 @@ import {
   GET_ALL_SUB_REQUEST,
   GET_ALL_SUB_SUCCESS,
   GET_ALL_SUB_FAIL,
+  GET_USER_ALL_REQUEST,
+  GET_USER_ALL_SUCCESS,
+  GET_USER_ALL_FAIL,
 } from "../constants/subscriptionConstants";
 import { USER_LOGOUT } from "../constants/userConstants";
 
@@ -115,6 +118,28 @@ export const getAllSubReducer = (state = {}, action) => {
         serverReply: action.payload,
       };
     case GET_ALL_SUB_FAIL:
+      return { loading: false, success: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
+    default:
+      return state;
+  }
+};
+
+export const getUserAllSubReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_USER_ALL_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case GET_USER_ALL_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        serverReply: action.payload,
+      };
+    case GET_USER_ALL_FAIL:
       return { loading: false, success: false, error: action.payload };
     case USER_LOGOUT:
       return {};

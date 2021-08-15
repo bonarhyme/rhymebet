@@ -1,9 +1,16 @@
 import React from "react";
 import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
-import { FaHome, FaCoins, FaCalendar, FaBox, FaReceipt } from "react-icons/fa";
+import {
+  FaHome,
+  FaCoins,
+  FaCalendar,
+  // FaBox,
+  FaReceipt,
+} from "react-icons/fa";
 import ActiveSub from "./ActiveSub";
 import Overview from "./Overview";
+import AllSubscriptions from "./AllSubscriptions";
 
 const UserDashboardNav = () => {
   return (
@@ -38,14 +45,14 @@ const UserDashboardNav = () => {
                   <span className="trim">Subscriptions</span>
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item>
+              {/* <Nav.Item>
                 <Nav.Link eventKey="promo">
                   <span>
                     <FaBox size={30} />
                   </span>
                   <span className="trim">Promo</span>
                 </Nav.Link>
-              </Nav.Item>
+              </Nav.Item> */}
               <Nav.Item>
                 <Nav.Link eventKey="referrals">
                   <span>
@@ -72,11 +79,11 @@ const UserDashboardNav = () => {
                 <ActiveSub />
               </Tab.Pane>
               <Tab.Pane eventKey="subscriptions">
-                <h2>Subscriptions</h2>
+                <AllSubscriptions />
               </Tab.Pane>
-              <Tab.Pane eventKey="promo">
+              {/* <Tab.Pane eventKey="promo">
                 <h2>Promo</h2>
-              </Tab.Pane>
+              </Tab.Pane> */}
               <Tab.Pane eventKey="referrals">
                 <h2>Referrals</h2>
               </Tab.Pane>

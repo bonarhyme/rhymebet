@@ -59,42 +59,54 @@ const ActiveSub = () => {
                 {plan ? (
                   plan
                 ) : (
-                  <Link to="/subscriptions">Buy Premium Game</Link>
+                  <Link to="/subscriptions" className="remove">
+                    Buy Premium Game
+                  </Link>
                 )}
               </td>
               <td>
                 {amount ? (
                   amount
                 ) : (
-                  <Link to="/subscriptions">Buy Premium Game</Link>
+                  <Link to="/subscriptions" className="remove">
+                    Buy Premium Game
+                  </Link>
                 )}
               </td>
               <td>
                 {currency ? (
                   currency
                 ) : (
-                  <Link to="/subscriptions">Buy Premium Game</Link>
+                  <Link to="/subscriptions" className="remove">
+                    Buy Premium Game
+                  </Link>
                 )}
               </td>
               <td>
                 {duration ? (
                   duration
                 ) : (
-                  <Link to="/subscriptions">Buy Premium Game</Link>
+                  <Link to="/subscriptions" className="remove">
+                    Buy Premium Game
+                  </Link>
                 )}
               </td>
               <td>
                 {subDate ? (
                   new Date(Number(subDate)).toString().slice(0, 25)
                 ) : (
-                  <Link to="/subscriptions">Buy Premium Game</Link>
+                  <Link to="/subscriptions" className="remove">
+                    Buy Premium Game
+                  </Link>
                 )}
               </td>
               <td>
                 {expiryDate ? (
                   expiryDate.slice(0, 25)
                 ) : (
-                  <Link to="/subscriptions">Buy Premium Game</Link>
+                  <Link to="/subscriptions" className="remove">
+                    Buy Premium Game
+                  </Link>
                 )}
               </td>
             </tr>
