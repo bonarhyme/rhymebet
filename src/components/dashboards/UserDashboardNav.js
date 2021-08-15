@@ -2,11 +2,12 @@ import React from "react";
 import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
 import { FaHome, FaCoins, FaCalendar, FaBox, FaReceipt } from "react-icons/fa";
+import Overview from "./Overview";
 
 const UserDashboardNav = () => {
   return (
     <Container fluid>
-      <Tab.Container id="userDashboardNav" defaultActiveKey="first">
+      <Tab.Container id="userDashboardNav" defaultActiveKey="overview">
         <Row>
           <Col xs={12} sm={12} md={12} lg xl={3}>
             <Nav variant="tabs" className="flex-column">
@@ -37,11 +38,11 @@ const UserDashboardNav = () => {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="bonus">
+                <Nav.Link eventKey="promo">
                   <span>
                     <FaBox size={30} />
                   </span>
-                  <span className="trim">Bonus</span>
+                  <span className="trim">Promo</span>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -64,7 +65,7 @@ const UserDashboardNav = () => {
           >
             <Tab.Content>
               <Tab.Pane eventKey="overview">
-                <h2>Overview</h2>
+                <Overview />
               </Tab.Pane>
               <Tab.Pane eventKey="active-subscription">
                 <h2>Active Subscription</h2>
@@ -72,8 +73,8 @@ const UserDashboardNav = () => {
               <Tab.Pane eventKey="subscriptions">
                 <h2>Subscriptions</h2>
               </Tab.Pane>
-              <Tab.Pane eventKey="bonus">
-                <h2>Bonus</h2>
+              <Tab.Pane eventKey="promo">
+                <h2>Promo</h2>
               </Tab.Pane>
               <Tab.Pane eventKey="referrals">
                 <h2>Referrals</h2>

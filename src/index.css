@@ -46,9 +46,9 @@ body {
   margin: 1rem auto;
 }
 
-/* a {
+a.remove {
   text-decoration: none;
-} */
+}
 
 ul {
   list-style-type: none;
