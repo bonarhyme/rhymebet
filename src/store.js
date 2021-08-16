@@ -38,6 +38,7 @@ import { getAllUsersReducer } from "./reducers/adminReducers";
 import {
   getRegularUsersReducer,
   makeAdminReducer,
+  getAdminUsersReducer,
 } from "./reducers/superAdminReducers";
 
 import { getUserRefsReducer } from "./reducers/referralReducer";
@@ -70,6 +71,7 @@ const reducer = combineReducers({
   userRefsGet: getUserRefsReducer,
   regularUsersGet: getRegularUsersReducer,
   adminMake: makeAdminReducer,
+  adminUsersGet: getAdminUsersReducer,
 });
 
 // Local storage matters

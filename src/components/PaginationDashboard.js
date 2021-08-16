@@ -3,24 +3,29 @@ import { Pagination } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getUserRefs } from "../actions/referralActions";
 import { getUserAllSub } from "../actions/subscriptionActions";
-import { getRegularUsers } from "../actions/superAdminActions";
+import { getAdminUsers, getRegularUsers } from "../actions/superAdminActions";
 
 const PaginationDashboard = ({
   pages,
   page,
   referral = false,
   regular = false,
+  admin = false,
 }) => {
   const dispatch = useDispatch();
 
   const handlePagination = (e) => {
-    if (regular) {
-      dispatch(getRegularUsers(e.target.innerText));
+    if (admin) {
+      dispatch(getAdminUsers(e.target.innerText));
     } else {
-      if (referral) {
-        dispatch(getUserRefs(e.target.innerText));
+      if (regular) {
+        dispatch(getRegularUsers(e.target.innerText));
       } else {
-        dispatch(getUserAllSub(e.target.innerText));
+        if (referral) {
+          dispatch(getUserRefs(e.target.innerText));
+        } else {
+          dispatch(getUserAllSub(e.target.innerText));
+        }
       }
     }
   };

@@ -27,10 +27,14 @@ const RegularUsers = () => {
     error: makeError,
   } = useSelector((state) => state.adminMake);
 
+  const { serverReply: adminServerReply } = useSelector(
+    (state) => state.adminUsersGet
+  );
+
   useEffect(() => {
     setList([]);
     dispatch(getRegularUsers(pageNumber));
-  }, [makeSuccess]);
+  }, [makeSuccess, adminServerReply]);
 
   useEffect(() => {
     if (success) {
