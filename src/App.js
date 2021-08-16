@@ -18,6 +18,8 @@ import UsersScreen from "./screens/Users";
 
 import UserDashboardScreen from "./screens/UserDashboard";
 
+import SuperAdminUser from "./screens/superAdmin/User";
+
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
 import { checkToken, getUserProfile } from "./actions/userActions";
@@ -123,6 +125,9 @@ const App = () => {
           )}
           {userInfo && userInfo.isAdmin && (
             <Route path="/admin/users" component={UsersScreen} exact />
+          )}
+          {userInfo && userInfo.isSuperAdmin && (
+            <Route path="/superadmin/users" component={SuperAdminUser} exact />
           )}
 
           <Route

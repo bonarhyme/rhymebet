@@ -32,6 +32,7 @@ const Referrals = () => {
   } = useSelector((state) => state.userLogin);
 
   useEffect(() => {
+    setAllRefs([]);
     dispatch(getUserRefs(pageNumer));
     // eslint-disable-next-line
   }, []);

@@ -25,6 +25,7 @@ import {
   GET_SHORT_FREE_GAMES_LIST_SUCCESS,
   GET_SHORT_FREE_GAMES_LIST_FAIL,
 } from "../constants/gameConstants";
+import { USER_LOGOUT } from "../constants/userConstants";
 
 export const gameToCartReducer = (state = { cartGames: [] }, action) => {
   switch (action.type) {
@@ -165,6 +166,8 @@ export const getPremiumGamesListReducer = (state = {}, action) => {
       };
     case GET_PREMIUM_GAMES_LIST_FAIL:
       return { loading: false, success: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
     default:
       return state;
   }
@@ -185,6 +188,8 @@ export const updateGamesWasWonReducer = (state = {}, action) => {
       };
     case UPDATE_GAMES_WASWON_FAIL:
       return { loading: false, success: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
     default:
       return state;
   }
@@ -205,6 +210,8 @@ export const deleteGameReducer = (state = {}, action) => {
       };
     case DELETE_GAME_FAIL:
       return { loading: false, success: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
     default:
       return state;
   }

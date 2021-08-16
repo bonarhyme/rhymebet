@@ -3,6 +3,7 @@ import {
   GET_USER_REFS_SUCCESS,
   GET_USER_REFS_FAIL,
 } from "../constants/referralConstants";
+import { USER_LOGOUT } from "../constants/userConstants";
 
 export const getUserRefsReducer = (state = {}, action) => {
   switch (action.type) {
@@ -19,6 +20,8 @@ export const getUserRefsReducer = (state = {}, action) => {
       };
     case GET_USER_REFS_FAIL:
       return { loading: false, success: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
     default:
       return state;
   }
