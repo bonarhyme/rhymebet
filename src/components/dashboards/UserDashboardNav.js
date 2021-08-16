@@ -11,6 +11,7 @@ import {
 import ActiveSub from "./ActiveSub";
 import Overview from "./Overview";
 import AllSubscriptions from "./AllSubscriptions";
+import Referrals from "./Referrals";
 
 const UserDashboardNav = () => {
   return (
@@ -85,7 +86,7 @@ const UserDashboardNav = () => {
                 <h2>Promo</h2>
               </Tab.Pane> */}
               <Tab.Pane eventKey="referrals">
-                <h2>Referrals</h2>
+                <Referrals />
               </Tab.Pane>
             </Tab.Content>
           </Col>

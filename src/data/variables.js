@@ -14,6 +14,7 @@ export const variables = {
   emailLink: "mailto:rhymebet_support@outlook.com",
   email: "rhymebet_support@outlook.com",
   backendLink: "http://localhost:4006",
+  frontendLink: "http://localhost:3000",
 };
 
 export { bank1, bank2, bank3, bank4, bank5 };

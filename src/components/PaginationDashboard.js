@@ -1,13 +1,18 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { getUserRefs } from "../actions/referralActions";
 import { getUserAllSub } from "../actions/subscriptionActions";
 
-const PaginationDashboard = ({ pages, page }) => {
+const PaginationDashboard = ({ pages, page, referral = false }) => {
   const dispatch = useDispatch();
 
   const handlePagination = (e) => {
-    dispatch(getUserAllSub(e.target.innerText));
+    if (referral) {
+      dispatch(getUserRefs(e.target.innerText));
+    } else {
+      dispatch(getUserAllSub(e.target.innerText));
+    }
   };
 
   return (

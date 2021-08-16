@@ -35,6 +35,8 @@ import {
 
 import { getAllUsersReducer } from "./reducers/adminReducers";
 
+import { getUserRefsReducer } from "./reducers/referralReducer";
+
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userVerify: verifyUserReducer,
@@ -60,6 +62,7 @@ const reducer = combineReducers({
   gamesFreeShortListGet: getShortFreeGamesListReducer,
   usersAllGet: getAllUsersReducer,
   userAllSubGet: getUserAllSubReducer,
+  userRefsGet: getUserRefsReducer,
 });
 
 // Local storage matters
