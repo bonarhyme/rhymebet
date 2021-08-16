@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Table, Button, Container } from "react-bootstrap";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { getAdminUsers } from "../../actions/superAdminActions";
+import { demoteAdmin, getAdminUsers } from "../../actions/superAdminActions";
 import Loader from "../Loader";
+import LoaderTwo from "../LoaderTwo";
 import Message from "../Message";
 import PaginationDashboard from "../PaginationDashboard";
 
@@ -19,10 +20,18 @@ const AdminUsers = () => {
     (state) => state.adminUsersGet
   );
 
+  const {
+    loading: demoteLoading,
+    success: demoteSuccess,
+    serverReply: demoteServerReply,
+    error: demoteError,
+  } = useSelector((state) => state.adminDemote);
+
   useEffect(() => {
     setList([]);
     dispatch(getAdminUsers(pageNumber));
-  }, []);
+    // eslint-disable-next-line
+  }, [demoteSuccess]);
 
   useEffect(() => {
     if (success) {
@@ -30,12 +39,25 @@ const AdminUsers = () => {
       setPage(serverReply.page);
       setPages(serverReply.pages);
     }
+    // eslint-disable-next-line
   }, [dispatch, success]);
+
+  const handleDemoteAdmin = (id, name) => {
+    if (
+      window.confirm(`Are you sure you want to remove ${name} as an admin?`)
+    ) {
+      dispatch(demoteAdmin(id));
+    }
+  };
 
   return (
     <section>
       <h3 className="other-header">Admin Users</h3>
       {error && <Message variant="danger">{error}</Message>}
+      {demoteError && <Message variant="danger">{demoteError}</Message>}
+      {demoteSuccess && (
+        <Message variant="success">{demoteServerReply.message}</Message>
+      )}
       {loading ? (
         <Loader />
       ) : (
@@ -48,7 +70,7 @@ const AdminUsers = () => {
                 <th>Username</th>
                 <th>Email</th>
                 <th>Verified</th>
-                <th>Remove</th>
+                <th>Demote</th>
               </tr>
             </thead>
             <tbody>
@@ -73,17 +95,16 @@ const AdminUsers = () => {
                       </td>
 
                       <td>
-                        {/* {makeLoading ? (
+                        {demoteLoading ? (
                           <LoaderTwo />
-                        ) : isAdmin ? (
-                          <Button variant="secondary" disabled>
-                            Admin
-                          </Button>
                         ) : (
-                          <Button onClick={() => handleMakeAdmin(_id, name)}>
-                            Make Admin
+                          <Button
+                            variant="warning"
+                            onClick={() => handleDemoteAdmin(_id, name)}
+                          >
+                            Demote Admin
                           </Button>
-                        )} */}
+                        )}
                       </td>
                     </tr>
                   );

@@ -31,10 +31,13 @@ const RegularUsers = () => {
     (state) => state.adminUsersGet
   );
 
+  const { success: demoteSuccess } = useSelector((state) => state.adminDemote);
+
   useEffect(() => {
     setList([]);
     dispatch(getRegularUsers(pageNumber));
-  }, [makeSuccess, adminServerReply]);
+    // eslint-disable-next-line
+  }, [makeSuccess, adminServerReply, demoteSuccess]);
 
   useEffect(() => {
     if (success) {
@@ -42,6 +45,7 @@ const RegularUsers = () => {
       setPage(serverReply.page);
       setPages(serverReply.pages);
     }
+    // eslint-disable-next-line
   }, [dispatch, success]);
 
   const handleMakeAdmin = (id, name) => {
