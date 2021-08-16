@@ -34,6 +34,7 @@ const AllSubscriptions = () => {
 
   return (
     <section>
+      <h3 className="other-header">All Subscriptions</h3>
       {error && <Message variant="danger">{error}</Message>}
       {loading ? (
         <Loader />

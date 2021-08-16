@@ -54,6 +54,7 @@ const Overview = () => {
 
   return (
     <section>
+      <h3 className="other-header">Overview</h3>
       {loading ? (
         <Loader />
       ) : (

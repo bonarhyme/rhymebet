@@ -3,8 +3,7 @@ import UserDashboardNav from "../components/dashboards/UserDashboardNav";
 
 const UserDashboard = () => {
   return (
-    <main>
-      <h1 className="main-header">User Dashboard</h1>
+    <main className="register ">
       <UserDashboardNav />
     </main>
   );

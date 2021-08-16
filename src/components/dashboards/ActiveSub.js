@@ -39,6 +39,7 @@ const ActiveSub = () => {
 
   return (
     <section>
+      <h3 className="other-header">Active Subscriptions</h3>
       {loading ? (
         <Loader />
       ) : (

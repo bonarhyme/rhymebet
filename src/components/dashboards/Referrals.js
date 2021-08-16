@@ -51,6 +51,7 @@ const Referrals = () => {
   }, [dispatch, success]);
   return (
     <section>
+      <h3 className="other-header">Referrals</h3>
       {error && <Message variant="danger">{error}</Message>}
       {loading ? (
         <Loader />
@@ -74,7 +75,6 @@ const Referrals = () => {
             </p>
           </Col>
           <Col xs={12} md={9}>
-            <h4 className="other-header">Referrals</h4>
             <p>
               Referral link:{" "}
               <b>
