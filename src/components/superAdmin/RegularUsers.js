@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRegularUsers, makeAdmin } from "../../actions/superAdminActions";
 import Loader from "../Loader";
 import LoaderTwo from "../LoaderTwo";
-import Message from "../Message";
+import MessageTwo from "../MessageTwo";
 import PaginationDashboard from "../PaginationDashboard";
 
 const RegularUsers = () => {
@@ -57,10 +57,10 @@ const RegularUsers = () => {
   return (
     <section>
       <h3 className="other-header">Regular Users</h3>
-      {error && <Message variant="danger">{error}</Message>}
-      {makeError && <Message variant="danger">{makeError}</Message>}
+      {error && <MessageTwo variant="danger">{error}</MessageTwo>}
+      {makeError && <MessageTwo variant="danger">{makeError}</MessageTwo>}
       {makeServerReply && (
-        <Message variant="success">{makeServerReply.message}</Message>
+        <MessageTwo variant="success">{makeServerReply.message}</MessageTwo>
       )}
       {loading ? (
         <Loader />

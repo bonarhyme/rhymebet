@@ -1,25 +1,8 @@
-import React, { useState } from "react";
-import { Alert, Button } from "react-bootstrap";
-import { FaTimes } from "react-icons/fa";
+import React from "react";
+import { Alert } from "react-bootstrap";
 
 const Message = ({ variant, children }) => {
-  const [show, setShow] = useState(true);
-
-  return (
-    <Alert
-      show={show}
-      variant={variant}
-      onClose={() => setShow(false)}
-      className="d-flex align-items-center space-between"
-    >
-      {children}
-      <div className="d-flex justify-content-end">
-        <Button variant="outline-danger" onClick={() => setShow(false)}>
-          <FaTimes size={20} color="red" />
-        </Button>
-      </div>
-    </Alert>
-  );
+  return <Alert variant={variant}>{children}</Alert>;
 };
 
 Message.defaultProps = {

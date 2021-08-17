@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { demoteAdmin, getAdminUsers } from "../../actions/superAdminActions";
 import Loader from "../Loader";
 import LoaderTwo from "../LoaderTwo";
-import Message from "../Message";
+import MessageTwo from "../MessageTwo";
 import PaginationDashboard from "../PaginationDashboard";
 
 const AdminUsers = () => {
@@ -53,10 +53,10 @@ const AdminUsers = () => {
   return (
     <section>
       <h3 className="other-header">Admin Users</h3>
-      {error && <Message variant="danger">{error}</Message>}
-      {demoteError && <Message variant="danger">{demoteError}</Message>}
+      {error && <MessageTwo variant="danger">{error}</MessageTwo>}
+      {demoteError && <MessageTwo variant="danger">{demoteError}</MessageTwo>}
       {demoteSuccess && (
-        <Message variant="success">{demoteServerReply.message}</Message>
+        <MessageTwo variant="success">{demoteServerReply.message}</MessageTwo>
       )}
       {loading ? (
         <Loader />
