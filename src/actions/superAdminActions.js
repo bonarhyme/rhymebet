@@ -13,6 +13,9 @@ import {
   SUPER_DEMOTE_ADMIN_REQUEST,
   SUPER_DEMOTE_ADMIN_SUCCESS,
   SUPER_DEMOTE_ADMIN_FAIL,
+  SUPER_GET_SUPER_ADMIN_USERS_REQUEST,
+  SUPER_GET_SUPER_ADMIN_USERS_SUCCESS,
+  SUPER_GET_SUPER_ADMIN_USERS_FAIL,
 } from "../constants/superAdminConstants";
 
 export const getRegularUsers = (pageNumber) => async (dispatch, getState) => {
@@ -88,6 +91,44 @@ export const getAdminUsers = (pageNumber) => async (dispatch, getState) => {
     });
   }
 };
+
+export const getSuperAdminUsers =
+  (pageNumber) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: SUPER_GET_SUPER_ADMIN_USERS_REQUEST,
+      });
+
+      const {
+        userLogin: { userInfo },
+      } = getState();
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      const { data } = await axios.get(
+        `${variables.backendLink}/api/super-admin/users/super-admin/?pageNumber=${pageNumber}`,
+        config
+      );
+
+      dispatch({
+        type: SUPER_GET_SUPER_ADMIN_USERS_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: SUPER_GET_SUPER_ADMIN_USERS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
 
 export const makeAdmin = (id) => async (dispatch, getState) => {
   try {
