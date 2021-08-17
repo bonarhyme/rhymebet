@@ -6,7 +6,7 @@ import RegularUsers from "../../components/superAdmin/RegularUsers";
 
 const User = () => {
   return (
-    <main>
+    <main className="px-1">
       <h1 className="main-header">Super Admin User List</h1>
       <SuperAdminUsers />
       <AdminUsers />

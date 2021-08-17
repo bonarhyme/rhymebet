@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Table, Button, Container } from "react-bootstrap";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { demoteAdmin, getAdminUsers } from "../../actions/superAdminActions";
+import {
+  demoteAdmin,
+  getAdminUsers,
+  makeSuperAdmin,
+} from "../../actions/superAdminActions";
 import Loader from "../Loader";
 import LoaderTwo from "../LoaderTwo";
 import MessageTwo from "../MessageTwo";
@@ -27,6 +31,13 @@ const AdminUsers = () => {
     error: demoteError,
   } = useSelector((state) => state.adminDemote);
 
+  const {
+    loading: promoteLoading,
+    success: promoteSuccess,
+    serverReply: promoteServerReply,
+    error: promoteError,
+  } = useSelector((state) => state.superAdminMake);
+
   useEffect(() => {
     setList([]);
     dispatch(getAdminUsers(pageNumber));
@@ -50,13 +61,25 @@ const AdminUsers = () => {
     }
   };
 
+  const handleMakeSuperAdmin = (id, name) => {
+    if (
+      window.confirm(`Are you sure you want to make ${name} as a super admin?`)
+    ) {
+      dispatch(makeSuperAdmin(id));
+    }
+  };
+
   return (
     <section>
       <h3 className="other-header">Admin Users</h3>
       {error && <MessageTwo variant="danger">{error}</MessageTwo>}
       {demoteError && <MessageTwo variant="danger">{demoteError}</MessageTwo>}
+      {promoteError && <MessageTwo variant="danger">{promoteError}</MessageTwo>}
       {demoteSuccess && (
         <MessageTwo variant="success">{demoteServerReply.message}</MessageTwo>
+      )}
+      {promoteSuccess && (
+        <MessageTwo variant="success">{promoteServerReply.message}</MessageTwo>
       )}
       {loading ? (
         <Loader />
@@ -71,6 +94,7 @@ const AdminUsers = () => {
                 <th>Email</th>
                 <th>Verified</th>
                 <th>Demote</th>
+                <th>Make_Super_Admin</th>
               </tr>
             </thead>
             <tbody>
@@ -99,10 +123,23 @@ const AdminUsers = () => {
                           <LoaderTwo />
                         ) : (
                           <Button
-                            variant="warning"
+                            variant="danger"
                             onClick={() => handleDemoteAdmin(_id, name)}
                           >
                             Demote Admin
+                          </Button>
+                        )}
+                      </td>
+                      <td>
+                        {}
+                        {promoteLoading ? (
+                          <LoaderTwo />
+                        ) : (
+                          <Button
+                            variant="warning"
+                            onClick={() => handleMakeSuperAdmin(_id, name)}
+                          >
+                            Make Super Admin
                           </Button>
                         )}
                       </td>

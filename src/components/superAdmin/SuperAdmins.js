@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button, Container } from "react-bootstrap";
+import { Table, Container } from "react-bootstrap";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getSuperAdminUsers } from "../../actions/superAdminActions";
 import Loader from "../Loader";
-// import LoaderTwo from "../LoaderTwo";
 import MessageTwo from "../MessageTwo";
 import PaginationDashboard from "../PaginationDashboard";
 
@@ -35,14 +34,6 @@ const SuperAdminUsers = () => {
     // eslint-disable-next-line
   }, [dispatch, success]);
 
-  //   const handleDemoteAdmin = (id, name) => {
-  //     if (
-  //       window.confirm(`Are you sure you want to remove ${name} as an admin?`)
-  //     ) {
-  //       dispatch(demoteAdmin(id));
-  //     }
-  //   };
-
   return (
     <section>
       <h3 className="other-header">Super Admin Users</h3>
@@ -66,14 +57,8 @@ const SuperAdminUsers = () => {
               {list &&
                 list.length > 0 &&
                 list.map((user, index) => {
-                  const {
-                    _id,
-                    name,
-                    username,
-                    email,
-                    isVerified,
-                    isSuperAdmin,
-                  } = user;
+                  const { name, username, email, isVerified, isSuperAdmin } =
+                    user;
 
                   return (
                     <tr key={index + 1}>
