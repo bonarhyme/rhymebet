@@ -54,6 +54,7 @@ const Users = () => {
                 <th>Subscription</th>
                 <th>Subs_Expire</th>
                 <th>Subs_Count</th>
+                <th>Promo_Active</th>
                 <th>Verified</th>
                 <th>Admin</th>
               </tr>
@@ -70,9 +71,12 @@ const Users = () => {
                     isVerified,
                     referral,
                     activeSub,
+                    activePromo,
                   } = user;
 
                   const { active, plan, expiryDateLiteral } = activeSub;
+
+                  const { active: promoActive } = activePromo;
 
                   return (
                     <tr key={index + 1}>
@@ -95,6 +99,13 @@ const Users = () => {
                           : "-"}
                       </td>
                       <td>{subCount}</td>
+                      <td>
+                        {promoActive ? (
+                          <FaCheck color="#17991d" />
+                        ) : (
+                          <FaTimes color="#f02c2c" />
+                        )}
+                      </td>
                       <td>
                         {isVerified ? (
                           <FaCheck color="#17991d" />

@@ -14,23 +14,21 @@ const PromoNotice = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const { success, serverReply } = useSelector(
-    (state) => state.singleSubActiveGet
-  );
+  const { success, profile } = useSelector((state) => state.userProfile);
 
   useEffect(() => {
     if (success) {
-      const { active } = serverReply.activePromo;
+      const { active } = profile.activePromo;
 
       setActive(active);
     } else {
       setActive(false);
     }
-  }, [success, serverReply]);
+  }, [success, profile]);
 
   return (
     <>
-      {!active && (
+      {active && (
         <>
           <Message variant="success" className="relative">
             <FcInfo size={35} color="#3498db" /> You have an active promo which
