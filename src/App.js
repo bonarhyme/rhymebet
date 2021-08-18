@@ -31,6 +31,7 @@ import Standard from "./components/subscriptions/Standard";
 import Gold from "./components/subscriptions/Gold";
 import BuyGamesScreen from "./screens/BuyGamesScreen";
 import { getActiveSingleSub } from "./actions/subscriptionActions";
+import SendVerificationAgain from "./screens/SendVerificationAgain";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -79,6 +80,11 @@ const App = () => {
           <Route
             path="/verify"
             component={!userInfo ? VerifyScreen : HomeScreen}
+            exact
+          />
+          <Route
+            path="/send-verification-again"
+            component={!userInfo ? SendVerificationAgain : HomeScreen}
             exact
           />
           <Route path="/login" component={LoginScreen} exact />

@@ -85,16 +85,25 @@ const Verification = ({ history, location }) => {
                       VERIFY ACCOUNT
                     </Button>
                     <p className="about-p  text-center my-2">
-                      ALREADY VERIFIED ACCOUNT?{" "}
-                      <Link to="login" className="register-btn">
-                        LOGIN
+                      NO EMAIL YET?{" "}
+                      <Link
+                        to="/send-verification-again"
+                        className="register-btn"
+                      >
+                        REQUEST VERIFICATION CODE AGAIN
                       </Link>
-                    </p>
-                    <p className=" text-center my-2">
-                      DON'T HAVE AN ACCOUNT?{" "}
-                      <Link to="/register" className="register-btn">
-                        REGISTER
-                      </Link>
+                      <p className="about-p  text-center my-2">
+                        ALREADY VERIFIED ACCOUNT?{" "}
+                        <Link to="login" className="register-btn">
+                          LOGIN
+                        </Link>
+                      </p>
+                      <p className=" text-center my-2">
+                        DON'T HAVE AN ACCOUNT?{" "}
+                        <Link to="/register" className="register-btn">
+                          REGISTER
+                        </Link>
+                      </p>
                     </p>
                   </Form>
                 </div>

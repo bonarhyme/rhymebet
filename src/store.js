@@ -11,6 +11,7 @@ import {
   getUserProfileReducer,
   updateUserProfileReducer,
   updateUserPasswordReducer,
+  SendVerificationAgainReducer,
 } from "./reducers/userReducers";
 
 import {
@@ -78,6 +79,7 @@ const reducer = combineReducers({
   adminDemote: demoteAdminReducer,
   superAdminGet: getSuperAdminUsersReducer,
   superAdminMake: makeSuperAdminReducer,
+  verificationSendAgain: SendVerificationAgainReducer,
 });
 
 // Local storage matters

@@ -31,6 +31,9 @@ import {
   UPDATE_USER_PASSWORD_REQUEST,
   UPDATE_USER_PASSWORD_SUCCESS,
   UPDATE_USER_PASSWORD_FAIL,
+  USER_SEND_VERI_AGAIN_REQUEST,
+  USER_SEND_VERI_AGAIN_SUCCESS,
+  USER_SEND_VERI_AGAIN_FAIL,
 } from "../constants/userConstants";
 
 export const register =
@@ -343,3 +346,35 @@ export const updateUserPassword =
       });
     }
   };
+
+export const SendVerificationAgain = (email) => async (dispatch) => {
+  try {
+    dispatch({
+      type: USER_SEND_VERI_AGAIN_REQUEST,
+    });
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const { data } = await axios.post(
+      `${variables.backendLink}/api/user/send-verification/again`,
+      {
+        email,
+      },
+      config
+    );
+    dispatch({
+      type: USER_SEND_VERI_AGAIN_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: USER_SEND_VERI_AGAIN_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};

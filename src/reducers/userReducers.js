@@ -27,6 +27,9 @@ import {
   UPDATE_USER_PASSWORD_REQUEST,
   UPDATE_USER_PASSWORD_SUCCESS,
   UPDATE_USER_PASSWORD_FAIL,
+  USER_SEND_VERI_AGAIN_REQUEST,
+  USER_SEND_VERI_AGAIN_SUCCESS,
+  USER_SEND_VERI_AGAIN_FAIL,
 } from "../constants/userConstants";
 
 export const userRegisterReducer = (state = {}, action) => {
@@ -157,6 +160,21 @@ export const updateUserPasswordReducer = (state = {}, action) => {
       return { loading: false, success: true, updatedPassword: action.payload };
     case UPDATE_USER_PASSWORD_FAIL:
       return { loading: false, success: false, errorPassword: action.payload };
+    case USER_LOGOUT:
+      return {};
+    default:
+      return state;
+  }
+};
+
+export const SendVerificationAgainReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_SEND_VERI_AGAIN_REQUEST:
+      return { loading: true };
+    case USER_SEND_VERI_AGAIN_SUCCESS:
+      return { loading: false, success: true, serverReply: action.payload };
+    case USER_SEND_VERI_AGAIN_FAIL:
+      return { loading: false, success: false, error: action.payload };
     case USER_LOGOUT:
       return {};
     default:

@@ -71,23 +71,31 @@ const Register = ({ history, location }) => {
           <Col className="py-5 my-5 register-container box-shadow-white" md={6}>
             <h2 className="main-header text-center">OPEN AN ACCOUNT</h2>
             {userInfo ? (
-              <Message variant="success">
-                <h3>
-                  Please check your email <code>{userInfo.email} </code>to
-                  confirm your account.
-                </h3>
-                <hr />
+              <>
+                <Message variant="success">
+                  <h3>
+                    Please check your email <code>{userInfo.email} </code>to
+                    confirm your account.
+                  </h3>
+                  <hr />
 
-                <p>
-                  If you haven't received our email in 15 minutes, please check
-                  your spam folder.
-                </p>
+                  <p>
+                    If you haven't received our email in 15 minutes, please
+                    check your spam folder.
+                  </p>
 
-                <p>
-                  Sometimes it takes a bit longer, be patient! Double-check your
-                  spam and trash folders!
+                  <p>
+                    Sometimes it takes a bit longer, be patient! Double-check
+                    your spam and trash folders!
+                  </p>
+                </Message>
+                <p className="about-p  text-center my-2">
+                  NO EMAIL YET?{" "}
+                  <Link to="/send-verification-again" className="register-btn">
+                    REQUEST VERIFICATION CODE AGAIN
+                  </Link>
                 </p>
-              </Message>
+              </>
             ) : (
               <div className="form-container">
                 <Form onSubmit={handleSubmit}>
