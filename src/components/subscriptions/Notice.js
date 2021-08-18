@@ -35,7 +35,7 @@ const Notice = ({ subScreen = false, show = true }) => {
               {"  "}
               <HashLink to="/#premium">
                 <button className="btn btn-primary">
-                  Click Here View Premium Games Snippet Now
+                  Click Here to View Premium Games Snippet Now
                 </button>
               </HashLink>
             </>

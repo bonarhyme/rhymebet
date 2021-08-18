@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Mate+SC&family=Metamorphous&family=Staatliches&display=swap&family=Metal+Mania&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&family=Mate&family=Metamorphous&family=Staatliches&display=swap&family=Metal+Mania&display=swap");
 
 /* TODOS: Use beskerville font */
 
 :root {
   --mate-font: "Mate SC", serif;
+  --mate-font-normal: "Mate", serif;
   --staat-font: "Staatliches", cursive;
   --mor-font: "Metamorphous", cursive;
   --metal-font: "Metal Mania", cursive;
@@ -327,7 +328,7 @@ ul {
 
 /* Navbar */
 .my-navbar {
-  font-family: var(--mate-font);
+  font-family: var(--mate-font-normal);
 }
 .my-navbar a {
   text-decoration: none;
@@ -432,7 +433,7 @@ ul {
 
 /* Header */
 .header-background {
-  font-family: var(--mate-font);
+  font-family: var(--mate-font-normal);
   background-image: url(images/field1.jpg);
   background-position: center;
   background-size: cover;
@@ -463,7 +464,7 @@ ul {
 /* Hero */
 .hero {
   background-color: var(--color-white-two);
-  font-family: var(--mate-font);
+  font-family: var(--mate-font-normal);
 }
 
 .subscriptions {
@@ -574,3 +575,24 @@ ul {
 }
 
 /* End dashboard tab */
+
+/* aside */
+.relative {
+  position: relative;
+}
+.aside {
+  width: 50%;
+  max-width: 300px;
+  height: 50%;
+  max-height: 200px;
+  background-color: rgba(238, 236, 236);
+  position: absolute;
+  transform: translateY(-100px);
+  padding: 0.5rem;
+}
+.shift-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/* end of aside */

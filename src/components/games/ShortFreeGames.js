@@ -6,6 +6,7 @@ import Loader from "../Loader";
 import Message from "../Message";
 import Notice from "../subscriptions/Notice";
 import ActiveNotice from "../subscriptions/ActiveNotice";
+import PromoNotice from "../subscriptions/PromoNotice";
 import { getShortFreeGamesList } from "../../actions/gamesActions";
 
 const ShortFreeGames = () => {
@@ -37,6 +38,7 @@ const ShortFreeGames = () => {
       <h2 className="main-header">Free Hot Picks</h2>
       <Notice />
       <ActiveNotice />
+      <PromoNotice />
       {loading ? (
         <Loader />
       ) : (

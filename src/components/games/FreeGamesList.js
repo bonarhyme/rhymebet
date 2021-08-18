@@ -12,6 +12,7 @@ import Loader from "../Loader";
 import Paginate from "../Pagination";
 import Notice from "../subscriptions/Notice";
 import ActiveNotice from "../subscriptions/ActiveNotice";
+import PromoNotice from "../subscriptions/PromoNotice";
 
 const FreeGamesList = () => {
   const dispatch = useDispatch();
@@ -86,6 +87,7 @@ const FreeGamesList = () => {
       <h2 className="main-header">Free Games</h2>
       <Notice />
       <ActiveNotice />
+      <PromoNotice />
       {error && <Message variant="danger">{error}</Message>}
       <div>
         {userInfo && userInfo.isAdmin && (

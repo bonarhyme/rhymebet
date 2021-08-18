@@ -9,6 +9,7 @@ import BuyGames from "./games/BuyGames";
 import FreeGamesList from "./games/FreeGamesList";
 import Message from "./Message";
 import Notice from "./subscriptions/Notice";
+import PromoNotice from "./subscriptions/PromoNotice";
 
 const Hero = () => {
   const [active, setActive] = useState(false);
@@ -36,6 +37,7 @@ const Hero = () => {
         <article className="m-5" id="premium" name="premium">
           <h3 className="main-header">Premium Games </h3>
           <Notice show={false} />
+          <PromoNotice />
           {active ? (
             <Message variant="info">
               You have an active{" "}
