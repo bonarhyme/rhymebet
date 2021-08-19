@@ -200,6 +200,11 @@ const MyNavbar = () => {
                     Subscriptions
                   </NavDropdown.Item>
                 </LinkContainer>
+                <LinkContainer to="/admin/news">
+                  <NavDropdown.Item title="Access all news">
+                    News
+                  </NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
             </Nav>
           )}
