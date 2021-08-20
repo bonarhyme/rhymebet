@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { FaPlusCircle, FaTimesCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +11,11 @@ import MessageTwo from "../MessageTwo";
 
 const CreateNews = () => {
   const dispatch = useDispatch();
+
+  const clearRef = useRef();
+  const clearrRef = useRef();
+  const clearrrRef = useRef();
+
   const [images, setImages] = useState([]);
   const [title, setTitle] = useState("");
   const [fullStory, setFullstory] = useState("");
@@ -40,6 +45,11 @@ const CreateNews = () => {
   useEffect(() => {
     if (success) {
       setImages([]);
+      setTitle("");
+      setFullstory("");
+      clearRef.current.value = "";
+      clearrRef.current.value = "";
+      clearrrRef.current.value = "";
     }
   }, [success]);
 
@@ -49,86 +59,86 @@ const CreateNews = () => {
         <Row className="justify-content-center ">
           <Col className="py-5 my-5 register-container box-shadow-white" md={6}>
             <h2 className="main-header text-center">Create News</h2>
-            {loading ? (
-              <Loader />
-            ) : (
-              <Form onSubmit={handleSubmit}>
-                {error && <Message variant="danger">{error}</Message>}
-                {success && (
-                  <MessageTwo variant="success">
-                    {serverReply.message}
-                  </MessageTwo>
-                )}
+            {loading && <Loader />}
 
-                {images.length > 0 &&
-                  images.map((image, index) => (
-                    <span key={index} className="image-wrapper">
-                      <FaTimesCircle
-                        size={25}
-                        color="#f02c2c"
-                        onClick={() => handleRemove(image)}
-                        className="times"
-                      />
+            <Form onSubmit={handleSubmit}>
+              {error && <Message variant="danger">{error}</Message>}
+              {success && (
+                <MessageTwo variant="success">{serverReply.message}</MessageTwo>
+              )}
 
-                      <img
-                        src={URL.createObjectURL(image)}
-                        alt=""
-                        height="200"
-                        width="200"
-                        style={{
-                          objectFit: "cover",
-                          borderRadius: "15px",
-                        }}
-                        className="p-1"
-                      />
-                    </span>
-                  ))}
-                <Form.Group>
-                  <Form.Label
-                    className=" mb-2 mt-5 button-block wide-block bg-blue color-white text-center"
-                    title="Select Image"
-                    style={{ cursor: "pointer" }}
-                    htmlFor="image"
-                  >
-                    <FaPlusCircle size={30} color="white" /> Select Pictures
-                  </Form.Label>
-                  <Form.File
-                    name="image"
-                    id="image"
-                    accept="/image/*"
-                    multiple={true}
-                    onChange={(e) => handleImages(e)}
-                    style={{ display: "none" }}
-                    className=" mb-2 mt-5 button-block wide-block bg-blue color-white text-center"
-                    autoFocus
-                  />
-                </Form.Group>
-                <Form.Group controlId="formBasicTitle">
-                  <Form.Label className="big-label">Title</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="News Title"
-                    className="about-form"
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group controlId="formBasicFullStory">
-                  <Form.Label className="big-label">Full story</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    rows={7}
-                    type="text"
-                    placeholder="Tell us the full story...."
-                    className="about-form"
-                    onChange={(e) => setFullstory(e.target.value)}
-                    required
-                  />
-                </Form.Group>
+              {images.length > 0 &&
+                images.map((image, index) => (
+                  <span key={index} className="image-wrapper">
+                    <FaTimesCircle
+                      size={25}
+                      color="#f02c2c"
+                      onClick={() => handleRemove(image)}
+                      className="times"
+                    />
 
-                <MyButton />
-              </Form>
-            )}
+                    <img
+                      src={URL.createObjectURL(image)}
+                      alt=""
+                      height="200"
+                      width="200"
+                      style={{
+                        objectFit: "cover",
+                        borderRadius: "15px",
+                      }}
+                      className="p-1"
+                    />
+                  </span>
+                ))}
+              <Form.Group>
+                <Form.Label
+                  className=" mb-2 mt-5 button-block wide-block bg-blue color-white text-center"
+                  title="Select Image"
+                  style={{ cursor: "pointer" }}
+                  htmlFor="image"
+                >
+                  <FaPlusCircle size={30} color="white" /> Select Pictures
+                </Form.Label>
+                <Form.File
+                  name="image"
+                  id="image"
+                  accept="/image/*"
+                  multiple={true}
+                  onChange={(e) => handleImages(e)}
+                  style={{ display: "none" }}
+                  className=" mb-2 mt-5 button-block wide-block bg-blue color-white text-center"
+                  autoFocus
+                  required
+                  ref={clearrrRef}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicTitle">
+                <Form.Label className="big-label">Title</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="News Title"
+                  className="about-form"
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                  ref={clearrRef}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicFullStory">
+                <Form.Label className="big-label">Full story</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={7}
+                  type="text"
+                  placeholder="Tell us the full story...."
+                  className="about-form"
+                  onChange={(e) => setFullstory(e.target.value)}
+                  required
+                  ref={clearRef}
+                />
+              </Form.Group>
+
+              <MyButton />
+            </Form>
           </Col>
         </Row>
       </Container>
