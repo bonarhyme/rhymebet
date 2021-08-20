@@ -306,6 +306,12 @@ ul {
 .space-between {
   justify-content: space-between;
 }
+
+.big-label {
+  font-size: 2rem;
+  padding: 2rem 0 0rem;
+}
+
 /* .overflow-pagination {
   overflow: scroll;
 } */
@@ -596,3 +602,20 @@ ul {
   right: 0;
 }
 /* end of aside */
+
+/* Image upload */
+.image-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+}
+.times {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  border: 2px solid red;
+}
+/* End image upload */

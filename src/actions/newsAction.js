@@ -26,12 +26,9 @@ export const createNews =
       const fData = new FormData();
       fData.append("title", title);
       fData.append("fullStory", fullStory);
+      // fData.append("image", images);
       images.forEach((image, index) => {
-        fData.append("image", {
-          name: "image" + index,
-          //   type: "image/*",
-          uri: image,
-        });
+        fData.append("image", image);
       });
 
       const { data } = await axios.post(

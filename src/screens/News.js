@@ -7,7 +7,7 @@ const CreateNews = () => {
     <main className="container">
       <LinkContainer to="/admin/news/create">
         <button className="mx-2 mt-5 button-block wide-block bg-blue color-white">
-          <FaPlus size={30} /> CREATE NEW GAMES
+          <FaPlus size={30} /> CREATE NEWS
         </button>
       </LinkContainer>
     </main>
