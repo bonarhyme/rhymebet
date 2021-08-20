@@ -9,6 +9,7 @@
   --mor-font: "Metamorphous", cursive;
   --metal-font: "Metal Mania", cursive;
   --color-red: #f02c2c;
+  --color-orange: #f3ab24;
   --color-light-blue: #add8e6;
   --color-blue-one: #3498db;
   --color-green-one: #17991d;
@@ -499,6 +500,8 @@ ul {
 /* News Container */
 .news-container {
   padding: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 720px) {
@@ -517,6 +520,21 @@ ul {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
   }
+
+  .image-container {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+.image-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.poster {
+  float: right;
+  color: var(--color-orange);
 }
 /* End of News Container */
 

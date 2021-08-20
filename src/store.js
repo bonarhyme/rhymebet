@@ -47,7 +47,7 @@ import {
 
 import { getUserRefsReducer } from "./reducers/referralReducer";
 
-import { createNewsReducer } from "./reducers/newsReducers";
+import { createNewsReducer, getAllNewsReducer } from "./reducers/newsReducers";
 
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
@@ -83,6 +83,7 @@ const reducer = combineReducers({
   superAdminMake: makeSuperAdminReducer,
   verificationSendAgain: SendVerificationAgainReducer,
   newsCreate: createNewsReducer,
+  newsGetAll: getAllNewsReducer,
 });
 
 // Local storage matters

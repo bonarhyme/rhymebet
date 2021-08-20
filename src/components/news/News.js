@@ -1,54 +1,35 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import { Button, Container, Image } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
+
 import Notice from "../subscriptions/Notice";
 import ActiveNotice from "../subscriptions/ActiveNotice";
+import Message from "../Message";
+import { getAllNews } from "../../actions/newsAction";
+import { FaUser } from "react-icons/fa";
 
 const News = () => {
-  // eslint-disable-next-line
-  const [news, setNews] = useState([
-    {
-      id: 1,
-      title: "Ronaldo just won the balon d'or",
+  const dispatch = useDispatch();
 
-      image:
-        "https://th.bing.com/th/id/Rad40bff2fc2334163b05e20bb6e4fb0d?rik=qM5UBCn2fICXRA&riu=http%3a%2f%2fdailypost.ng%2fwp-content%2fuploads%2f2019%2f03%2fCristiano-Ronaldo.jpg&ehk=OtYylJrD2f7Tc8SDUgq81JpNan56el9EfEfyKxhKD6M%3d&risl=&pid=ImgRaw",
-      fullstory:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo. sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo.",
-      date: "8:55 pm, friday 20 sept, 2021",
-    },
-    {
-      id: 2,
-      title: "Ronaldo just won the balon d'or",
+  const pageNumber = 1;
+  const [news, setNews] = useState([]);
 
-      image:
-        "https://th.bing.com/th/id/Rad40bff2fc2334163b05e20bb6e4fb0d?rik=qM5UBCn2fICXRA&riu=http%3a%2f%2fdailypost.ng%2fwp-content%2fuploads%2f2019%2f03%2fCristiano-Ronaldo.jpg&ehk=OtYylJrD2f7Tc8SDUgq81JpNan56el9EfEfyKxhKD6M%3d&risl=&pid=ImgRaw",
-      fullstory:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo. sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo.",
-      date: "8:55 pm, friday 20 sept, 2021",
-    },
-    {
-      id: 3,
-      title: "Ronaldo just won the balon d'or",
+  const { loading, success, serverReply, error } = useSelector(
+    (state) => state.newsGetAll
+  );
 
-      image:
-        "https://th.bing.com/th/id/Rad40bff2fc2334163b05e20bb6e4fb0d?rik=qM5UBCn2fICXRA&riu=http%3a%2f%2fdailypost.ng%2fwp-content%2fuploads%2f2019%2f03%2fCristiano-Ronaldo.jpg&ehk=OtYylJrD2f7Tc8SDUgq81JpNan56el9EfEfyKxhKD6M%3d&risl=&pid=ImgRaw",
-      fullstory:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo. sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo.",
-      date: "8:55 pm, friday 20 sept, 2021",
-    },
-    {
-      id: 4,
-      title: "Ronaldo just won the balon d'or",
+  useEffect(() => {
+    dispatch(getAllNews(pageNumber));
+  }, [dispatch]);
 
-      image:
-        "https://th.bing.com/th/id/Rad40bff2fc2334163b05e20bb6e4fb0d?rik=qM5UBCn2fICXRA&riu=http%3a%2f%2fdailypost.ng%2fwp-content%2fuploads%2f2019%2f03%2fCristiano-Ronaldo.jpg&ehk=OtYylJrD2f7Tc8SDUgq81JpNan56el9EfEfyKxhKD6M%3d&risl=&pid=ImgRaw",
-      fullstory:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo. sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo.",
-      date: "8:55 pm, friday 20 sept, 2021",
-    },
-  ]);
+  useEffect(() => {
+    if (success) {
+      setNews(serverReply.allNews);
+      console.log(serverReply.allNews);
+    }
+  }, [dispatch, success]);
+
   return (
     <section id="sportsnews" name="sportsnews">
       <h2 className="main-header">Sports News</h2>
@@ -56,21 +37,35 @@ const News = () => {
         <Notice />
         <ActiveNotice />
       </Container>
-      <Container className="news-container">
-        {news.map((story, index) => {
-          const { title, image, fullstory, date, id } = story;
-          return (
-            <div className="py-3" key={index + 1}>
-              <h4>{title}</h4>
-              <small>{date}</small>
-              <Image src={image} alt={title} fluid />
-              <p>{fullstory.slice(0, 170)}</p>
-              <LinkContainer to={`/sportsnews/${id}`}>
-                <Button>Read more</Button>
-              </LinkContainer>
-            </div>
-          );
-        })}
+      <Container className="news-container news-container">
+        {news && news.length > 0 ? (
+          news.map((story, index) => {
+            const { title, images, fullStory, createdAt, _id, poster } = story;
+            const { username } = poster;
+            return (
+              <div className="py-3 single-news" key={index + 1}>
+                <h4>{title}</h4>
+                <small>
+                  {new Date(createdAt).toString().slice(0, 3)}{" "}
+                  {new Date(createdAt).toLocaleString()}{" "}
+                </small>
+                <small className="poster">
+                  <FaUser />
+                  {username}
+                </small>
+                <div className="image-container">
+                  <Image src={images[0].url} alt={title} fluid />
+                </div>
+                <p>{fullStory.slice(0, 170)}</p>
+                <LinkContainer to={`/sportsnews/${_id}`}>
+                  <Button>Read more</Button>
+                </LinkContainer>
+              </div>
+            );
+          })
+        ) : (
+          <Message>There are no news at the moment.</Message>
+        )}
       </Container>
       <LinkContainer to="/sportsnews" className="news-button">
         <button className="button-block wide-block d-block mx-auto bg-green color-white my-4 mx-3">
