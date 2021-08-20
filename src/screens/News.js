@@ -1,17 +1,13 @@
 import React from "react";
-import { FaPlus } from "react-icons/fa";
-import { LinkContainer } from "react-router-bootstrap";
 
-const CreateNews = () => {
+import FirstNews from "../components/news/News";
+
+const News = () => {
   return (
-    <main className="container">
-      <LinkContainer to="/admin/news/create">
-        <button className="mx-2 mt-5 button-block wide-block bg-blue color-white">
-          <FaPlus size={30} /> CREATE NEWS
-        </button>
-      </LinkContainer>
+    <main>
+      <FirstNews showPaging showButton={false} />
     </main>
   );
 };
 
-export default CreateNews;
+export default News;

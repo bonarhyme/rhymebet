@@ -3,15 +3,20 @@ import { Pagination } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getAllSub } from "../actions/subscriptionActions";
 import { getAllUsers } from "../actions/adminActions";
+import { getAllNews } from "../actions/newsAction";
 
-const PaginateAll = ({ pages, page, users = false }) => {
+const PaginateAll = ({ pages, page, users = false, news = false }) => {
   const dispatch = useDispatch();
 
   const handlePagination = (e) => {
-    if (users) {
-      dispatch(getAllUsers(e.target.innerText));
+    if (news) {
+      dispatch(getAllNews(e.target.innerText));
     } else {
-      dispatch(getAllSub(e.target.innerText));
+      if (users) {
+        dispatch(getAllUsers(e.target.innerText));
+      } else {
+        dispatch(getAllSub(e.target.innerText));
+      }
     }
   };
 

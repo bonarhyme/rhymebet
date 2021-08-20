@@ -32,8 +32,9 @@ import Gold from "./components/subscriptions/Gold";
 import BuyGamesScreen from "./screens/BuyGamesScreen";
 import { getActiveSingleSub } from "./actions/subscriptionActions";
 import SendVerificationAgain from "./screens/SendVerificationAgain";
-import NewsScreen from "./screens/News";
+import AdminNewsScreen from "./screens/AdminNews";
 import CreateNews from "./components/news/CreateNews";
+import AllNews from "./screens/News";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -145,12 +146,14 @@ const App = () => {
           />
 
           {userInfo && userInfo.isAdmin && (
-            <Route path="/admin/news/" component={NewsScreen} exact />
+            <Route path="/admin/news/" component={AdminNewsScreen} exact />
           )}
 
           {userInfo && userInfo.isAdmin && (
             <Route path="/admin/news/create" component={CreateNews} exact />
           )}
+
+          <Route path="/sportsnews" component={AllNews} exact />
 
           <Route path="/subscription/testie" component={Testie} exact />
           <Route path="/subscription/noob" component={Noob} exact />
