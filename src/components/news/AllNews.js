@@ -1,5 +1,5 @@
-import { Button, Card, Container } from "react-bootstrap"
-import { LinkContainer } from "react-router-bootstrap"
+import { Button, Card, Container } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 const news = [
   {
@@ -72,17 +72,15 @@ const news = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo. sit amet consectetur adipisicing elit. Sint exercitationem recusandae officiis reiciendis architecto repellendus officia. Id distinctio, aut dolores explicabo modi sapiente earum deserunt maiores. Cupiditate, atque! Quisquam, quo.",
     date: "8:55 pm, friday 20 sept, 2021",
   },
-]
+];
 
 const AllNews = () => {
   return (
-    <main>
-      <h1 className="text-center metal-font  large-font-size text-underline large-line-height my-5 py-3">
-        All News
-      </h1>
+    <main id="sportsnews" name="sportsnews">
+      <h1 className="main-header">All News</h1>
       <Container className="all-news-container">
         {news.map((data, index) => {
-          const { date, fullstory, id, image, title } = data
+          const { date, fullstory, id, image, title } = data;
           return (
             <article key={id}>
               <Card style={{ width: "18rem" }}>
@@ -97,11 +95,11 @@ const AllNews = () => {
                 </Card.Body>
               </Card>
             </article>
-          )
+          );
         })}
       </Container>
     </main>
-  )
-}
+  );
+};
 
-export default AllNews
+export default AllNews;

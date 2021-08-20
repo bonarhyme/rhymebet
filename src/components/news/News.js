@@ -50,7 +50,7 @@ const News = () => {
     },
   ]);
   return (
-    <section>
+    <section id="sportsnews" name="sportsnews">
       <h2 className="main-header">Sports News</h2>
       <Container>
         <Notice />

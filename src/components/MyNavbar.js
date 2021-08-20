@@ -120,9 +120,15 @@ const MyNavbar = () => {
               </NavDropdown.Item>
             </LinkContainer>
           </NavDropdown>
-          <LinkContainer to="/sportsnews">
-            <Nav.Link title="Rhymebet sports news">Sports News</Nav.Link>
-          </LinkContainer>
+
+          <HashLink
+            className="nav-link"
+            title="Rhymebet sports news"
+            smooth
+            to={"/#sportsnews"}
+          >
+            Sports News
+          </HashLink>
         </Nav>
         <div className="flex-it">
           <Nav>
