@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaUser } from "react-icons/fa";
 
-import { createComment, getSingleNews } from "../actions/newsAction";
+import {
+  createComment,
+  createReply,
+  getSingleNews,
+} from "../actions/newsAction";
 import Loader from "../components/Loader";
 import LoaderTwo from "../components/LoaderTwo";
 import Message from "../components/Message";
@@ -21,8 +25,11 @@ const SingleNews = ({ location }) => {
   const [createdDate, setCreatedDate] = useState("");
   const [updatedDate, setUpdatedDate] = useState("");
 
+  const [fNewsId, setFNewsId] = useState("");
   const [comment, setComment] = useState("");
   const [commentId, setCommentId] = useState("");
+  const [reply, setReply] = useState("");
+  const [showReplyBox, setShowReplyBox] = useState(false);
 
   const { loading, success, serverReply, error } = useSelector(
     (state) => state.newsGetSingle
@@ -35,10 +42,17 @@ const SingleNews = ({ location }) => {
     error: commentError,
   } = useSelector((state) => state.commentCreate);
 
+  const {
+    loading: replyLoading,
+    success: replySuccess,
+    serverReply: replyServerReply,
+    error: replyError,
+  } = useSelector((state) => state.replyCreate);
+
   useEffect(() => {
     dispatch(getSingleNews(newsId));
     // eslint-disable-next-line
-  }, [dispatch, newsId, commentSuccess]);
+  }, [dispatch, newsId, commentSuccess, replySuccess]);
 
   useEffect(() => {
     if (success) {
@@ -49,14 +63,19 @@ const SingleNews = ({ location }) => {
       setCreatedDate(serverReply.createdAt);
       setUpdatedDate(serverReply.updatedAt);
       setPoster(serverReply.poster);
-      setCommentId(serverReply._id);
+      setFNewsId(serverReply._id);
     }
     // eslint-disable-next-line
   }, [dispatch, success]);
 
   const handleSubmitComment = (e) => {
     e.preventDefault();
-    dispatch(createComment(commentId, comment));
+    dispatch(createComment(fNewsId, comment));
+  };
+
+  const handleSubmitReply = (e) => {
+    e.preventDefault();
+    dispatch(createReply(fNewsId, commentId, reply));
   };
   return (
     <>
@@ -144,6 +163,50 @@ const SingleNews = ({ location }) => {
                         </small>
                       </span>
                       <p>{com.comment}</p>
+                      {replyLoading ? (
+                        <LoaderTwo />
+                      ) : (
+                        <Button
+                          size="sm"
+                          onClick={() => {
+                            setCommentId(com._id);
+                            setShowReplyBox(!showReplyBox);
+                          }}
+                        >
+                          reply
+                        </Button>
+                      )}
+
+                      {showReplyBox && (
+                        <div>
+                          <Form onSubmit={handleSubmitReply}>
+                            {replyError && (
+                              <MessageTwo>{replyError}</MessageTwo>
+                            )}
+                            {replySuccess && (
+                              <MessageTwo variant="success">
+                                {replyServerReply.message}
+                              </MessageTwo>
+                            )}{" "}
+                            <Form.Group controlId="reply">
+                              <Form.Label></Form.Label>
+                              <Form.Control
+                                as="textarea"
+                                minLength={25}
+                                rows={3}
+                                type="text"
+                                placeholder="Reply with respect..."
+                                className="about-form"
+                                onChange={(e) => setReply(e.target.value)}
+                                required
+                              />
+                            </Form.Group>
+                            <Button type="submit" style={{ marginTop: "1rem" }}>
+                              Reply comment
+                            </Button>
+                          </Form>
+                        </div>
+                      )}
                     </div>
                   );
                 })
