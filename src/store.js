@@ -51,6 +51,7 @@ import {
   createNewsReducer,
   getAllNewsReducer,
   getSingleNewsReducer,
+  createCommentReducer,
 } from "./reducers/newsReducers";
 
 const reducer = combineReducers({
@@ -89,6 +90,7 @@ const reducer = combineReducers({
   newsCreate: createNewsReducer,
   newsGetAll: getAllNewsReducer,
   newsGetSingle: getSingleNewsReducer,
+  commentCreate: createCommentReducer,
 });
 
 // Local storage matters

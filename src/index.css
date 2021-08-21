@@ -573,6 +573,35 @@ ul {
   margin: 0 auto;
 }
 
+.comment-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 4rem 1rem 1rem 0;
+  position: relative;
+}
+
+.comment-order {
+  font-size: 1.5rem;
+}
+
+.comments {
+  margin-top: 2rem;
+}
+
+.small-date {
+  font-size: 0.7rem;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.font-size-big {
+  font-size: 1.5rem;
+}
+
+.commenter-box {
+  border-top: 1px solid var(--color-white-three);
+  padding: 0.5rem 0;
+}
 /* End of News Container */
 
 /* Past Games */
