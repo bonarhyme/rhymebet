@@ -5,6 +5,9 @@ import {
   GET_ALL_NEWS_REQUEST,
   GET_ALL_NEWS_SUCCESS,
   GET_ALL_NEWS_FAIL,
+  GET_SINGLE_NEWS_REQUEST,
+  GET_SINGLE_NEWS_SUCCESS,
+  GET_SINGLE_NEWS_FAIL,
 } from "../constants/newsConstants";
 import axios from "axios";
 import { variables } from "../data/variables";
@@ -72,6 +75,29 @@ export const getAllNews = (pageNumber) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: GET_ALL_NEWS_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+export const getSingleNews = (id) => async (dispatch) => {
+  try {
+    dispatch({
+      type: GET_SINGLE_NEWS_REQUEST,
+    });
+
+    const { data } = await axios.get(`${variables.backendLink}/api/news/${id}`);
+
+    dispatch({
+      type: GET_SINGLE_NEWS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_SINGLE_NEWS_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

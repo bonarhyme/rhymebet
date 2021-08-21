@@ -47,7 +47,11 @@ import {
 
 import { getUserRefsReducer } from "./reducers/referralReducer";
 
-import { createNewsReducer, getAllNewsReducer } from "./reducers/newsReducers";
+import {
+  createNewsReducer,
+  getAllNewsReducer,
+  getSingleNewsReducer,
+} from "./reducers/newsReducers";
 
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
@@ -84,6 +88,7 @@ const reducer = combineReducers({
   verificationSendAgain: SendVerificationAgainReducer,
   newsCreate: createNewsReducer,
   newsGetAll: getAllNewsReducer,
+  newsGetSingle: getSingleNewsReducer,
 });
 
 // Local storage matters

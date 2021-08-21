@@ -35,6 +35,7 @@ import SendVerificationAgain from "./screens/SendVerificationAgain";
 import AdminNewsScreen from "./screens/AdminNews";
 import CreateNews from "./components/news/CreateNews";
 import AllNews from "./screens/News";
+import SingleNews from "./screens/SingleNews";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -154,6 +155,8 @@ const App = () => {
           )}
 
           <Route path="/sportsnews" component={AllNews} exact />
+
+          <Route path="/sportsnews/:id" component={SingleNews} exact />
 
           <Route path="/subscription/testie" component={Testie} exact />
           <Route path="/subscription/noob" component={Noob} exact />

@@ -536,6 +536,43 @@ ul {
   float: right;
   color: var(--color-orange);
 }
+
+.poster-details {
+  font-size: 0.9rem;
+  color: var(--color-orange);
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.poster-details > * {
+  margin-right: 2rem;
+  display: inline-block;
+}
+.news-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.news-image-container img {
+  height: 100%;
+  max-height: 400px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5rem;
+}
+
+.news-paragraph {
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem 1rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin: 0 auto;
+}
+
 /* End of News Container */
 
 /* Past Games */
