@@ -14,6 +14,7 @@ import {
   CREATE_REPLY_REQUEST,
   CREATE_REPLY_SUCCESS,
   CREATE_REPLY_FAIL,
+  CREATE_REPLY_RESET,
 } from "../constants/newsConstants";
 
 import { USER_LOGOUT } from "../constants/userConstants";
@@ -118,6 +119,8 @@ export const createReplyReducer = (state = {}, action) => {
       };
     case CREATE_REPLY_FAIL:
       return { loading: false, success: false, error: action.payload };
+    case CREATE_REPLY_RESET:
+      return {};
     case USER_LOGOUT:
       return {};
     default:

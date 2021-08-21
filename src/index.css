@@ -109,6 +109,9 @@ ul {
 .bold {
   font-weight: 700;
 }
+.bold-sm {
+  font-weight: 500;
+}
 .small-font {
   font-size: 0.8rem !important;
 }
@@ -566,7 +569,7 @@ ul {
 
 .news-paragraph {
   width: 100%;
-  max-width: 900px;
+  max-width: 1250px;
   padding: 2rem 1rem;
   line-height: 1.5;
   letter-spacing: 1px;
@@ -577,6 +580,13 @@ ul {
   width: 100%;
   max-width: 500px;
   margin: 4rem 1rem 1rem 0;
+  position: relative;
+}
+
+.reply-box {
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem 1rem 1rem 0;
   position: relative;
 }
 
@@ -601,6 +611,17 @@ ul {
 .commenter-box {
   border-top: 1px solid var(--color-white-three);
   padding: 0.5rem 0;
+}
+
+.replier-box {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.replier-container {
+  border-top: 1px solid var(--color-white-three);
 }
 /* End of News Container */
 

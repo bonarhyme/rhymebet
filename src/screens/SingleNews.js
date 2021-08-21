@@ -2,16 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaUser } from "react-icons/fa";
 
-import {
-  createComment,
-  createReply,
-  getSingleNews,
-} from "../actions/newsAction";
+import { createComment, getSingleNews } from "../actions/newsAction";
 import Loader from "../components/Loader";
 import LoaderTwo from "../components/LoaderTwo";
 import Message from "../components/Message";
 import MessageTwo from "../components/MessageTwo";
 import { Form, Button } from "react-bootstrap";
+import CommentHouse from "../components/news/Comment";
 
 const SingleNews = ({ location }) => {
   const dispatch = useDispatch();
@@ -27,9 +24,6 @@ const SingleNews = ({ location }) => {
 
   const [fNewsId, setFNewsId] = useState("");
   const [comment, setComment] = useState("");
-  const [commentId, setCommentId] = useState("");
-  const [reply, setReply] = useState("");
-  const [showReplyBox, setShowReplyBox] = useState(false);
 
   const { loading, success, serverReply, error } = useSelector(
     (state) => state.newsGetSingle
@@ -42,17 +36,12 @@ const SingleNews = ({ location }) => {
     error: commentError,
   } = useSelector((state) => state.commentCreate);
 
-  const {
-    loading: replyLoading,
-    success: replySuccess,
-    serverReply: replyServerReply,
-    error: replyError,
-  } = useSelector((state) => state.replyCreate);
+  // const { success: replySuccess } = useSelector((state) => state.replyCreate);
 
   useEffect(() => {
     dispatch(getSingleNews(newsId));
     // eslint-disable-next-line
-  }, [dispatch, newsId, commentSuccess, replySuccess]);
+  }, [dispatch, newsId, commentSuccess]);
 
   useEffect(() => {
     if (success) {
@@ -73,10 +62,6 @@ const SingleNews = ({ location }) => {
     dispatch(createComment(fNewsId, comment));
   };
 
-  const handleSubmitReply = (e) => {
-    e.preventDefault();
-    dispatch(createReply(fNewsId, commentId, reply));
-  };
   return (
     <>
       {loading ? (
@@ -150,66 +135,9 @@ const SingleNews = ({ location }) => {
                 </p>
               )}
               {comments.length > 0 ? (
-                comments.map((com, index) => {
-                  return (
-                    <div key={index} className="commenter-box">
-                      <span className="commenter-meta">
-                        <small className="bold">
-                          <FaUser size={13} /> {com.username}
-                        </small>
-                        <small className="small-date">
-                          {new Date(com.createdAt).toString().slice(0, 3)}{" "}
-                          {new Date(com.createdAt).toLocaleString()}
-                        </small>
-                      </span>
-                      <p>{com.comment}</p>
-                      {replyLoading ? (
-                        <LoaderTwo />
-                      ) : (
-                        <Button
-                          size="sm"
-                          onClick={() => {
-                            setCommentId(com._id);
-                            setShowReplyBox(!showReplyBox);
-                          }}
-                        >
-                          reply
-                        </Button>
-                      )}
-
-                      {showReplyBox && (
-                        <div>
-                          <Form onSubmit={handleSubmitReply}>
-                            {replyError && (
-                              <MessageTwo>{replyError}</MessageTwo>
-                            )}
-                            {replySuccess && (
-                              <MessageTwo variant="success">
-                                {replyServerReply.message}
-                              </MessageTwo>
-                            )}{" "}
-                            <Form.Group controlId="reply">
-                              <Form.Label></Form.Label>
-                              <Form.Control
-                                as="textarea"
-                                minLength={25}
-                                rows={3}
-                                type="text"
-                                placeholder="Reply with respect..."
-                                className="about-form"
-                                onChange={(e) => setReply(e.target.value)}
-                                required
-                              />
-                            </Form.Group>
-                            <Button type="submit" style={{ marginTop: "1rem" }}>
-                              Reply comment
-                            </Button>
-                          </Form>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })
+                comments.map((com, index) => (
+                  <CommentHouse key={index} com={com} fNewsId={fNewsId} />
+                ))
               ) : (
                 <Message>
                   Be the first to comment. Try it and get 7 years of good luck!
