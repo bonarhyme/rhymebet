@@ -744,4 +744,10 @@ ul {
   font-size: 1.5rem;
 }
 
+@media (min-width: 481px) {
+  .terms ol {
+    margin-left: 5rem;
+  }
+}
+
 /* End of discover */

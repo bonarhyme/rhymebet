@@ -39,6 +39,7 @@ import SingleNews from "./screens/SingleNews";
 
 import AboutScreen from "./screens/discover/About";
 import DisclaimerScreen from "./screens/discover/Disclaimer";
+import TermsScreen from "./screens/discover/Terms";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -174,6 +175,7 @@ const App = () => {
             component={DisclaimerScreen}
             exact
           />
+          <Route path="/discover/terms" component={TermsScreen} exact />
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />
