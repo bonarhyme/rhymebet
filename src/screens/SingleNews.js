@@ -9,6 +9,7 @@ import Message from "../components/Message";
 import MessageTwo from "../components/MessageTwo";
 import { Form, Button } from "react-bootstrap";
 import CommentHouse from "../components/news/Comment";
+import { CREATE_COMMENT_RESET } from "../constants/newsConstants";
 
 const SingleNews = ({ location }) => {
   const dispatch = useDispatch();
@@ -36,12 +37,12 @@ const SingleNews = ({ location }) => {
     error: commentError,
   } = useSelector((state) => state.commentCreate);
 
-  // const { success: replySuccess } = useSelector((state) => state.replyCreate);
+  const { success: replySuccess } = useSelector((state) => state.replyCreate);
 
   useEffect(() => {
     dispatch(getSingleNews(newsId));
     // eslint-disable-next-line
-  }, [dispatch, newsId, commentSuccess]);
+  }, [dispatch, newsId, commentSuccess, replySuccess]);
 
   useEffect(() => {
     if (success) {
@@ -56,6 +57,15 @@ const SingleNews = ({ location }) => {
     }
     // eslint-disable-next-line
   }, [dispatch, success]);
+
+  useEffect(() => {
+    if (commentSuccess) {
+      setTimeout(() => {
+        dispatch({ type: CREATE_COMMENT_RESET });
+      }, 4000);
+    }
+    // eslint-disable-next-line
+  }, [dispatch, commentSuccess]);
 
   const handleSubmitComment = (e) => {
     e.preventDefault();
@@ -101,7 +111,7 @@ const SingleNews = ({ location }) => {
                 <Form onSubmit={handleSubmitComment}>
                   <h3 className="other-header">Comments</h3>
                   {commentError && <MessageTwo>{commentError}</MessageTwo>}
-                  {commentSuccess && (
+                  {commentServerReply && commentServerReply.message && (
                     <MessageTwo variant="success">
                       {commentServerReply.message}
                     </MessageTwo>

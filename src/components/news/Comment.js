@@ -33,7 +33,7 @@ const CommentHouse = ({ com, fNewsId }) => {
     if (replySuccess) {
       setTimeout(() => {
         dispatch({ type: CREATE_REPLY_RESET });
-      }, 2000);
+      }, 4000);
     }
   }, [dispatch, replySuccess]);
 
@@ -85,7 +85,7 @@ const CommentHouse = ({ com, fNewsId }) => {
         <div className="reply-box">
           <Form onSubmit={handleSubmitReply}>
             {replyError && <MessageTwo>{replyError}</MessageTwo>}
-            {replySuccess && (
+            {replyServerReply && replyServerReply.message && (
               <MessageTwo variant="success">
                 {replyServerReply.message}
               </MessageTwo>

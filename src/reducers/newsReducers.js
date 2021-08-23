@@ -15,6 +15,7 @@ import {
   CREATE_REPLY_SUCCESS,
   CREATE_REPLY_FAIL,
   CREATE_REPLY_RESET,
+  CREATE_COMMENT_RESET,
 } from "../constants/newsConstants";
 
 import { USER_LOGOUT } from "../constants/userConstants";
@@ -97,6 +98,8 @@ export const createCommentReducer = (state = {}, action) => {
       };
     case CREATE_COMMENT_FAIL:
       return { loading: false, success: false, error: action.payload };
+    case CREATE_COMMENT_RESET:
+      return { serverReply: null, success: true };
     case USER_LOGOUT:
       return {};
     default:
@@ -120,7 +123,8 @@ export const createReplyReducer = (state = {}, action) => {
     case CREATE_REPLY_FAIL:
       return { loading: false, success: false, error: action.payload };
     case CREATE_REPLY_RESET:
-      return {};
+      return { serverReply: null, success: true };
+
     case USER_LOGOUT:
       return {};
     default:

@@ -576,6 +576,12 @@ ul {
   margin: 0 auto;
 }
 
+.news-paragraph > p::first-letter {
+  color: var(--color-orange);
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
 .comment-box {
   width: 100%;
   max-width: 500px;
