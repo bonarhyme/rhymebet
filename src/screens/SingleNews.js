@@ -122,7 +122,7 @@ const SingleNews = ({ location }) => {
                     </Form.Label>
                     <Form.Control
                       as="textarea"
-                      minLength={25}
+                      minLength={4}
                       rows={4}
                       type="text"
                       placeholder="Create an exciting comment and contribute to the story...."

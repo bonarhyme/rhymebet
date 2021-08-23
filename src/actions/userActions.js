@@ -248,12 +248,23 @@ export const getUserProfile = () => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
+    let config;
+
+    if (userInfo) {
+      config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+    } else {
+      config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+    }
+
     const { data } = await axios.get(
       `${variables.backendLink}/api/user/profile`,
       config
