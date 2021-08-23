@@ -37,6 +37,8 @@ import CreateNews from "./components/news/CreateNews";
 import AllNews from "./screens/News";
 import SingleNews from "./screens/SingleNews";
 
+import AboutScreen from "./screens/discover/About";
+
 const App = () => {
   const dispatch = useDispatch();
 
@@ -164,6 +166,8 @@ const App = () => {
           <Route path="/subscription/standard" component={Standard} exact />
           <Route path="/subscription/gold" component={Gold} exact />
           <Route path="/subscriptions" component={BuyGamesScreen} exact />
+
+          <Route path="/discover/about" component={AboutScreen} exact />
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />

@@ -732,3 +732,16 @@ ul {
   border: 2px solid red;
 }
 /* End image upload */
+
+/* Start of discover */
+.discover-paragraph {
+  width: 100%;
+  max-width: 1250px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* End of discover */
