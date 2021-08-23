@@ -38,6 +38,7 @@ import AllNews from "./screens/News";
 import SingleNews from "./screens/SingleNews";
 
 import AboutScreen from "./screens/discover/About";
+import DisclaimerScreen from "./screens/discover/Disclaimer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -168,6 +169,11 @@ const App = () => {
           <Route path="/subscriptions" component={BuyGamesScreen} exact />
 
           <Route path="/discover/about" component={AboutScreen} exact />
+          <Route
+            path="/discover/disclaimer"
+            component={DisclaimerScreen}
+            exact
+          />
           <Route path="*" component={PageNotFoundScreen} />
         </Switch>
         <MyFooter />

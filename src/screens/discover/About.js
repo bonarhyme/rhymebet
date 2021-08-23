@@ -1,8 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   return (
     <main>
+      <Helmet>
+        <title>About Us - Rhymebet</title>
+        <meta name="description" content="About rhymebet" />
+      </Helmet>
       <h1 className="main-header">About Us</h1>
       <article>
         <p className="discover-paragraph">
