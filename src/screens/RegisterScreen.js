@@ -165,7 +165,8 @@ const Register = ({ history, location }) => {
                     required
                     // onInvalid={remind}
                   />{" "}
-                  I accept your <Link to="terms">terms and conditions</Link>
+                  I accept your{" "}
+                  <Link to="/discover/terms">terms and conditions</Link>
                   {/* onInvalid="this.setCustomValidity('Please accept our terms and conditions to continue')"
                   onInput="setCustomValidity('')" */}
                   <MyButton />

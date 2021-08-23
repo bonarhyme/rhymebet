@@ -107,9 +107,9 @@ const MyNavbar = () => {
               </NavDropdown.Item>
             </LinkContainer>
             <NavDropdown.Divider />
-            <LinkContainer to="/discover/policy">
-              <NavDropdown.Item title="Learn more about our policies">
-                Our Policy
+            <LinkContainer to="/discover/terms">
+              <NavDropdown.Item title="Learn more about our terms and conditions">
+                Terms and Conditions
               </NavDropdown.Item>
             </LinkContainer>
 

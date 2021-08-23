@@ -12,7 +12,7 @@ import { variables } from "../data/variables";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-links-container">
+      <div className="footer-links-container container-fluid">
         <LinkContainer to="/">
           <img
             src={variables.rhymebetLogo}
@@ -56,8 +56,10 @@ const Footer = () => {
             <LinkContainer to="/discover/faq">
               <li title="Discover some frequently asked questions"> FAQ</li>
             </LinkContainer>
-            <LinkContainer to="/discover/policy">
-              <li title="Learn more about our policies"> Our Policy</li>
+            <LinkContainer to="/discover/terms">
+              <li title="Learn more about our terms and conditions">
+                Terms and Conditions
+              </li>
             </LinkContainer>
             <LinkContainer to="/discover/disclaimer">
               <li title="Learn more about what we don't do"> Disclaimer</li>

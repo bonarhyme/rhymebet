@@ -48,7 +48,7 @@ const Hero = () => {
             </Message>
           ) : (
             <LinkContainer to="/subscriptions">
-              <button className="mb-2 mt-5 button-block wide-block bg-blue color-white">
+              <button className="mb-2 mt-2 button-block wide-block bg-blue color-white">
                 <FaKey />
                 Unlock all
               </button>

@@ -15,9 +15,9 @@ const PageNotFound = () => {
         <div className="center-all">
           <h1 className="py-5 color-red">Oooopssss!!! Page Not Found!</h1>
           <FaSearch size={150} className="shake" />
-          <p className="small-font">
-            The link below does point to a page or you are not logged in or
-            authorized to use it:
+          <p>
+            The link below does not point to a page on our website or you are
+            not logged in or authorized to use it:
           </p>
           <p className="color-red ">{window.location.href}</p>
           <LinkContainer to="/">
