@@ -14,7 +14,7 @@ const About = () => {
           <strong>rhymebet.com</strong> is a subsidiary of{" "}
           <b>Bonarhyme Tech Hub</b>, that provides premium and free football
           predictions and tips based on extensive studies and analysis of teams
-          forms by our inhouse experts.{" "}
+          forms by our in-house experts.{" "}
         </p>
         <p className="discover-paragraph my-2">
           We are focused on ensuring maximum profit by providing properly

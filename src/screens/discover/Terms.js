@@ -135,9 +135,6 @@ const Terms = () => {
           users.
         </p>
       </article>
-      <article>
-        <h3 className="other-header"></h3>
-      </article>
     </main>
   );
 };
