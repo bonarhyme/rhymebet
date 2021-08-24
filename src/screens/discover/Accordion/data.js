@@ -6,23 +6,65 @@ const questions = [
   },
   {
     id: 2,
-    title: "How do I change my My Page password?",
-    info: "Coloring book forage photo booth gentrify lumbersexual. Migas chillwave poutine synth shoreditch, enamel pin thundercats fashion axe roof party polaroid chartreuse.",
+    title: "What does rhymebet.com do?",
+    info: "We provide premium and free football predictions and also reliable sports news.",
   },
   {
     id: 3,
-    title: "What is BankID?",
-    info: "Enamel pin fam sustainable woke whatever venmo. Authentic asymmetrical put a bird on it, lumbersexual activated charcoal kinfolk banjo cred pickled sartorial.",
+    title: "Is rhymebet.com secured?",
+    info: "rhymebet.com is encrypted and no information about users are exposed.",
   },
   {
     id: 4,
-    title: "Whose birth number can I use?",
-    info: "Edison bulb direct trade gentrify beard lo-fi seitan sustainable roof party franzen occupy squid. Knausgaard cronut succulents, scenester readymade shabby chic lyft. Copper mug meh vegan gentrify.",
+    title: "Is rhymebet.com a registered business?",
+    info: "rhymebet is a subsidiary of Bonarhyme Tech  which is a duly registered business with Corporate Affair's Commission (CAC) in Nigeria.",
   },
   {
     id: 5,
-    title: "When do I recieve a password ordered by letter?",
-    info: "Locavore franzen fashion axe live-edge neutra irony synth af tilde shabby chic man braid chillwave waistcoat copper mug messenger bag. Banjo snackwave blog, microdosing thundercats migas vaporware viral lo-fi seitan ",
+    title: "How to I register or sign up?",
+    info: "To  register or sign up, simply go to the home and click on the register button. It directs you to a registration page.",
+  },
+  {
+    id: 0,
+    title: "What is the benefit of using rhymebet.com",
+    info: "You get access to well studied football predictions by experts.",
+  },
+
+  {
+    id: 6,
+    title: "How good is the prediction?",
+    info: "Our predictions are done by experts and guarantee the highest chance of winning.",
+  },
+  {
+    id: 7,
+    title: "How do I view premium games?",
+    info: "You only view premium games if you have purchased a premium plan or if you have 10 or above unsettled referrals.",
+  },
+  {
+    id: 8,
+    title: "How can I pay for premium games?",
+    info: "To pay for premium games, you have to register. Navigate to the plan's page labelled testie, noob, basic, standard or gold. On the page you click on the make payment.",
+  },
+  {
+    id: 9,
+    title: "What is an unsettled referral?",
+    info: "An unsettled referral is a referral that hasn't earned you a reward.",
+  },
+  {
+    id: 10,
+    title: "What is a referral?",
+    info: "A referral is earned when a guest uses your referral link to register/sign up in rhymebet.com",
+  },
+  {
+    id: 11,
+    title: "Where can I find my referral link?",
+    info: "Your referral link is located in your dashboard and only available when you sign in.",
+  },
+
+  {
+    id: 12,
+    title: "Can I get a refund?",
+    info: "No. But it doesn't mean that we are careless with our prediction.",
   },
 ];
 export default questions;
