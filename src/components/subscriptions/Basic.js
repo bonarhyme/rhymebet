@@ -18,10 +18,13 @@ const Basic = () => {
     (state) => state.singleSubActiveGet
   );
 
+  const { userInfo } = useSelector((state) => state.userLogin);
   useEffect(() => {
-    dispatch(getActiveSingleSub());
+    if (userInfo) {
+      dispatch(getActiveSingleSub());
+    }
     // eslint-disable-next-line
-  }, []);
+  }, [userInfo]);
 
   useEffect(() => {
     if (success) {

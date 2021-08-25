@@ -23,9 +23,13 @@ const Overview = () => {
     (state) => state.userProfile
   );
 
+  const { userInfo } = useSelector((state) => state.userLogin);
   useEffect(() => {
-    dispatch(getUserProfile());
-  }, [dispatch]);
+    if (userInfo) {
+      dispatch(getUserProfile());
+    }
+    // eslint-disable-next-line
+  }, [userInfo]);
 
   useEffect(() => {
     if (success) {

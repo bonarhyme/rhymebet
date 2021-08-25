@@ -20,10 +20,13 @@ const Subscriptions = () => {
     (state) => state.subscriptionActiveGet
   );
 
+  const { userInfo } = useSelector((state) => state.userLogin);
   useEffect(() => {
-    dispatch(getActiveSubscriptions());
+    if (userInfo) {
+      dispatch(getActiveSubscriptions());
+    }
     // eslint-disable-next-line
-  }, []);
+  }, [userInfo]);
 
   useEffect(() => {
     if (success) {

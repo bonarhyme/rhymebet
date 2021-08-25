@@ -10,15 +10,21 @@ const MyHeader = () => {
   const dispatch = useDispatch();
   const { profile: user } = useSelector((state) => state.userProfile);
 
+  const { userInfo } = useSelector((state) => state.userLogin);
   useEffect(() => {
-    dispatch(getUserProfile());
-  }, [dispatch]);
+    if (userInfo) {
+      dispatch(getUserProfile());
+    }
+    // eslint-disable-next-line
+  }, [userInfo]);
   return (
     <header className="header-background">
       <Container className="p-5 header-container" fluid>
         <div className="header-content">
           <h1 className="main-header-2">Welcome to Rhymebet</h1>
-          <em>Home of premium and free football tips and predictions</em>
+          <em style={{ fontSize: "1.3rem" }}>
+            Home of premium and free football tips and predictions
+          </em>
           {!user ? (
             <div className="d-block mx-auto my-3">
               <LinkContainer to="/login">
