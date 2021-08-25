@@ -92,18 +92,18 @@ const Verification = ({ history, location }) => {
                       >
                         REQUEST VERIFICATION CODE AGAIN
                       </Link>
-                      <p className="about-p  text-center my-2">
-                        ALREADY VERIFIED ACCOUNT?{" "}
-                        <Link to="login" className="register-btn">
-                          LOGIN
-                        </Link>
-                      </p>
-                      <p className=" text-center my-2">
-                        DON'T HAVE AN ACCOUNT?{" "}
-                        <Link to="/register" className="register-btn">
-                          REGISTER
-                        </Link>
-                      </p>
+                    </p>
+                    <p className="about-p  text-center my-2">
+                      ALREADY VERIFIED ACCOUNT?{" "}
+                      <Link to="login" className="register-btn">
+                        LOGIN
+                      </Link>
+                    </p>
+                    <p className=" text-center my-2">
+                      DON'T HAVE AN ACCOUNT?{" "}
+                      <Link to="/register" className="register-btn">
+                        REGISTER
+                      </Link>
                     </p>
                   </Form>
                 </div>

@@ -90,6 +90,12 @@ const Register = ({ history, location }) => {
                   </p>
                 </Message>
                 <p className="about-p  text-center my-2">
+                  RECEIVED EMAIL?{" "}
+                  <Link to="/verify" className="register-btn">
+                    VERIFY NOW
+                  </Link>
+                </p>
+                <p className="about-p  text-center my-2">
                   NO EMAIL YET?{" "}
                   <Link to="/send-verification-again" className="register-btn">
                     REQUEST VERIFICATION CODE AGAIN
