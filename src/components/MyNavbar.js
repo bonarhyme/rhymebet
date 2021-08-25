@@ -101,6 +101,10 @@ const MyNavbar = () => {
               </NavDropdown.Item>
             </LinkContainer>
             <NavDropdown.Divider />
+            <LinkContainer to="/discover/contact">
+              <NavDropdown.Item title="Contact us">Contact us</NavDropdown.Item>
+            </LinkContainer>
+            <NavDropdown.Divider />
             <LinkContainer to="/discover/faq">
               <NavDropdown.Item title="Discover some frequently asked questions">
                 FAQ
