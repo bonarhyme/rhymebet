@@ -13,8 +13,10 @@ export const variables = {
   instagramHandle: "@rhymebet_support",
   emailLink: "mailto:rhymebet_support@outlook.com",
   email: "rhymebet_support@outlook.com",
-  backendLink: "http://localhost:4006",
-  frontendLink: "http://localhost:3000",
+  // backendLink: "http://localhost:4006",
+  // frontendLink: "http://localhost:3000",
+  backendLink: "https://rhymebet.herokuapp.com",
+  frontendLink: "https://rhymebet.com",
 };
 
 export { bank1, bank2, bank3, bank4, bank5 };
