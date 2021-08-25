@@ -9,6 +9,7 @@ import Message from "../components/Message";
 import PasswordUpdate from "../components/PasswordUpdate";
 import Notice from "../components/subscriptions/Notice";
 import ActiveNotice from "../components/subscriptions/ActiveNotice";
+import { Helmet } from "react-helmet";
 
 const Profile = ({ history }) => {
   const [name, setName] = useState("");
@@ -47,6 +48,10 @@ const Profile = ({ history }) => {
 
   return (
     <main className="register ">
+      <Helmet>
+        <title>User Profile - Rhymebet</title>
+        <meta name="description" content="rhymebet User profile" />
+      </Helmet>
       <Row className="justify-content-center ">
         <Col className="py-5 my-5 register-container box-shadow-white" md={6}>
           <div className=" form-container">

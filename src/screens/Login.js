@@ -36,7 +36,7 @@ const Login = ({ history, location }) => {
     <main className="form-container register">
       <Helmet>
         <title>Login - Rhymebet</title>
-        <meta name="description" content="Login" />
+        <meta name="description" content="Login - rhymebet" />
       </Helmet>
       <Container fluid className="justify-content-center align-items-center">
         <Row className="justify-content-center ">

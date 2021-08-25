@@ -61,7 +61,7 @@ const Register = ({ history, location }) => {
     <main className="register">
       <Helmet>
         <title>Registration - Rhymebet</title>
-        <meta name="description" content="Register" />
+        <meta name="description" content="rhymebet Registration" />
       </Helmet>
       <Container
         fluid

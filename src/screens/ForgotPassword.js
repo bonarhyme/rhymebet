@@ -31,7 +31,7 @@ const ForgotPassword = () => {
     <main className="form-container register">
       <Helmet>
         <title>Forgot Password - Rhymebet</title>
-        <meta name="description" content="Rhymebet Forgot Password page" />
+        <meta name="description" content="Rhymebet Forgot Password" />
       </Helmet>
       <Row className="justify-content-center ">
         <Col className="py-5 my-5 register-container box-shadow-white" md={6}>

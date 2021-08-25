@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import {
   FaEnvelopeSquare,
   FaInstagramSquare,
@@ -9,6 +10,10 @@ import { variables } from "../data/variables";
 const Contact = () => {
   return (
     <main className="contact ">
+      <Helmet>
+        <title>Contact Us - Rhymebet</title>
+        <meta name="description" content="Contact Rhymebet" />
+      </Helmet>
       <div>
         <h1 className="main-header">Contact Us</h1>
         <div className="contact-container p-2 ">

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { SendVerificationAgain } from "../actions/userActions";
+import { Helmet } from "react-helmet";
 
 const SendVerificationAgainScreen = () => {
   const [email, setEmail] = useState("");
@@ -23,6 +24,10 @@ const SendVerificationAgainScreen = () => {
 
   return (
     <main className="register">
+      <Helmet>
+        <title>Send verification Again - Rhymebet</title>
+        <meta name="description" content="rhymebet - send veification again" />
+      </Helmet>
       <Container className="mb-5">
         <Row className="justify-content-center ">
           <Col className="py-5 my-5 register-container box-shadow-white" md={6}>

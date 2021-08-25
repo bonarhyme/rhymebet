@@ -43,7 +43,7 @@ const Verification = ({ history, location }) => {
     <main className="register">
       <Helmet>
         <title>Verify User - Rhymebet</title>
-        <meta name="description" content="Login" />
+        <meta name="description" content="rhymebet - Verify User" />
       </Helmet>
       <Container className="mb-5">
         <Row className="justify-content-center ">

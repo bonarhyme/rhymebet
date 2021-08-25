@@ -10,6 +10,7 @@ import MessageTwo from "../components/MessageTwo";
 import { Form, Button } from "react-bootstrap";
 import CommentHouse from "../components/news/Comment";
 import { CREATE_COMMENT_RESET } from "../constants/newsConstants";
+import { Helmet } from "react-helmet";
 
 const SingleNews = ({ location }) => {
   const dispatch = useDispatch();
@@ -78,6 +79,10 @@ const SingleNews = ({ location }) => {
         <Loader />
       ) : (
         <main>
+          <Helmet>
+            <title>{title} - Rhymebet</title>
+            <meta name="description" content={`rhymebet - ${title}`} />
+          </Helmet>
           {error && <Message variant="danger">{error}</Message>}
           <h1 className="main-header">{title}</h1>
           <p className="poster-details">
