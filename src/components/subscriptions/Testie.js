@@ -55,7 +55,7 @@ const Testie = () => {
           className="responsive-image mx-auto d-block"
         />
         <article className="subs-container">
-          <p>{plans.testie.description}</p>
+          <p className="discover-paragraph">{plans.testie.description}</p>
           <p className="medium-font">
             <b>Duration:</b> {plans.testie.duration} Days
           </p>

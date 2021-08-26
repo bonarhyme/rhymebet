@@ -55,7 +55,7 @@ const Basic = () => {
           className="responsive-image mx-auto d-block"
         />
         <article className="subs-container">
-          <p>{plans.basic.description}</p>
+          <p className="discover-paragraph">{plans.basic.description}</p>
           <p className="medium-font">
             <b>Duration:</b> {plans.basic.duration} Days
           </p>

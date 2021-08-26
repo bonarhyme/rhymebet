@@ -54,7 +54,7 @@ const Gold = () => {
           className="responsive-image mx-auto d-block"
         />
         <article className="subs-container">
-          <p>{plans.gold.description}</p>
+          <p className="discover-paragraph">{plans.gold.description}</p>
           <p className="medium-font">
             <b>Duration:</b> {plans.gold.duration} Days
           </p>
