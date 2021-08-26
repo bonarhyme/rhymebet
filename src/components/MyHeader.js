@@ -19,10 +19,20 @@ const MyHeader = () => {
   }, [userInfo]);
   return (
     <header className="header-background">
-      <Container className="p-5 header-container" fluid>
-        <div className="header-content">
+      <Container className="pt-5 mb-5 header-container" fluid>
+        <div className="header-content py-5">
           <h1 className="main-header-2">Welcome to Rhymebet</h1>
-          <em style={{ fontSize: "1.3rem" }}>
+          <em
+            className="text-center"
+            style={{
+              fontSize: "1.3rem",
+              display: "block",
+              marginRight: "auto",
+              marginLeft: "auto",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
+            }}
+          >
             Home of premium and free football tips and predictions
           </em>
           {!user ? (
@@ -61,7 +71,7 @@ const MyHeader = () => {
             </>
           )}
         </div>
-        <div className="fancy-header header-content margin-top">
+        <div className="fancy-header header-content margin-top py-5">
           <ShortFreeGames />
         </div>
       </Container>

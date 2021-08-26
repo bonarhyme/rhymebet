@@ -84,14 +84,16 @@ const MyNavbar = () => {
               </NavDropdown.Item>
             </LinkContainer>
             <NavDropdown.Divider />
+            {/* <NavDropdown.Item> */}
             <HashLink
-              className="nav-link"
+              className="dropdown-item"
               title="View Premium games"
               smooth
               to={"/#premium"}
             >
               View Premium Games
             </HashLink>
+            {/* </NavDropdown.Item> */}
           </NavDropdown>
 
           <NavDropdown title="Discover us" id="collasible-nav-dropdown">

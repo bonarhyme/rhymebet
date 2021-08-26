@@ -77,7 +77,9 @@ const News = ({ showPaging = false, showButton = true }) => {
                 );
               })
             ) : (
-              <Message>There are no news at the moment.</Message>
+              <div className="manage-margin">
+                <Message>There are no news at the moment.</Message>
+              </div>
             )}
           </Container>
           {showPaging && <PaginateAll pages={pages} page={page} news />}

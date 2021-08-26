@@ -316,6 +316,12 @@ ul {
   padding: 2rem 0 0rem;
 }
 
+.manage-margin {
+  width: 100%;
+  min-width: 460px;
+  max-width: 800px;
+}
+
 /* .overflow-pagination {
   overflow: scroll;
 } */
@@ -449,6 +455,7 @@ ul {
   background-image: url(images/field1.jpg);
   background-position: center;
   background-size: cover;
+  border: 1px solid transparent;
 }
 .header-container {
   display: flex;
