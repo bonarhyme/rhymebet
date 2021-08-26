@@ -78,6 +78,7 @@ const ResetPassword = ({ location, history }) => {
                   setPasswordError(false);
                 }}
                 required
+                autoFocus
               />
               <Form.Text className="text-muted">
                 <b>Hint:</b> Password must be 7 characters or more.

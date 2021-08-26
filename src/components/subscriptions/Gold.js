@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { bank1 } from "../../data/variables";
@@ -10,6 +10,12 @@ import ActiveNotice from "./ActiveNotice";
 
 const Gold = () => {
   const dispatch = useDispatch();
+
+  const focusDiv = useRef(null);
+
+  useEffect(() => {
+    focusDiv.current.focus();
+  }, []);
 
   const [active, setActive] = useState(false);
 
@@ -39,7 +45,9 @@ const Gold = () => {
       <ActiveNotice />
       <Notice />
       <section>
-        <h2 className="main-header">Gold Plan</h2>
+        <h2 className="main-header" ref={focusDiv} tabIndex="-1">
+          Gold Plan
+        </h2>
         <img
           src={bank1}
           alt="gold-plan"

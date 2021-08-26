@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { bank5 } from "../../data/variables";
@@ -34,12 +34,21 @@ const Testie = () => {
       setActive(false);
     }
   }, [success, serverReply]);
+
+  const focusDiv = useRef(null);
+
+  useEffect(() => {
+    focusDiv.current.focus();
+  }, []);
+
   return (
     <main>
       <ActiveNotice />
       <Notice />
       <section>
-        <h2 className="main-header">Testie Plan</h2>
+        <h2 className="main-header" ref={focusDiv} tabIndex="-1">
+          Testie Plan
+        </h2>
         <img
           src={bank5}
           alt="testie-plan"

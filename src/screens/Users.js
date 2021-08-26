@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Table } from "react-bootstrap";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
@@ -34,6 +34,12 @@ const Users = () => {
     }
     // eslint-disable-next-line
   }, [success]);
+
+  const focusDiv = useRef(null);
+
+  useEffect(() => {
+    focusDiv.current.focus();
+  }, []);
   return (
     <main>
       <h1 className="main-header">Users List</h1>
@@ -44,7 +50,7 @@ const Users = () => {
         ) : (
           <Table striped bordered hover responsive>
             <thead>
-              <tr>
+              <tr ref={focusDiv} tabIndex="-1">
                 <th>#</th>
                 <th>Name</th>
                 <th>Username</th>
