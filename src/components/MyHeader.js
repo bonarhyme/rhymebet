@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import { Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import ShortFreeGames from "./games/ShortFreeGames";
-import { getUserProfile } from "../actions/userActions";
+// import { getUserProfile } from "../actions/userActions";
 
 const MyHeader = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { profile: user } = useSelector((state) => state.userProfile);
 
-  const { userInfo } = useSelector((state) => state.userLogin);
-  useEffect(() => {
-    if (userInfo) {
-      dispatch(getUserProfile());
-    }
-    // eslint-disable-next-line
-  }, [userInfo]);
+  // const { userInfo } = useSelector((state) => state.userLogin);
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     dispatch(getUserProfile());
+  //   }
+  //   // eslint-disable-next-line
+  // }, [userInfo]);
   return (
     <header className="header-background">
       <Container className="pt-5 mb-5 header-container" fluid>
