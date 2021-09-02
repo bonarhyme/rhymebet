@@ -21,7 +21,7 @@ const ForgotPassword = () => {
     e.preventDefault();
 
     if (window.confirm("Are you sure your input is correct?")) {
-      dispatch(userForgotPassword(email));
+      dispatch(userForgotPassword(email.toLowerCase().trim()));
     }
   };
 

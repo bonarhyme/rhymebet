@@ -19,7 +19,7 @@ const SendVerificationAgainScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(SendVerificationAgain(email));
+    dispatch(SendVerificationAgain(email.toLowerCase().trim()));
   };
 
   return (

@@ -47,7 +47,15 @@ const Register = ({ history, location }) => {
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
     } else {
-      dispatch(register(name, email, username, password, referralUsername));
+      dispatch(
+        register(
+          name,
+          email.toLowerCase().trim(),
+          username,
+          password,
+          referralUsername
+        )
+      );
     }
   };
 

@@ -34,7 +34,7 @@ const Contact = () => {
             <p>{variables.instagramHandle}</p>
           </div>
           <div>
-            <a href="mailto:rhymebet_support@outlook.com">
+            <a href="mailto:support@rhymebet.com">
               <FaEnvelopeSquare size={60} />
             </a>
             <p>{variables.email}</p>
