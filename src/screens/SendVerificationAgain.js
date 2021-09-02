@@ -47,7 +47,6 @@ const SendVerificationAgainScreen = () => {
                         placeholder="Enter your email"
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        autoSave
                       />
                     </Form.Group>
                     <Button
