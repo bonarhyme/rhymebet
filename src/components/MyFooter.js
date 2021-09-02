@@ -78,8 +78,8 @@ const Footer = () => {
         free or premium games.
       </div>
       <div className="copyright pt-2 ">
-        Rhymebet - Copyright &copy; 2021 - {new Date().getFullYear()} a
-        subsidiary. All rights reserved.
+        Rhymebet - Copyright &copy; 2021 - {new Date().getFullYear()}. All
+        rights reserved.
       </div>
       {/* <hr /> */}
       <div className="copyright pt-2">
