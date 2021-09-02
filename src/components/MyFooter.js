@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 
 import { variables } from "../data/variables";
+import parentLogo from "../images/parent-logo.PNG";
 
 const Footer = () => {
   return (
@@ -77,8 +78,19 @@ const Footer = () => {
         free or premium games.
       </div>
       <div className="copyright pt-2 ">
-        Rhymebet - Copyright &copy; 2021 - {new Date().getFullYear()} Onuorah
-        Bonaventure Chukwudi. All rights reserved.
+        Rhymebet - Copyright &copy; 2021 - {new Date().getFullYear()} a
+        subsidiary. All rights reserved.
+      </div>
+      {/* <hr /> */}
+      <div className="copyright pt-2">
+        <strong>Rhymebet is a subsidiary of</strong>
+        <img
+          src={parentLogo}
+          alt="Bonarhyme Tech Hub logo"
+          width="200"
+          height="200"
+          style={{ objectFit: "contain" }}
+        />
       </div>
     </footer>
   );
