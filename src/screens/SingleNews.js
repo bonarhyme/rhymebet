@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaUser } from "react-icons/fa";
 
@@ -73,6 +73,12 @@ const SingleNews = ({ location }) => {
     dispatch(createComment(fNewsId, comment));
   };
 
+  const focusDiv = useRef(null);
+
+  useEffect(() => {
+    focusDiv.current.focus();
+  }, []);
+
   return (
     <>
       {loading ? (
@@ -84,7 +90,9 @@ const SingleNews = ({ location }) => {
             <meta name="description" content={`rhymebet - ${title}`} />
           </Helmet>
           {error && <Message variant="danger">{error}</Message>}
-          <h1 className="main-header">{title}</h1>
+          <h1 className="main-header" ref={focusDiv} tabIndex="-1">
+            {title}
+          </h1>
           <p className="poster-details">
             <span>
               <FaUser /> {poster.username}

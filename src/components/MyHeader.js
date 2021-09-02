@@ -1,28 +1,38 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import { Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import ShortFreeGames from "./games/ShortFreeGames";
-import { getUserProfile } from "../actions/userActions";
+// import { getUserProfile } from "../actions/userActions";
 
 const MyHeader = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { profile: user } = useSelector((state) => state.userProfile);
 
-  const { userInfo } = useSelector((state) => state.userLogin);
-  useEffect(() => {
-    if (userInfo) {
-      dispatch(getUserProfile());
-    }
-    // eslint-disable-next-line
-  }, [userInfo]);
+  // const { userInfo } = useSelector((state) => state.userLogin);
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     dispatch(getUserProfile());
+  //   }
+  //   // eslint-disable-next-line
+  // }, [userInfo]);
   return (
     <header className="header-background">
-      <Container className="p-5 header-container" fluid>
-        <div className="header-content">
+      <Container className="pt-5 mb-5 header-container" fluid>
+        <div className="header-content py-5">
           <h1 className="main-header-2">Welcome to Rhymebet</h1>
-          <em style={{ fontSize: "1.3rem" }}>
+          <em
+            className="text-center"
+            style={{
+              fontSize: "1.3rem",
+              display: "block",
+              marginRight: "auto",
+              marginLeft: "auto",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
+            }}
+          >
             Home of premium and free football tips and predictions
           </em>
           {!user ? (
@@ -61,7 +71,7 @@ const MyHeader = () => {
             </>
           )}
         </div>
-        <div className="fancy-header header-content margin-top">
+        <div className="fancy-header header-content margin-top py-5">
           <ShortFreeGames />
         </div>
       </Container>

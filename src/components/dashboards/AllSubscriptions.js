@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import Loader from "../Loader";
@@ -32,9 +32,17 @@ const AllSubscriptions = () => {
     // eslint-disable-next-line
   }, [dispatch, success]);
 
+  const focusDiv = useRef(null);
+
+  useEffect(() => {
+    focusDiv.current.focus();
+  }, []);
+
   return (
     <section>
-      <h3 className="other-header">All Subscriptions</h3>
+      <h3 className="other-header" ref={focusDiv} tabIndex="-1">
+        All Subscriptions
+      </h3>
       {error && <Message variant="danger">{error}</Message>}
       {loading ? (
         <Loader />

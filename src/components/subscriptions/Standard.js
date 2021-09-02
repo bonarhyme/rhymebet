@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { bank2 } from "../../data/variables";
@@ -34,19 +34,28 @@ const Standard = () => {
       setActive(false);
     }
   }, [success, serverReply]);
+
+  const focusDiv = useRef(null);
+
+  useEffect(() => {
+    focusDiv.current.focus();
+  }, []);
+
   return (
     <main>
       <ActiveNotice />
       <Notice />
       <section>
-        <h2 className="main-header">Standard Plan</h2>
+        <h2 className="main-header" ref={focusDiv} tabIndex="-1">
+          Standard Plan
+        </h2>
         <img
           src={bank2}
           alt="standard-plan"
           className="responsive-image mx-auto d-block"
         />
         <article className="subs-container">
-          <p>{plans.standard.description}</p>
+          <p className="discover-paragraph">{plans.standard.description}</p>
           <p className="medium-font">
             <b>Duration:</b> {plans.standard.duration} Days
           </p>
