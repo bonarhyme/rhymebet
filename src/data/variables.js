@@ -24,6 +24,49 @@ export { bank1, bank2, bank3, bank4, bank5 };
 export const gameVariables = {
   league: [
     {
+      long: "World Cup",
+      short: "WC",
+      country: "NIL",
+      countryFull: "NIL",
+    },
+    {
+      long: "World Cup Qualifiers",
+      short: "WCQ",
+      country: "NIL",
+      countryFull: "NIL",
+    },
+    {
+      long: "African Cup of Nations Qualifiers",
+      short: "ACNQ",
+      country: "NIL",
+      countryFull: "NIL",
+    },
+    {
+      long: "African cup Of Nations",
+      short: "ACN",
+      country: "NIL",
+      countryFull: "NIL",
+    },
+    {
+      long: "Champions League",
+      short: "CL",
+      country: "NIL",
+      countryFull: "NIL",
+    },
+    {
+      long: "Europa League",
+      short: "EL",
+      country: "NIL",
+      countryFull: "NIL",
+    },
+    {
+      long: "Club World Cup",
+      short: "CWC",
+      country: "NIL",
+      countryFull: "NIL",
+    },
+
+    {
       long: "Premier League",
       short: "EPL",
       country: "ENG",
@@ -163,6 +206,1072 @@ export const gameVariables = {
     // },
   ],
   clubs: [
+    {
+      long: "Afghanistan",
+      short: "AFG",
+      country: "Country",
+    },
+    {
+      long: "Albania",
+      short: "ALB",
+      country: "Country",
+    },
+    {
+      long: "Algeria",
+      short: "ALG",
+      country: "Country",
+    },
+    {
+      long: "American Samoa",
+      short: "AME.S",
+      country: "Country",
+    },
+    {
+      long: "Angola",
+      short: "ANG",
+      country: "Country",
+    },
+    {
+      long: "Anguilla",
+      short: "ANG",
+      country: "Country",
+    },
+    {
+      long: "Antigua and Barbuda",
+      short: "ANT",
+      country: "Country",
+    },
+    {
+      long: "Aruba",
+      short: "ARU",
+      country: "Country",
+    },
+    {
+      long: "Bahamas",
+      short: "BAH",
+      country: "Country",
+    },
+    {
+      long: "Bahrain",
+      short: "BAH",
+      country: "Country",
+    },
+    {
+      long: "Bangladesh",
+      short: "BAN",
+      country: "Country",
+    },
+    {
+      long: "Barbados",
+      short: "BAR",
+      country: "Country",
+    },
+    {
+      long: "Belize",
+      short: "BEL",
+      country: "Country",
+    },
+    {
+      long: "Benin",
+      short: "BEN",
+      country: "Country",
+    },
+    {
+      long: "Bermuda",
+      short: "BER",
+      country: "Country",
+    },
+    {
+      long: "Bhutan",
+      short: "BHU",
+      country: "Country",
+    },
+    {
+      long: "Botswana",
+      short: "BOT",
+      country: "Country",
+    },
+    {
+      long: "British Virgin Islands",
+      short: "BVI",
+      country: "Country",
+    },
+    {
+      long: "Brunei Darussalam",
+      short: "BRU.D",
+      country: "Country",
+    },
+    {
+      long: "Burkina Faso",
+      short: "BUR.F",
+      country: "Country",
+    },
+    {
+      long: "Burundi",
+      short: "BUR",
+      country: "Country",
+    },
+    {
+      long: "Cabo Verde",
+      short: "CAB",
+      country: "Country",
+    },
+    {
+      long: "Cambodia",
+      short: "CAM",
+      country: "Country",
+    },
+    {
+      long: "Cameroon",
+      short: "CAM",
+      country: "Country",
+    },
+    {
+      long: "Cayman Islands",
+      short: "CAY",
+      country: "Country",
+    },
+    {
+      long: "Central African Republic",
+      short: "CAR",
+      country: "Country",
+    },
+    {
+      long: "Chad",
+      short: "CHA",
+      country: "Country",
+    },
+    {
+      long: "China PR",
+      short: "CHI.P",
+      country: "Country",
+    },
+    {
+      long: "Comoros",
+      short: "COM",
+      country: "Country",
+    },
+    {
+      long: "Congo DR",
+      short: "Con",
+      country: "Country",
+    },
+    {
+      long: "Cook Islands",
+      short: "Coo",
+      country: "Country",
+    },
+    {
+      long: "Cuba",
+      short: "CUB",
+      country: "Country",
+    },
+    {
+      long: "Curaçao",
+      short: "CUR",
+      country: "Country",
+    },
+    {
+      long: "Côte d'Ivoire",
+      short: "CÔT",
+      country: "Country",
+    },
+    {
+      long: "Denmark",
+      short: "DEN",
+      country: "Country",
+    },
+    {
+      long: "Djibouti",
+      short: "DJI",
+      country: "Country",
+    },
+    {
+      long: "Dominica",
+      short: "DOM",
+      country: "Country",
+    },
+    {
+      long: "Dominican Republic",
+      short: "DOM",
+      country: "Country",
+    },
+    {
+      long: "Egypt",
+      short: "EGY",
+      country: "Country",
+    },
+    {
+      long: "Equatorial Guinea",
+      short: "E.GUI",
+      country: "Country",
+    },
+    {
+      long: "Eritrea",
+      short: "ERI",
+      country: "Country",
+    },
+    {
+      long: "Eswatini",
+      short: "ESW",
+      country: "Country",
+    },
+    {
+      long: "Ethiopia",
+      short: "ETH",
+      country: "Country",
+    },
+    {
+      long: "Fiji",
+      short: "FIJ",
+      country: "Country",
+    },
+    {
+      long: "Gabon",
+      short: "GAB",
+      country: "Country",
+    },
+    {
+      long: "Gambia",
+      short: "GAM",
+      country: "Country",
+    },
+    {
+      long: "Grenada",
+      short: "GRE",
+      country: "Country",
+    },
+    {
+      long: "Guam",
+      short: "GUA",
+      country: "Country",
+    },
+    {
+      long: "Guatemala",
+      short: "GUA",
+      country: "Country",
+    },
+    {
+      long: "Guinea",
+      short: "GUI",
+      country: "Country",
+    },
+    {
+      long: "Guinea-Bissau",
+      short: "GUI.B",
+      country: "Country",
+    },
+    {
+      long: "Guyana",
+      short: "GUY",
+      country: "Country",
+    },
+    {
+      long: "Haiti",
+      short: "HAI",
+      country: "Country",
+    },
+    {
+      long: "Hong Kong",
+      short: "H.KON",
+      country: "Country",
+    },
+    {
+      long: "IR Iran",
+      short: "IRA",
+      country: "Country",
+    },
+    {
+      long: "India",
+      short: "IND",
+      country: "Country",
+    },
+    {
+      long: "Indonesia",
+      short: "IND",
+      country: "Country",
+    },
+    {
+      long: "Iraq",
+      short: "IRA",
+      country: "Country",
+    },
+    {
+      long: "Jordan",
+      short: "JOR",
+      country: "Country",
+    },
+    {
+      long: "Kenya",
+      short: "KEN",
+      country: "Country",
+    },
+    {
+      long: "Korea DPR",
+      short: "KOR",
+      country: "Country",
+    },
+    {
+      long: "Korea Republic",
+      short: "KOR",
+      country: "Country",
+    },
+    {
+      long: "Kuwait",
+      short: "KUW",
+      country: "Country",
+    },
+    {
+      long: "Kyrgyz RepubliC",
+      short: "KYR",
+      country: "Country",
+    },
+    {
+      long: "Lao",
+      short: "LAO",
+      country: "Country",
+    },
+    {
+      long: "Lebanon",
+      short: "LEB",
+      country: "Country",
+    },
+    {
+      long: "Lesotho",
+      short: "LES",
+      country: "Country",
+    },
+    {
+      long: "Liberia",
+      short: "LIB",
+      country: "Country",
+    },
+    {
+      long: "Libya",
+      short: "LIB",
+      country: "Country",
+    },
+    {
+      long: "Macau",
+      short: "MAC",
+      country: "Country",
+    },
+    {
+      long: "Madagascar",
+      short: "MAD",
+      country: "Country",
+    },
+    {
+      long: "Malawi",
+      short: "MAL",
+      country: "Country",
+    },
+    {
+      long: "Malaysia",
+      short: "MAL",
+      country: "Country",
+    },
+    {
+      long: "Maldives",
+      short: "MAL",
+      country: "Country",
+    },
+    {
+      long: "Mali",
+      short: "MAL",
+      country: "Country",
+    },
+    {
+      long: "Mauritania",
+      short: "MAU",
+      country: "Country",
+    },
+    {
+      long: "Mauritius",
+      short: "MAU",
+      country: "Country",
+    },
+    {
+      long: "Mongolia",
+      short: "MON",
+      country: "Country",
+    },
+    {
+      long: "Montserrat",
+      short: "MON",
+      country: "Country",
+    },
+    {
+      long: "Morocco",
+      short: "MOR",
+      country: "Country",
+    },
+    {
+      long: "Mozambique",
+      short: "MOZ",
+      country: "Country",
+    },
+    {
+      long: "Myanmar",
+      short: "MYA",
+      country: "Country",
+    },
+    {
+      long: "Namibia",
+      short: "NAM",
+      country: "Country",
+    },
+    {
+      long: "Nepal",
+      short: "NEP",
+      country: "Country",
+    },
+    {
+      long: "New Caledonia",
+      short: "N.CAL",
+      country: "Country",
+    },
+    {
+      long: "New Zealand",
+      short: "N.ZEA",
+      country: "Country",
+    },
+    {
+      long: "Nicaragua",
+      short: "NIC",
+      country: "Country",
+    },
+    {
+      long: "Niger",
+      short: "NIG",
+      country: "Country",
+    },
+    {
+      long: "Nigeria",
+      short: "NIG",
+      country: "Country",
+    },
+    {
+      long: "Pakistan",
+      short: "PAK",
+      country: "Country",
+    },
+    {
+      long: "Palestine",
+      short: "PAL",
+      country: "Country",
+    },
+    {
+      long: "Philippines",
+      short: "PHI",
+      country: "Country",
+    },
+    {
+      long: "Puerto Rico",
+      short: "P.RIC",
+      country: "Country",
+    },
+    {
+      long: "Qatar",
+      short: "QAT",
+      country: "Country",
+    },
+    {
+      long: "Rwanda",
+      short: "RWA",
+      country: "Country",
+    },
+    {
+      long: "Samoa",
+      short: "SAM",
+      country: "Country",
+    },
+    {
+      long: "Senegal",
+      short: "SEN",
+      country: "Country",
+    },
+    {
+      long: "Seychelles",
+      short: "SEY",
+      country: "Country",
+    },
+    {
+      long: "Sierra Leone",
+      short: "S.LEO",
+      country: "Country",
+    },
+    {
+      long: "Singapore",
+      short: "SIN",
+      country: "Country",
+    },
+    {
+      long: "Somalia",
+      short: "SOM",
+      country: "Country",
+    },
+    {
+      long: "South Africa",
+      short: "S.AFR",
+      country: "Country",
+    },
+    {
+      long: "South Sudan",
+      short: "S.SUD",
+      country: "Country",
+    },
+    {
+      long: "Sri Lanka",
+      short: "S.LAN",
+      country: "Country",
+    },
+    {
+      long: "St. Kitts and Nevis",
+      short: "SKN",
+      country: "Country",
+    },
+    {
+      long: "St. Vincent / Grenadines",
+      short: "SVG",
+      country: "Country",
+    },
+    {
+      long: "Sudan",
+      short: "SUD",
+      country: "Country",
+    },
+    {
+      long: "Suriname",
+      short: "SUR",
+      country: "Country",
+    },
+    {
+      long: "Syria",
+      short: "SYR",
+      country: "Country",
+    },
+    {
+      long: "São Tomé and Príncipe",
+      short: "STP",
+      country: "Country",
+    },
+    {
+      long: "Tajikistan",
+      short: "TAJ",
+      country: "Country",
+    },
+    {
+      long: "Tanzania",
+      short: "TAN",
+      country: "Country",
+    },
+    {
+      long: "Thailand",
+      short: "THA",
+      country: "Country",
+    },
+    {
+      long: "Timor-Leste",
+      short: "TIM",
+      country: "Country",
+    },
+    {
+      long: "Togo",
+      short: "TOG",
+      country: "Country",
+    },
+    {
+      long: "Tonga",
+      short: "TON",
+      country: "Country",
+    },
+    {
+      long: "Trinidad and Tobago",
+      short: "TAT",
+      country: "Country",
+    },
+    {
+      long: "Tunisia",
+      short: "TUN",
+      country: "Country",
+    },
+    {
+      long: "Turkmenistan",
+      short: "TUR",
+      country: "Country",
+    },
+    {
+      long: "Turks and Caicos Islands",
+      short: "TCI",
+      country: "Country",
+    },
+    {
+      long: "US Virgin Islands",
+      short: "USVI",
+      country: "Country",
+    },
+    {
+      long: "United Arab Emirates",
+      short: "UAE",
+      country: "Country",
+    },
+    {
+      long: "Uzbekistan",
+      short: "UZB",
+      country: "Country",
+    },
+    {
+      long: "Vanuatu",
+      short: "VAN",
+      country: "Country",
+    },
+    {
+      long: "Yemen",
+      short: "YEM",
+      country: "Country",
+    },
+    {
+      long: "Zambia",
+      short: "ZAM",
+      country: "Country",
+    },
+    {
+      long: "Zimbabwe",
+      short: "ZIM",
+      country: "Country",
+    },
+
+    {
+      long: "Portugal",
+      short: "POR",
+      country: "Country",
+    },
+    {
+      long: "Serbia",
+      short: "SER",
+      country: "Country",
+    },
+    {
+      long: "Luxembourg",
+      short: "LUX",
+      country: "Country",
+    },
+    {
+      long: "Republic of Ireland",
+      short: "IRE",
+      country: "Country",
+    },
+    {
+      long: "Azerbaijan",
+      short: "AZE",
+      country: "Country",
+    },
+    {
+      long: "Spain",
+      short: "SPA",
+      country: "Country",
+    },
+    {
+      long: "Sweden",
+      short: "SWE",
+      country: "Country",
+    },
+    {
+      long: "Kosovo",
+      short: "KOS",
+      country: "Country",
+    },
+    {
+      long: "Greece",
+      short: "GRE",
+      country: "Country",
+    },
+    {
+      long: "Georgia",
+      short: "GEO",
+      country: "Country",
+    },
+    {
+      long: "Italy",
+      short: "ITA",
+      country: "Country",
+    },
+    {
+      long: "Switzerland",
+      short: "SWI",
+      country: "Country",
+    },
+    {
+      long: "Bulgaria",
+      short: "BUL",
+      country: "Country",
+    },
+    {
+      long: "Northern Ireland",
+      short: "N.IRE",
+      country: "Country",
+    },
+    {
+      long: "Lithuania",
+      short: "LIT",
+      country: "Country",
+    },
+    {
+      long: "France",
+      short: "FRA",
+      country: "Country",
+    },
+    {
+      long: "Finland",
+      short: "FIN",
+      country: "Country",
+    },
+    {
+      long: "Ukraine",
+      short: "UKR",
+      country: "Country",
+    },
+    {
+      long: "Bosnia and Herzegovina ",
+      short: "BAH",
+      country: "Country",
+    },
+    {
+      long: "Kazakhstan",
+      short: "KAZ",
+      country: "Country",
+    },
+    {
+      long: "Belgium",
+      short: "BEL",
+      country: "Country",
+    },
+    {
+      long: "Czech Republic",
+      short: "CZE",
+      country: "Country",
+    },
+    {
+      long: "Wales",
+      short: "WAL",
+      country: "Country",
+    },
+    {
+      long: "Belarus",
+      short: "BEL",
+      country: "Country",
+    },
+    {
+      long: "Estonia",
+      short: "EST",
+      country: "Country",
+    },
+    {
+      long: "Denmark ",
+      short: "DEN",
+      country: "Country",
+    },
+    {
+      long: "Israel",
+      short: "ISR",
+      country: "Country",
+    },
+    {
+      long: "Scotland",
+      short: "SCO",
+      country: "Country",
+    },
+    {
+      long: "Austria",
+      short: "AUS",
+      country: "Country",
+    },
+    {
+      long: "Faroe Islands",
+      short: "FAR",
+      country: "Country",
+    },
+    {
+      long: "Moldova",
+      short: "MOL",
+      country: "Country",
+    },
+    {
+      long: "Turkey",
+      short: "TUR",
+      country: "Country",
+    },
+    {
+      long: "Netherlands",
+      short: "NET",
+      country: "Country",
+    },
+    {
+      long: "Norway",
+      short: "NOR",
+      country: "Country",
+    },
+    {
+      long: "Montenegro",
+      short: "MON",
+      country: "Country",
+    },
+    {
+      long: "Latvia",
+      short: "LAT",
+      country: "Country",
+    },
+    {
+      long: "Gibraltar",
+      short: "GIB",
+      country: "Country",
+    },
+    {
+      long: "Russia",
+      short: "RUS",
+      country: "Country",
+    },
+    {
+      long: "Croatia",
+      short: "CRO",
+      country: "Country",
+    },
+    {
+      long: "Slovenia",
+      short: "SLO",
+      country: "Country",
+    },
+    {
+      long: "Slovakia",
+      short: "SLO",
+      country: "Country",
+    },
+    {
+      long: "Malta",
+      short: "MAL",
+      country: "Country",
+    },
+    {
+      long: "Cyprus",
+      short: "CYP",
+      country: "Country",
+    },
+    {
+      long: "England",
+      short: "ENG",
+      country: "Country",
+    },
+    {
+      long: "Poland",
+      short: "POL",
+      country: "Country",
+    },
+    {
+      long: "Albania",
+      short: "ALB",
+      country: "Country",
+    },
+    {
+      long: "Hungary",
+      short: "HUN",
+      country: "Country",
+    },
+    {
+      long: "Andorra",
+      short: "AND",
+      country: "Country",
+    },
+    {
+      long: "San Marino",
+      short: "MAR",
+      country: "Country",
+    },
+    {
+      long: "Germany",
+      short: "GER",
+      country: "Country",
+    },
+    {
+      long: "Armenia",
+      short: "ARM",
+      country: "Country",
+    },
+    {
+      long: "Romania",
+      short: "ROM",
+      country: "Country",
+    },
+    {
+      long: "North Macedonia",
+      short: "N.MAR",
+      country: "Country",
+    },
+    {
+      long: "Iceland",
+      short: "ICE",
+      country: "Country",
+    },
+    {
+      long: "Liechtenstein",
+      short: "LIE",
+      country: "Country",
+    },
+    {
+      long: "Mexico",
+      short: "MEX",
+      country: "Country",
+    },
+    {
+      long: "Panama",
+      short: "PAN",
+      country: "Country",
+    },
+    {
+      long: "Canada",
+      short: "CAN",
+      country: "Country",
+    },
+    {
+      long: "Honduras",
+      short: "HON",
+      country: "Country",
+    },
+    {
+      long: "United States of America",
+      short: "USA",
+      country: "Country",
+    },
+    {
+      long: "El Salvador",
+      short: "SAL",
+      country: "Country",
+    },
+    {
+      long: "Costa Rica",
+      short: "COS",
+      country: "Country",
+    },
+    {
+      long: "Jamaica",
+      short: "JAM",
+      country: "Country",
+    },
+    {
+      long: "Egypt",
+      short: "EGY",
+      country: "Country",
+    },
+    {
+      long: "Uganda",
+      short: "UGA",
+      country: "Country",
+    },
+    {
+      long: "Ghana",
+      short: "GHA",
+      country: "Country",
+    },
+    {
+      long: "Congo",
+      short: "CON",
+      country: "Country",
+    },
+    {
+      long: "Solomon Islands",
+      short: "SOL",
+      country: "Country",
+    },
+    {
+      long: "Tahiti",
+      short: "TAH",
+      country: "Country",
+    },
+    {
+      long: "Papua New Guinea",
+      short: "PAP",
+      country: "Country",
+    },
+    {
+      long: "Brazil",
+      short: "BRA",
+      country: "Country",
+    },
+    {
+      long: "Argentina",
+      short: "ARG",
+      country: "Country",
+    },
+    {
+      long: "Ecuador",
+      short: "ECU",
+      country: "Country",
+    },
+    {
+      long: "uruguay",
+      short: "URU",
+      country: "Country",
+    },
+    {
+      long: "Colombia",
+      short: "COL",
+      country: "Country",
+    },
+    {
+      long: "Paraguay",
+      short: "PAR",
+      country: "Country",
+    },
+    {
+      long: "Peru",
+      short: "PER",
+      country: "Country",
+    },
+    {
+      long: "Chile",
+      short: "CHI",
+      country: "Country",
+    },
+    {
+      long: "Bolivia",
+      short: "BOL",
+      country: "Country",
+    },
+    {
+      long: "Venezuela",
+      short: "VEN",
+      country: "Country",
+    },
+    {
+      long: "Australia",
+      short: "AUS",
+      country: "Country",
+    },
+    {
+      long: "Saudi Arabia",
+      short: "SAU",
+      country: "Country",
+    },
+    {
+      long: "Oman",
+      short: "OMA",
+      country: "Country",
+    },
+    {
+      long: "Japan",
+      short: "JAP",
+      country: "Country",
+    },
+    {
+      long: "Vietnam",
+      short: "VIE",
+      country: "Country",
+    },
+    {
+      long: "China",
+      short: "CHI",
+      country: "Country",
+    },
     {
       long: "Accrington Stanley",
       short: "ACCS",

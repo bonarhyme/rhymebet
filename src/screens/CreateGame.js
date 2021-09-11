@@ -129,7 +129,7 @@ const CreateGame = () => {
                 <option value="">Choose a league</option>
                 {gameVariables.league.map((x, i) => (
                   <option value={x.short} key={i} title={x.long}>
-                    {x.short}
+                    {x.long}
                   </option>
                 ))}
               </Form.Control>
