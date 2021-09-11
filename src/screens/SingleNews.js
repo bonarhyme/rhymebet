@@ -90,7 +90,7 @@ const SingleNews = ({ location }) => {
             <meta name="description" content={`rhymebet - ${title}`} />
           </Helmet>
           {error && <Message variant="danger">{error}</Message>}
-          <h1 className="main-header" ref={focusDiv} tabIndex="-1">
+          <h1 className="main-header-2" ref={focusDiv} tabIndex="-1">
             {title}
           </h1>
           <p className="poster-details">
@@ -116,7 +116,7 @@ const SingleNews = ({ location }) => {
               })}
           </div>
           <div className="news-paragraph">
-            <p>{fullStory ? fullStory : ""}</p>
+            <pre>{fullStory ? fullStory : ""}</pre>
             <div className="comment-box">
               {commentLoading ? (
                 <LoaderTwo />
