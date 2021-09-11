@@ -116,7 +116,7 @@ const SingleNews = ({ location }) => {
               })}
           </div>
           <div className="news-paragraph">
-            <pre>{fullStory ? fullStory : ""}</pre>
+            <p>{fullStory ? fullStory : ""}</p>
             <div className="comment-box">
               {commentLoading ? (
                 <LoaderTwo />
