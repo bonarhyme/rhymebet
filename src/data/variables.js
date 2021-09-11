@@ -3525,6 +3525,10 @@ export const gameVariables = {
   ],
   win: [
     {
+      long: "NIL",
+      short: "NIL",
+    },
+    {
       long: "Home Win",
       short: "1",
     },
@@ -3546,6 +3550,10 @@ export const gameVariables = {
     },
   ],
   ov: [
+    {
+      long: "NIL",
+      short: "NIL",
+    },
     {
       long: "Over 0.5",
       short: "OV 0.5",
@@ -3602,6 +3610,10 @@ export const gameVariables = {
   ],
   gg: [
     {
+      long: "NIL",
+      short: "NIL",
+    },
+    {
       long: "Both Team To Score",
       short: "GG",
     },
@@ -3611,6 +3623,10 @@ export const gameVariables = {
     },
   ],
   corner: [
+    {
+      long: "NIL",
+      short: "NIL",
+    },
     {
       long: "Over 0.5",
       short: "OV 0.5",
