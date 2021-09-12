@@ -138,7 +138,7 @@ const FreeGamesList = () => {
                       ov,
                       wasWon,
                       win,
-                      clubs,
+                      // clubs,
                       clubsFull,
                       _id,
                     } = singleGame;
@@ -148,7 +148,7 @@ const FreeGamesList = () => {
                         <td>{index + 1}</td>
                         <td title={countryFull}>{country}</td>
                         <td title={leagueFull}>{league}</td>
-                        <td title={clubsFull}>{clubs}</td>
+                        <td title={clubsFull}>{clubsFull}</td>
                         <td title="Match result">{win}</td>
                         <td title="Number of goals">{ov}</td>
                         <td title="Both teams to score">{gg}</td>

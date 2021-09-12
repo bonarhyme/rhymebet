@@ -133,7 +133,7 @@ const PremiumGamesList = ({ see = true }) => {
                         ov,
                         wasWon,
                         win,
-                        clubs,
+                        // clubs,
                         clubsFull,
                         _id,
                       } = singleGame;
@@ -143,7 +143,7 @@ const PremiumGamesList = ({ see = true }) => {
                           <td>{index + 1}</td>
                           <td title={countryFull}>{country}</td>
                           <td title={leagueFull}>{league}</td>
-                          <td title={clubsFull}>{clubs}</td>
+                          <td title={clubsFull}>{clubsFull}</td>
                           <td title="Match result">{win ? win : "-"}</td>
                           <td title="Number of goals">{ov ? ov : "-"}</td>
                           <td title="Both teams to score">{gg ? gg : "-"}</td>
