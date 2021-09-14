@@ -47,7 +47,7 @@ const ListGames = () => {
       ) : (
         <Container fluid>
           <div className="overflowing-table">
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
               <thead>
                 <tr>
                   <th>#</th>
