@@ -49,13 +49,13 @@ export const gameVariables = {
     },
     {
       long: "Champions League",
-      short: "CL",
+      short: "UCL",
       country: "NIL",
       countryFull: "NIL",
     },
     {
       long: "Europa League",
-      short: "EL",
+      short: "UEL",
       country: "NIL",
       countryFull: "NIL",
     },
@@ -198,12 +198,12 @@ export const gameVariables = {
       country: "BEL",
       countryFull: "Belgium",
     },
-    // {
-    //   long: "Belgian First Division B",
-    //   short: "BFD-B",
-    //   country: "BEL",
-    //   countryFull: "Belgium",
-    // },
+    {
+      long: "Ukraine - Premier League",
+      short: "UPL",
+      country: "UKR",
+      countryFull: "Ukraine",
+    },
   ],
   clubs: [
     {
@@ -2508,8 +2508,8 @@ export const gameVariables = {
       country: "Italy",
     },
     {
-      long: "Arezzo",
       short: "AZZ",
+      long: "Arezzo",
       country: "Italy",
     },
     {
@@ -3521,6 +3521,111 @@ export const gameVariables = {
       long: "Zulte Waregem",
       short: "ZULW",
       country: "Belgium",
+    },
+    {
+      long: "Dynamo Kiev",
+      short: "DKV",
+      country: "Ukraine",
+    },
+    {
+      long: "Shakhtar Donetsk",
+      short: "SHAD",
+      country: "Ukraine",
+    },
+    {
+      long: "Zorya Luhansk",
+      short: "ZLK",
+      country: "Ukraine",
+    },
+    {
+      long: "Kolos Kovalivka",
+      short: "KKA",
+      country: "Ukraine",
+    },
+    {
+      long: "Vorskla Poltava",
+      short: "VAP",
+      country: "Ukraine",
+    },
+    {
+      long: "Desna",
+      short: "DES",
+      country: "Ukraine",
+    },
+    {
+      long: "SC Dnipro-1",
+      short: "DNI-1",
+      country: "Ukraine",
+    },
+    {
+      long: "FC Lviv",
+      short: "LVIV",
+      country: "Ukraine",
+    },
+    {
+      long: "Oleksandria",
+      short: "OLE",
+      country: "Ukraine",
+    },
+    {
+      long: "Rukh Lviv",
+      short: "RUKH",
+      country: "Ukraine",
+    },
+    {
+      long: "Mariupol",
+      short: "MAR",
+      country: "Ukraine",
+    },
+    {
+      long: "Inhulets Petrove",
+      short: "INH",
+      country: "Ukraine",
+    },
+    {
+      long: "Olimpik Donetsk",
+      short: "OKD",
+      country: "Ukraine",
+    },
+    {
+      long: "FC Minaj",
+      short: "FCM",
+      country: "Ukraine",
+    },
+    {
+      long: "FC Olexandriya",
+      short: "OLE",
+      country: "Ukraine",
+    },
+    {
+      long: "Veres Rivne",
+      short: "VER",
+      country: "Ukraine",
+    },
+    {
+      long: "Metalist 1925",
+      short: "MET",
+      country: "Ukraine",
+    },
+    {
+      long: "Chornomorets Odessa",
+      short: "CHR",
+      country: "Ukraine",
+    },
+    {
+      long: "",
+      short: "",
+      country: "Ukraine",
+    },
+    {
+      long: "",
+      short: "",
+      country: "Ukraine",
+    },
+    {
+      long: "",
+      short: "",
+      country: "Ukraine",
     },
   ],
   win: [
