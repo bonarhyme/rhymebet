@@ -26,44 +26,44 @@ export const gameVariables = {
     {
       long: "World Cup",
       short: "WC",
-      country: "NIL",
-      countryFull: "NIL",
+      country: "-",
+      countryFull: "-",
     },
     {
       long: "World Cup Qualifiers",
       short: "WCQ",
-      country: "NIL",
-      countryFull: "NIL",
+      country: "-",
+      countryFull: "-",
     },
     {
       long: "African Cup of Nations Qualifiers",
       short: "ACNQ",
-      country: "NIL",
-      countryFull: "NIL",
+      country: "-",
+      countryFull: "-",
     },
     {
       long: "African cup Of Nations",
       short: "ACN",
-      country: "NIL",
-      countryFull: "NIL",
+      country: "-",
+      countryFull: "-",
     },
     {
       long: "Champions League",
       short: "UCL",
-      country: "NIL",
-      countryFull: "NIL",
+      country: "-",
+      countryFull: "-",
     },
     {
       long: "Europa League",
       short: "UEL",
-      country: "NIL",
-      countryFull: "NIL",
+      country: "-",
+      countryFull: "-",
     },
     {
       long: "Club World Cup",
       short: "CWC",
-      country: "NIL",
-      countryFull: "NIL",
+      country: "-",
+      countryFull: "-",
     },
 
     {
@@ -87,6 +87,18 @@ export const gameVariables = {
     {
       long: "EFL League Two",
       short: "EFL-L2",
+      country: "ENG",
+      countryFull: "England",
+    },
+    {
+      long: "EFL Cup",
+      short: "EFL-CUP",
+      country: "ENG",
+      countryFull: "England",
+    },
+    {
+      long: "FA Cup",
+      short: "FA-CUP",
       country: "ENG",
       countryFull: "England",
     },
@@ -203,6 +215,84 @@ export const gameVariables = {
       short: "UPL",
       country: "UKR",
       countryFull: "Ukraine",
+    },
+    {
+      long: "Eredivisie",
+      short: "ERE",
+      country: "NET",
+      countryFull: "Netherlands",
+    },
+    {
+      long: "Eerste Divisie",
+      short: "EED",
+      country: "NET",
+      countryFull: "Netherlands",
+    },
+    {
+      long: "Premiership",
+      short: "PRE",
+      country: "SC0T",
+      countryFull: "Scotland",
+    },
+    {
+      long: "Scottish League Cup",
+      short: "LCP",
+      country: "SC0T",
+      countryFull: "Scotland",
+    },
+    {
+      long: "Scottish League Cup - Playoff",
+      short: "LCPP",
+      country: "SC0T",
+      countryFull: "Scotland",
+    },
+    {
+      long: "Scottish Championship",
+      short: "SCP",
+      country: "SC0T",
+      countryFull: "Scotland",
+    },
+    {
+      long: "Scottish League 1",
+      short: "SL1",
+      country: "SC0T",
+      countryFull: "Scotland",
+    },
+    {
+      long: "Brazillian Seria A",
+      short: "BSA",
+      country: "BRA",
+      countryFull: "Brazil",
+    },
+    {
+      long: "Brazillian Seria B",
+      short: "BSB",
+      country: "BRA",
+      countryFull: "Brazil",
+    },
+    {
+      long: "Sweden Allsvenskan",
+      short: "SAN",
+      country: "SWE",
+      countryFull: "Sweden",
+    },
+    {
+      long: "Sweden Superettan",
+      short: "SSN",
+      country: "SWE",
+      countryFull: "Sweden",
+    },
+    {
+      long: "sWISH Super League",
+      short: "SLE",
+      country: "SWI",
+      countryFull: "Switzerland",
+    },
+    {
+      long: "SWISH Challenge League",
+      short: "SCL",
+      country: "SWI",
+      countryFull: "Switzerland",
     },
   ],
   clubs: [
@@ -3613,25 +3703,870 @@ export const gameVariables = {
       country: "Ukraine",
     },
     {
-      long: "",
-      short: "",
-      country: "Ukraine",
+      long: "Ajax",
+      short: "AJA",
+      country: "Netherlands",
     },
     {
-      long: "",
-      short: "",
-      country: "Ukraine",
+      long: "AZ Alkmaar",
+      short: "AZA",
+      country: "Netherlands",
     },
     {
-      long: "",
-      short: "",
-      country: "Ukraine",
+      long: "Cambuur",
+      short: "CAM",
+      country: "Netherlands",
+    },
+    {
+      long: "Feyenoord",
+      short: "FEY",
+      country: "Netherlands",
+    },
+    {
+      long: "Fortuna Sittard",
+      short: "FOR",
+      country: "Netherlands",
+    },
+    {
+      long: "Go Ahead Eagles",
+      short: "GAE",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Groningen",
+      short: "FCG",
+      country: "Netherlands",
+    },
+    {
+      long: "SC Heerenveen",
+      short: "SCH",
+      country: "Netherlands",
+    },
+    {
+      long: "Heracles Almelo",
+      short: "HAO",
+      country: "Netherlands",
+    },
+    {
+      long: "NEC Nijmegen",
+      short: "NEC",
+      country: "Netherlands",
+    },
+    {
+      long: "PSV Eindhoven",
+      short: "PSV",
+      country: "Netherlands",
+    },
+    {
+      long: "RKC Waalwijk",
+      short: "RKC",
+      country: "Netherlands",
+    },
+    {
+      long: "Sparta Rotterdam",
+      short: "SPP",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Twente",
+      short: "FCT",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Utrecht",
+      short: "FCU",
+      country: "Netherlands",
+    },
+    {
+      long: "Vitesse",
+      short: "VIT",
+      country: "Netherlands",
+    },
+    {
+      long: "Willem II",
+      short: "WII",
+      country: "Netherlands",
+    },
+    {
+      long: "PEC Zwolle",
+      short: "PEC",
+      country: "Netherlands",
+    },
+    {
+      long: "ADO Den Haag",
+      short: "ADO",
+      country: "Netherlands",
+    },
+    {
+      long: "Almere City FC",
+      short: "ALC",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Den Bosch",
+      short: "FDB",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Dordrecht",
+      short: "FCD",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Eindhoven",
+      short: "FCE",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Emmen",
+      short: "FCE",
+      country: "Netherlands",
+    },
+    {
+      long: "Excelsior",
+      short: "EXC",
+      country: "Netherlands",
+    },
+    {
+      long: "De Graafschap",
+      short: "DEG",
+      country: "Netherlands",
+    },
+    {
+      long: "Helmond Sport",
+      short: "HES",
+      country: "Netherlands",
+    },
+    {
+      long: "Jong Ajax",
+      short: "JAX",
+      country: "Netherlands",
+    },
+    {
+      long: "Jong AZ",
+      short: "JAZ",
+      country: "Netherlands",
+    },
+    {
+      long: "Jong PSV",
+      short: "JPS",
+      country: "Netherlands",
+    },
+    {
+      long: "Jong FC Utrecht",
+      short: "JFU",
+      country: "Netherlands",
+    },
+    {
+      long: "MVV Maastricht",
+      short: "MVV",
+      country: "Netherlands",
+    },
+    {
+      long: "NAC Breda",
+      short: "NAC",
+      country: "Netherlands",
+    },
+    {
+      long: "Roda JC Kerkrade",
+      short: "RJK",
+      country: "Netherlands",
+    },
+    {
+      long: "Telstar",
+      short: "TEL",
+      country: "Netherlands",
+    },
+    {
+      long: "TOP Oss",
+      short: "TOP",
+      country: "Netherlands",
+    },
+    {
+      long: "FC Volendam",
+      short: "FCV",
+      country: "Netherlands",
+    },
+    {
+      long: "VVV-Venlo",
+      short: "VVV",
+      country: "Netherlands",
+    },
+    {
+      long: "Rangers",
+      short: "RAN",
+      country: "Scotland",
+    },
+    {
+      long: "Hibernian",
+      short: "HIB",
+      country: "Scotland",
+    },
+    {
+      long: "Hearts",
+      short: "HEA",
+      country: "Scotland",
+    },
+    {
+      long: "Motherwell",
+      short: "MOT",
+      country: "Scotland",
+    },
+    {
+      long: "Dundee United",
+      short: "DUN",
+      country: "Scotland",
+    },
+    {
+      long: "Celtic",
+      short: "CEL",
+      country: "Scotland",
+    },
+    {
+      long: "Aberdeen",
+      short: "ABE",
+      country: "Scotland",
+    },
+    {
+      long: "St. Johnstone",
+      short: "STJ",
+      country: "Scotland",
+    },
+    {
+      long: "Livingston",
+      short: "LIV",
+      country: "Scotland",
+    },
+    {
+      long: "St. Mirren",
+      short: "STM",
+      country: "Scotland",
+    },
+    {
+      long: "Ross County",
+      short: "ROC",
+      country: "Scotland",
+    },
+    {
+      long: "Dundee FC",
+      short: "DFC",
+      country: "Scotland",
+    },
+    {
+      long: "Inverness CT",
+      short: "ICT",
+      country: "Scotland",
+    },
+    {
+      long: "Kilmarnock",
+      short: "KIK",
+      country: "Scotland",
+    },
+    {
+      long: "Arbroath",
+      short: "ARH",
+      country: "Scotland",
+    },
+    {
+      long: "Partick Thistle",
+      short: "PAT",
+      country: "Scotland",
+    },
+    {
+      long: "Raith Rovers",
+      short: "RRS",
+      country: "Scotland",
+    },
+    {
+      long: "Ayr United",
+      short: "AYU",
+      country: "Scotland",
+    },
+    {
+      long: "Queen of South",
+      short: "QSH",
+      country: "Scotland",
+    },
+    {
+      long: "Greenock Morton",
+      short: "GMN",
+      country: "Scotland",
+    },
+    {
+      long: "Hamilton Academical",
+      short: "HAL",
+      country: "Scotland",
+    },
+    {
+      long: "Dunfermline Athletic",
+      short: "DAC",
+      country: "Scotland",
+    },
+    {
+      long: "Queen's Park",
+      short: "QPK",
+      country: "Scotland",
+    },
+    {
+      long: "Dumbarton",
+      short: "DTN",
+      country: "Scotland",
+    },
+    {
+      long: "Cove Rangers",
+      short: "CRS",
+      country: "Scotland",
+    },
+    {
+      long: "Montrose",
+      short: "MTE",
+      country: "Scotland",
+    },
+    {
+      long: "Airdrieonians",
+      short: "AID",
+      country: "Scotland",
+    },
+    {
+      long: "Alloa Athletic",
+      short: "AAC",
+      country: "Scotland",
+    },
+    {
+      long: "Falkirk",
+      short: "FAK",
+      country: "Scotland",
+    },
+    {
+      long: "Clyde",
+      short: "CLY",
+      country: "Scotland",
+    },
+    {
+      long: "Peterhead",
+      short: "PHD",
+      country: "Scotland",
+    },
+    {
+      long: "East Fife",
+      short: "EFE",
+      country: "Scotland",
+    },
+    {
+      long: "Kelty Hearts",
+      short: "KHS",
+      country: "Scotland",
+    },
+    {
+      long: "Annan Athletic",
+      short: "AAC",
+      country: "Scotland",
+    },
+    {
+      long: "Stirling Albion",
+      short: "SAN",
+      country: "Scotland",
+    },
+    {
+      long: "Forfar Athletic",
+      short: "FAC",
+      country: "Scotland",
+    },
+    {
+      long: "Edinburgh City",
+      short: "EHY",
+      country: "Scotland",
+    },
+    {
+      long: "Stranraer",
+      short: "STR",
+      country: "Scotland",
+    },
+    {
+      long: "Albion Rovers",
+      short: "ARS",
+      country: "Scotland",
+    },
+    {
+      long: "Elgin City",
+      short: "ECY",
+      country: "Scotland",
+    },
+    {
+      long: "Cowdenbeath",
+      short: "CBH",
+      country: "Scotland",
+    },
+    {
+      long: "Stenhousemuir",
+      short: "SMR",
+      country: "Scotland",
+    },
+    {
+      long: "Atletico MG",
+      short: "AMG",
+      country: "Brazil",
+    },
+    {
+      long: "Palmeiras",
+      short: "PAS",
+      country: "Brazil",
+    },
+    {
+      long: "Flamengo",
+      short: "FLA",
+      country: "Brazil",
+    },
+    {
+      long: "Fortaleza",
+      short: "FOR",
+      country: "Brazil",
+    },
+    {
+      long: "Bragantino",
+      short: "BRA",
+      country: "Brazil",
+    },
+    {
+      long: "Corinthians",
+      short: "COR",
+      country: "Brazil",
+    },
+    {
+      long: "Internacional",
+      short: "INT",
+      country: "Brazil",
+    },
+    {
+      long: "Fluminense",
+      short: "FLU",
+      country: "Brazil",
+    },
+    {
+      long: "Cuiaba",
+      short: "CUI",
+      country: "Brazil",
+    },
+    {
+      long: "Athletico Paranaense",
+      short: "APE",
+      country: "Brazil",
+    },
+    {
+      long: "Atletico GO",
+      short: "AGO",
+      country: "Brazil",
+    },
+    {
+      long: "Sao Paulo",
+      short: "SPO",
+      country: "Brazil",
+    },
+    {
+      long: "Ceara",
+      short: "CEA",
+      country: "Brazil",
+    },
+    {
+      long: "Santos FC",
+      short: "SFC",
+      country: "Brazil",
+    },
+    {
+      long: "Bahia",
+      short: "BAH",
+      country: "Brazil",
+    },
+    {
+      long: "America MG",
+      short: "AMG",
+      country: "Brazil",
+    },
+    {
+      long: "Juventude",
+      short: "JVE",
+      country: "Brazil",
+    },
+    {
+      long: "Gremio",
+      short: "GRE",
+      country: "Brazil",
+    },
+    {
+      long: "Sport Recife",
+      short: "SRE",
+      country: "Brazil",
+    },
+    {
+      long: "Chapecoense AF",
+      short: "CAF",
+      country: "Brazil",
+    },
+    {
+      long: "Coritiba",
+      short: "cor",
+      country: "Brazil",
+    },
+    {
+      long: "Goias",
+      short: "GOI",
+      country: "Brazil",
+    },
+    {
+      long: "Botafogo RJ",
+      short: "BRJ",
+      country: "Brazil",
+    },
+    {
+      long: "CRB",
+      short: "CRB",
+      country: "Brazil",
+    },
+    {
+      long: "Guarani",
+      short: "GUA",
+      country: "Brazil",
+    },
+    {
+      long: "Avai FC",
+      short: "AFC",
+      country: "Brazil",
+    },
+    {
+      long: "Sampaio Correa",
+      short: "SCA",
+      country: "Brazil",
+    },
+    {
+      long: "Nautico",
+      short: "NAU",
+      country: "Brazil",
+    },
+    {
+      long: "Vasco da Gama",
+      short: "VDG",
+      country: "Brazil",
+    },
+    {
+      long: "Operario Ferroviario",
+      short: "OFO",
+      country: "Brazil",
+    },
+    {
+      long: "Remo",
+      short: "REMO",
+      country: "Brazil",
+    },
+    {
+      long: "CS Alagoano",
+      short: "CSA",
+      country: "Brazil",
+    },
+    {
+      long: "Cruzeiro",
+      short: "CRU",
+      country: "Brazil",
+    },
+    {
+      long: "Ponte Preta",
+      short: "PPA",
+      country: "Brazil",
+    },
+    {
+      long: "Brusque",
+      short: "BRU",
+      country: "Brazil",
+    },
+    {
+      long: "Vila Nova",
+      short: "VNA",
+      country: "Brazil",
+    },
+    {
+      long: "Vitoria",
+      short: "VTA",
+      country: "Brazil",
+    },
+    {
+      long: "Londrina EC",
+      short: "LFC",
+      country: "Brazil",
+    },
+    {
+      long: "Confianca",
+      short: "CON",
+      country: "Brazil",
+    },
+    {
+      long: "Brasil de Pelotas",
+      short: "BDP",
+      country: "Brazil",
+    },
+    {
+      long: "Djurgaarden",
+      short: "DJU",
+      country: "Sweden",
+    },
+    {
+      long: "AIK",
+      short: "AIK",
+      country: "Sweden",
+    },
+    {
+      long: "Malmoe FF",
+      short: "MFF",
+      country: "Sweden",
+    },
+    {
+      long: "Elfsborg",
+      short: "ELF",
+      country: "Sweden",
+    },
+    {
+      long: "IFK Norrkoeping",
+      short: "IFK",
+      country: "Sweden",
+    },
+    {
+      long: "Hammarby",
+      short: "HAM",
+      country: "Sweden",
+    },
+    {
+      long: "Kalmar FF",
+      short: "KAL",
+      country: "Sweden",
+    },
+    {
+      long: "Varbergs BoIS FC",
+      short: "VBF",
+      country: "Sweden",
+    },
+    {
+      long: "Sirius",
+      short: "SIR",
+      country: "Sweden",
+    },
+    {
+      long: "Haecken",
+      short: "HAE",
+      country: "Sweden",
+    },
+    {
+      long: "IFK Gothenburg",
+      short: "IFK",
+      country: "Sweden",
+    },
+    {
+      long: "Halmstads BK",
+      short: "HBK",
+      country: "Sweden",
+    },
+    {
+      long: "Degerfors",
+      short: "DEG",
+      country: "Sweden",
+    },
+    {
+      long: "Mjaellby",
+      short: "MJA",
+      country: "Sweden",
+    },
+    {
+      long: "Orebro",
+      short: "ORE",
+      country: "Sweden",
+    },
+    {
+      long: "Oestersunds FK",
+      short: "OFK",
+      country: "Sweden",
+    },
+    {
+      long: "IFK Vaernamo",
+      short: "IFK",
+      country: "Sweden",
+    },
+    {
+      long: "Helsingborg",
+      short: "HEL",
+      country: "Sweden",
+    },
+    {
+      long: "Trelleborgs FF",
+      short: "TFF",
+      country: "Sweden",
+    },
+    {
+      long: "GIF Sundsvall",
+      short: "GIF",
+      country: "Sweden",
+    },
+    {
+      long: "Norrby",
+      short: "NOR",
+      country: "Sweden",
+    },
+    {
+      long: "Landskrona BoIS",
+      short: "LBS",
+      country: "Sweden",
+    },
+    {
+      long: "Joenkoepings Soedra",
+      short: "JSA",
+      country: "Sweden",
+    },
+    {
+      long: "Oesters IF",
+      short: "OIF",
+      country: "Sweden",
+    },
+    {
+      long: "Orgryte",
+      short: "ORE",
+      country: "Sweden",
+    },
+    {
+      long: "AFC Eskilstuna",
+      short: "AFC",
+      country: "Sweden",
+    },
+    {
+      long: "GAIS",
+      short: "GAIS",
+      country: "Sweden",
+    },
+    {
+      long: "Vaesteraas SK",
+      short: "VSK",
+      country: "Sweden",
+    },
+    {
+      long: "IK Brage",
+      short: "IKB",
+      country: "Sweden",
+    },
+    {
+      long: "Vasalunds IF",
+      short: "VIF",
+      country: "Sweden",
+    },
+    {
+      long: "Akropolis IF",
+      short: "AIF",
+      country: "Sweden",
+    },
+    {
+      long: "Falkenbergs FF",
+      short: "FFF",
+      country: "Sweden",
+    },
+    {
+      long: "Basel",
+      short: "BAS",
+      country: "Switzerland",
+    },
+    {
+      long: "FC Zuerich",
+      short: "FCZ",
+      country: "Switzerland",
+    },
+    {
+      long: "Young Boys",
+      short: "YBS",
+      country: "Switzerland",
+    },
+    {
+      long: "Servette",
+      short: "SER",
+      country: "Switzerland",
+    },
+    {
+      long: "Sion",
+      short: "SION",
+      country: "Switzerland",
+    },
+    {
+      long: "Lugano",
+      short: "LUG",
+      country: "Switzerland",
+    },
+    {
+      long: "Grasshopper",
+      short: "GRA",
+      country: "Switzerland",
+    },
+    {
+      long: "St. Gallen",
+      short: "STG",
+      country: "Switzerland",
+    },
+    {
+      long: "Luzern",
+      short: "LUZ",
+      country: "Switzerland",
+    },
+    {
+      long: "Lausanne",
+      short: "LAU",
+      country: "Switzerland",
+    },
+    {
+      long: "Xamax",
+      short: "XAM",
+      country: "Switzerland",
+    },
+    {
+      long: "Winterthur",
+      short: "WINT",
+      country: "Switzerland",
+    },
+    {
+      long: "FC Vaduz",
+      short: "FCA",
+      country: "Switzerland",
+    },
+    {
+      long: "Aarau",
+      short: "AAU",
+      country: "Switzerland",
+    },
+    {
+      long: "Thun",
+      short: "THN",
+      country: "Switzerland",
+    },
+    {
+      long: "FC Stade Lausanne-Ouchy",
+      short: "FSL",
+      country: "Switzerland",
+    },
+    {
+      long: "Schaffhausen",
+      short: "SCF",
+      country: "Switzerland",
+    },
+    {
+      long: "WIL",
+      short: "WIL",
+      country: "Switzerland",
+    },
+    {
+      long: "Yverdon",
+      short: "YVN",
+      country: "Switzerland",
+    },
+    {
+      long: "Kriens",
+      short: "KRI",
+      country: "Switzerland",
     },
   ],
   win: [
     {
-      long: "NIL",
-      short: "NIL",
+      long: "-",
+      short: "-",
     },
     {
       long: "Home Win",
@@ -3656,8 +4591,8 @@ export const gameVariables = {
   ],
   ov: [
     {
-      long: "NIL",
-      short: "NIL",
+      long: "-",
+      short: "-",
     },
     {
       long: "Over 0.5",
@@ -3715,8 +4650,8 @@ export const gameVariables = {
   ],
   gg: [
     {
-      long: "NIL",
-      short: "NIL",
+      long: "-",
+      short: "-",
     },
     {
       long: "Both Team To Score",
@@ -3729,8 +4664,8 @@ export const gameVariables = {
   ],
   corner: [
     {
-      long: "NIL",
-      short: "NIL",
+      long: "-",
+      short: "-",
     },
     {
       long: "Over 0.5",

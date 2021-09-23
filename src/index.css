@@ -30,6 +30,9 @@
   box-sizing: border-box;
 }
 
+a.anchor {
+  text-decoration: none;
+}
 html {
   overflow-x: hidden;
   width: 100%;

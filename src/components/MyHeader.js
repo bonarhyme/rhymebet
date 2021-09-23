@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import ShortFreeGames from "./games/ShortFreeGames";
+import { HashLink } from "react-router-hash-link";
 // import { getUserProfile } from "../actions/userActions";
 
 const MyHeader = () => {
@@ -47,11 +48,16 @@ const MyHeader = () => {
                   Register
                 </button>
               </LinkContainer>
-              <LinkContainer to="/verify">
+              <HashLink
+                className="anchor"
+                title="Access free games"
+                smooth
+                to={"/#free"}
+              >
                 <button className="mt-1 button-block wide-block bg-ash color-white mx-auto">
-                  VERIFY ACCOUNT
+                  View Free Predictions
                 </button>
-              </LinkContainer>
+              </HashLink>
             </div>
           ) : (
             <>
@@ -67,6 +73,16 @@ const MyHeader = () => {
                     View Profile
                   </button>
                 </LinkContainer>
+                <HashLink
+                  className="anchor"
+                  title="Access free games"
+                  smooth
+                  to={"/#free"}
+                >
+                  <button className="mt-1  button-block wide-block bg-ash color-white mx-auto">
+                    View Free Predictions
+                  </button>
+                </HashLink>
               </div>
             </>
           )}
