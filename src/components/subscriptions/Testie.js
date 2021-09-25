@@ -53,8 +53,9 @@ const Testie = () => {
           src={bank5}
           alt="testie-plan"
           className="responsive-image mx-auto d-block"
-          height="auto"
-          width="100%"
+          height={300}
+          width={300}
+          loading="lazy"
         />
         <article className="subs-container">
           <p className="discover-paragraph">{plans.testie.description}</p>

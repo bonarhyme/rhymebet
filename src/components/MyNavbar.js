@@ -34,7 +34,7 @@ const MyNavbar = () => {
           src={variables.rhymebetLogo}
           alt="Rhymebet Logo"
           width={150}
-          height="auto"
+          height={30}
         />
       </LinkContainer>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />

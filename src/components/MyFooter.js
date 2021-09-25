@@ -20,7 +20,7 @@ const Footer = () => {
             alt="Rhymebet Logo"
             className="responsive-image"
             width={150}
-            height="auto"
+            height={80}
           />
         </LinkContainer>
         <div>
