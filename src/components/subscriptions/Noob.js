@@ -54,8 +54,8 @@ const Noob = () => {
           src={bank4}
           alt="noob-plan"
           className="responsive-image mx-auto d-block"
-          height={300}
-          width={300}
+          height={500}
+          width={500}
           loading="lazy"
         />
         <article className="subs-container">

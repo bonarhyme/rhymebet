@@ -53,8 +53,8 @@ const Basic = () => {
           src={bank3}
           alt="basic-plan"
           className="responsive-image mx-auto d-block"
-          height={300}
-          width={300}
+          height={500}
+          width={500}
           loading="lazy"
         />
         <article className="subs-container">
