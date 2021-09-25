@@ -52,6 +52,8 @@ const Gold = () => {
           src={bank1}
           alt="gold-plan"
           className="responsive-image mx-auto d-block"
+          height="auto"
+          width="100%"
         />
         <article className="subs-container">
           <p className="discover-paragraph">{plans.gold.description}</p>

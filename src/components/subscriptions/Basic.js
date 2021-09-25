@@ -53,6 +53,8 @@ const Basic = () => {
           src={bank3}
           alt="basic-plan"
           className="responsive-image mx-auto d-block"
+          height="auto"
+          width="100%"
         />
         <article className="subs-container">
           <p className="discover-paragraph">{plans.basic.description}</p>

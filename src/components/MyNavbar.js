@@ -30,7 +30,12 @@ const MyNavbar = () => {
   return (
     <Navbar bg="light" expand="lg" className="my-navbar" collapseOnSelect>
       <LinkContainer to="/">
-        <Image src={variables.rhymebetLogo} alt="Rhymebet Logo" width={150} />
+        <Image
+          src={variables.rhymebetLogo}
+          alt="Rhymebet Logo"
+          width={150}
+          height="auto"
+        />
       </LinkContainer>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

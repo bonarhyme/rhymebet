@@ -19,6 +19,8 @@ const Footer = () => {
             src={variables.rhymebetLogo}
             alt="Rhymebet Logo"
             className="responsive-image"
+            width={150}
+            height="auto"
           />
         </LinkContainer>
         <div>

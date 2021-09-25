@@ -53,6 +53,8 @@ const Standard = () => {
           src={bank2}
           alt="standard-plan"
           className="responsive-image mx-auto d-block"
+          height="auto"
+          width="100%"
         />
         <article className="subs-container">
           <p className="discover-paragraph">{plans.standard.description}</p>
