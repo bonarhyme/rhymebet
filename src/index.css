@@ -270,8 +270,8 @@ ul {
 }
 
 .responsive-image {
-  width: 100%;
-  max-width: 550px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .sr-only {

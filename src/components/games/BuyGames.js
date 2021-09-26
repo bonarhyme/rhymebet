@@ -26,8 +26,8 @@ const BuyGames = () => {
               variant="top"
               src={bank5}
               className="mb-3"
-              height={500}
-              width={500}
+              height={300}
+              width={300}
               loading="lazy"
             />
             <Card.Body>
@@ -56,8 +56,8 @@ const BuyGames = () => {
             <Card.Img
               variant="top"
               src={bank4}
-              height={500}
-              width={500}
+              height={300}
+              width={300}
               loading="lazy"
             />
             <Card.Body>
@@ -86,8 +86,8 @@ const BuyGames = () => {
             <Card.Img
               variant="top"
               src={bank3}
-              height={500}
-              width={500}
+              height={300}
+              width={300}
               loading="lazy"
             />
             <Card.Body>
@@ -116,8 +116,8 @@ const BuyGames = () => {
             <Card.Img
               variant="top"
               src={bank2}
-              height={500}
-              width={500}
+              height={300}
+              width={300}
               loading="lazy"
             />
             <Card.Body>
@@ -149,8 +149,8 @@ const BuyGames = () => {
             <Card.Img
               variant="top"
               src={bank1}
-              height={500}
-              width={500}
+              height={300}
+              width={300}
               loading="lazy"
             />
             <Card.Body>
