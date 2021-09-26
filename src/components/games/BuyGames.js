@@ -29,6 +29,7 @@ const BuyGames = () => {
               height={300}
               width={300}
               loading="lazy"
+              alt="testie-plan"
             />
             <Card.Body>
               <Card.Title className="big-font bold">Testie Plan</Card.Title>
@@ -59,6 +60,7 @@ const BuyGames = () => {
               height={300}
               width={300}
               loading="lazy"
+              alt="noob-plan"
             />
             <Card.Body>
               <Card.Title className="big-font bold">Noob Plan</Card.Title>
@@ -89,6 +91,7 @@ const BuyGames = () => {
               height={300}
               width={300}
               loading="lazy"
+              alt="basic-plan"
             />
             <Card.Body>
               <Card.Title className="big-font bold">Basic Plan</Card.Title>
@@ -119,6 +122,7 @@ const BuyGames = () => {
               height={300}
               width={300}
               loading="lazy"
+              alt="standard-plan"
             />
             <Card.Body>
               <Card.Title className="big-font bold">Standard Plan</Card.Title>
@@ -152,6 +156,7 @@ const BuyGames = () => {
               height={300}
               width={300}
               loading="lazy"
+              alt="gold-plan"
             />
             <Card.Body>
               <Card.Title className="big-font bold">Gold Plan</Card.Title>
