@@ -9,6 +9,8 @@ import { getActiveSingleSub } from "./actions/subscriptionActions";
 import HomeScreen from "./screens/Home";
 import MyNavbar from "./components/MyNavbar";
 
+const tawkTo = lazy(() => import("tawkto-react"));
+
 const LoginScreen = lazy(() => import("./screens/Login"));
 const VerifyScreen = lazy(() => import("./screens/Verification"));
 const RegisterScreen = lazy(() => import("./screens/RegisterScreen"));
@@ -79,6 +81,12 @@ const App = () => {
     }
     // eslint-disable-next-line
   }, [userInfo]);
+
+  const tawkToPropertyId = "614adb25d326717cb682b7be";
+  const tawkToKey = "1fg66g355";
+  useEffect(() => {
+    tawkTo(tawkToPropertyId, tawkToKey);
+  }, []);
 
   return (
     <>
