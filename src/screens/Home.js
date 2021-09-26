@@ -1,8 +1,11 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import Helmet from "react-helmet";
 import MyHeader from "../components/MyHeader";
-import MyHero from "../components/Hero";
-import News from "../components/news/News";
+// import MyHero from "../components/Hero";
+// import News from "../components/news/News";
+
+const MyHero = lazy(() => import("../components/Hero"));
+const News = lazy(() => import("../components/news/News"));
 
 const Home = () => {
   return (
@@ -12,10 +15,12 @@ const Home = () => {
         <meta name="description" content="Rhymebet Home Page" />
       </Helmet>
       <MyHeader />
-      <main>
-        <MyHero />
-        <News />
-      </main>
+      <Suspense fallback={<div>Loading...</div>}>
+        <main>
+          <MyHero />
+          <News />
+        </main>
+      </Suspense>
     </>
   );
 };
