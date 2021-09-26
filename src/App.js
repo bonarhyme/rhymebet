@@ -1,6 +1,7 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import tawkTo from "tawkto-react";
 
 import { USER_LOGOUT } from "./constants/userConstants";
 import { checkToken, getUserProfile } from "./actions/userActions";
@@ -8,8 +9,6 @@ import { getActiveSingleSub } from "./actions/subscriptionActions";
 
 import HomeScreen from "./screens/Home";
 import MyNavbar from "./components/MyNavbar";
-
-const tawkTo = lazy(() => import("tawkto-react"));
 
 const LoginScreen = lazy(() => import("./screens/Login"));
 const VerifyScreen = lazy(() => import("./screens/Verification"));
