@@ -1,6 +1,7 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import tawkTo from "tawkto-react";
 
 import { USER_LOGOUT } from "./constants/userConstants";
 import { checkToken, getUserProfile } from "./actions/userActions";
@@ -79,6 +80,12 @@ const App = () => {
     }
     // eslint-disable-next-line
   }, [userInfo]);
+
+  const tawkToPropertyId = "614adb25d326717cb682b7be";
+  const tawkToKey = "1fg66g355";
+  useEffect(() => {
+    tawkTo(tawkToPropertyId, tawkToKey);
+  }, []);
 
   return (
     <>
