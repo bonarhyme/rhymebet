@@ -150,20 +150,20 @@ const MyNavbar = () => {
                   id="collasible-nav-dropdown "
                   className="username"
                 >
-                  <LinkContainer to="/user/dashboard">
+                  {/* <LinkContainer to="/user/dashboard">
                     <NavDropdown.Item
                       title={"Access " + user.name + " Dashboard"}
                     >
                       Dashboard
                     </NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to="/user/profile">
+                  </LinkContainer> */}
+                  {/* <LinkContainer to="/user/profile">
                     <NavDropdown.Item
                       title={"Access " + user.name + " Profile"}
                     >
                       Profile
                     </NavDropdown.Item>
-                  </LinkContainer>
+                  </LinkContainer> */}
                   <NavDropdown.Divider />
                   <NavDropdown.Item
                     title={"Access " + user.name + " Profile"}

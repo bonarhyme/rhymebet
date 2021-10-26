@@ -19,12 +19,12 @@ import LoginScreen from "./screens/Login";
 
 import ForgotPasswordScreen from "./screens/ForgotPassword";
 import ResetPasswordScreen from "./screens/ResetPassword";
-import ProfileScreen from "./screens/Profile";
+// import ProfileScreen from "./screens/Profile";
 import AdminGamesScreen from "./screens/AdminGames";
 import SubscriptionsScreen from "./screens/Subscriptions";
 import UsersScreen from "./screens/Users";
 
-import UserDashboardScreen from "./screens/UserDashboard";
+// import UserDashboardScreen from "./screens/UserDashboard";
 
 import SuperAdminUser from "./screens/superAdmin/User";
 
@@ -161,7 +161,7 @@ const App = () => {
             exact
           />
 
-          <Route path="/user/profile" component={ProfileScreen} exact />
+          {/* <Route path="/user/profile" component={ProfileScreen} exact /> */}
 
           {userInfo && userInfo.isAdmin && (
             <Route
@@ -197,11 +197,11 @@ const App = () => {
             <Route path="/superadmin/users" component={SuperAdminUser} exact />
           )}
 
-          <Route
+          {/* <Route
             path="/user/dashboard"
             component={userInfo ? UserDashboardScreen : LoginScreen}
             exact
-          />
+          /> */}
 
           {userInfo && userInfo.isAdmin && (
             <Route path="/admin/news/" component={AdminNewsScreen} exact />
