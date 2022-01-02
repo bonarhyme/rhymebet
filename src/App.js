@@ -180,7 +180,7 @@ const App = () => {
           <Route path="/discover/terms" component={TermsScreen} exact />
           <Route path="/discover/faq" component={Faq} exact />
           <Route path="/discover/contact" component={Contact} exact />
-          <Route path="*" component={PageNotFoundScreen} />
+          {/* <Route path="*" component={PageNotFoundScreen} /> */}
         </Switch>
         <MyFooter />
       </Router>
