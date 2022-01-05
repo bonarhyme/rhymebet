@@ -15,7 +15,8 @@ export const variables = {
   email: "rhymebet@outlook.com",
   // backendLink: "http://localhost:4006",
   // backendLink: "https://rhymebet.herokuapp.com",
-  backendLink: "https://api-rhymebet.herokuapp.com",
+  // backendLink: "https://api-rhymebet.herokuapp.com",
+  backendLink: "https://rhymbet.herokuapp.com",
   frontendLink: "https://rhymebet-frontend.vercel.app/",
   // frontendLink: "http://localhost:3000",
 };
