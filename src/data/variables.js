@@ -17,7 +17,7 @@ export const variables = {
   // backendLink: "https://rhymebet.herokuapp.com",
   // backendLink: "https://api-rhymebet.herokuapp.com",
   backendLink: "https://rhymbet.herokuapp.com",
-  frontendLink: "https://rhymebet-frontend.vercel.app/",
+  frontendLink: "https://rhymebet.vercel.app/",
   // frontendLink: "http://localhost:3000",
 };
 
